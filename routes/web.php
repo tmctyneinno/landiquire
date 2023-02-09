@@ -25,6 +25,7 @@ Route::get('/', [DashboardController::class, 'Index'])->name('index');
 Route::get('/index', [DashboardController::class, 'Index'])->name('index');
 Route::get('/page/{slug}', [PagesController::class, "Pages"])->name('pages');
 Route::get('/pages/{slug}', [PagesController::class, "SubPages"])->name('subpages');
+Route::get('/blog/details/{id}', [PagesController::class, 'BlogDetails'])->name('blog.details');
 
 
 

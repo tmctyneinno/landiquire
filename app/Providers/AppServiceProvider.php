@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         view()->composer('*', function($view){
-        $menus = Menu::get();
+        $menus = Menu::where('status', 1)->get();
         $view->with('menus', $menus);
 
         $view->with('settings', Setting::latest()->first());

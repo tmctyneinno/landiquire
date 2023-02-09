@@ -2,15 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use Illuminate\Http\Request;
 use App\Models\Menu;
 use App\Models\SubMenu;
 use App\Models\Page;
+use App\Models\ClientJob;
 class PagesController extends Controller
 {
  
     public function Pages($id){
         $menuId = Menu::where('id', $id)->first();
+
+        if($menuId->slug == 'blogs'){
+            return view('frontend.blogs', ['blogs' => Blog::latest()->get(), 'popular' => Blog::where('views', '>', 10)->get()]);
+        }
+        if($menuId->slug == 'jobs'){
+            return view('frontend.jobs',[
+                'jobs' => ClientJob::latest()->get(),
+            ]);
+
+        }
         if($menuId->has_child){
             $pages['pages'] = SubMenu::where('menu_id', $menuId->id)->get();
             $pages['breadcrums'] = $pages['pages'][0]->name;
@@ -44,4 +56,12 @@ class PagesController extends Controller
         return view('frontend.subpages', $pages);
     }
 
+
+    public function BlogDetails($id){
+        $id = decrypt($id);
+        return view('frontend.blog_details', [
+            'blogs' => Blog::where('id', $id)->first(),
+            'popular' => Blog::where('views', '>', '10')->get(),
+        ]);
+    }
 }
