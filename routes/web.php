@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ClientJobController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PagesController;
@@ -26,6 +27,8 @@ Route::get('/index', [DashboardController::class, 'Index'])->name('index');
 Route::get('/page/{slug}', [PagesController::class, "Pages"])->name('pages');
 Route::get('/pages/{slug}', [PagesController::class, "SubPages"])->name('subpages');
 Route::get('/blog/details/{id}', [PagesController::class, 'BlogDetails'])->name('blog.details');
+Route::get('/job/details/{id}', [ClientJobController::class, 'Details'])->name('job-details');
+Route::get('/jobs/industries/{id}', [PagesController::class, 'JobCategory'])->name('industries-category');
 
 
 

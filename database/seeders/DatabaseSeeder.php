@@ -5,6 +5,8 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+use function Pest\Laravel\call;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -20,5 +22,9 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        $this->call(IndustrySeeder::class);
+        $this->call(JobSeeder::class);
+
     }
 }
