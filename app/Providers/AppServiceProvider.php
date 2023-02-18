@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Menu;
 use App\Models\Setting;
+use App\Models\AdminNotify;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -32,7 +33,7 @@ class AppServiceProvider extends ServiceProvider
 
         $view->with('settings', Setting::latest()->first());
         });
-
-
+       view::share('unread_notify', AdminNotify::where('status', 0)->latest()->take(10)->get());
+       view::share('read_notify', AdminNotify::where('status', 1)->latest()->take(2)->get());
     }
 }

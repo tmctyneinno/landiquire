@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\ClientJobController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
@@ -22,13 +23,28 @@ use App\Http\Controllers\SliderController;
 |
 */
 
+
+Route::prefix('admins')->group(function(){
+
+    Route::get('/', [AdminDashboardController::class, 'Index'])->name('admin.index');
+
+
+});
+
+
 Route::get('/', [DashboardController::class, 'Index'])->name('index');
 Route::get('/index', [DashboardController::class, 'Index'])->name('index');
-Route::get('/page/{slug}', [PagesController::class, "Pages"])->name('pages');
-Route::get('/pages/{slug}', [PagesController::class, "SubPages"])->name('subpages');
-Route::get('/blog/details/{id}', [PagesController::class, 'BlogDetails'])->name('blog.details');
-Route::get('/job/details/{id}', [ClientJobController::class, 'Details'])->name('job-details');
-Route::get('/jobs/industries/{id}', [PagesController::class, 'JobCategory'])->name('industries-category');
+
+Route::controller(PagesController::class)->group(function(){
+Route::get('/page/{slug}', 'Pages')->name('pages');
+Route::get('/pages/{slug}',  "SubPages")->name('subpages');
+Route::get('/blog/details/{id}',  'BlogDetails')->name('blog.details');
+Route::get('/job/details/{id}',  'Details')->name('job-details');
+Route::get('/jobs/industries/{id}',  'JobCategory')->name('industries-category');
+Route::post('/contactus/request', 'ContactEmails')->name('contact-email');
+});
+
+Route::post('/jobs/apply/{id}', [ClientJobController::class, 'ApplyJob'])->name('apply.job');
 
 
 
@@ -37,6 +53,8 @@ Route::get('/jobs/industries/{id}', [PagesController::class, 'JobCategory'])->na
 //     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
 //     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 // });
+
+
 
 
 require __DIR__.'/auth.php';

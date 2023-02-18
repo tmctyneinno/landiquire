@@ -178,6 +178,7 @@
         $(form).submit(function (e) {
             e.preventDefault();
             var formData = form.serialize();
+            console.log(formData);
             $.ajax({
                 type: 'POST',
                 url: form.attr('action'),
@@ -189,7 +190,7 @@
 
                 // Set the message text.
                 formMessages.html("<button type='button' class='close' data-dismiss='alert'>&times;</button>");
-                formMessages.append(response);
+                formMessages.append('Completed successfully');
 
                 // Clear the form.
                 $('#contact-form input,#contact-form textarea').val('');

@@ -6,8 +6,10 @@ use App\Models\Blog;
 use Illuminate\Http\Request;
 use App\Models\Menu;
 use App\Models\SubMenu;
+use Illuminate\Support\Facades\Mail;
 use App\Models\Page;
 use App\Models\ClientJob;
+use App\Mail\ContactUs;
 use App\Models\Industry;
 
 class PagesController extends Controller
@@ -26,7 +28,9 @@ class PagesController extends Controller
         }
 
         if($menuId->slug == 'contact'){
-            return view('frontend.contact');
+            return view('frontend.contact', [
+                'key' => rand(999,1111).substr(base64_encode('sdsjkdsdsd'), 0, 10),
+            ]);
         }
         if($menuId->has_child){
             $pages['pages'] = SubMenu::where('menu_id', $menuId->id)->get();
@@ -80,5 +84,27 @@ class PagesController extends Controller
     }else{
         return back();
     }
+    }
+
+    public function ContactEmails(Request $request){
+
+        if(!$request->key){
+            return back();
+        }
+       $request->validate([
+            'name' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+            'message' => 'required'
+        ]);
+
+        $data = [
+            'name' =>  $request->name,
+            'phone' => $request->phone,
+            'email' =>  $request->email,
+            'message' => $request->message
+        ];
+
+        Mail::to('jesmikky@gmail.com')->send(new ContactUs($data));
     }
 }
