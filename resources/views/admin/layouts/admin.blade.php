@@ -12,13 +12,13 @@
     <link rel="stylesheet" href="{{asset('/backend/vendors/bundle.css')}}" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
   <!-- Datepicker -->
-    <link rel="stylesheet" href="{{asset('/backend/vendors/clockpicker/bootstrap-clockpicker.min.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{asset('/backend/vendors/datepicker/daterangepicker.css')}}">
+
     <link rel="stylesheet" href="{{asset('/backend/vendors/slick/slick.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('/backend/vendors/slick/slick-theme.css')}}" type="text/css">
     <!-- Vmap -->
     <link rel="stylesheet" href="{{asset('/backend/vendors/vmap/jqvmap.min.css')}}">
     <link rel="stylesheet" href="{{asset('/backend/css/app.min.css')}}" type="text/css">
+    @yield('css')
 </head>
 <body>
     <!-- App styles  -->
@@ -34,7 +34,7 @@
                 <div class="navigation-menu-tab-header" data-toggle="tooltip" title="Admin" data-placement="right">
                     <a href="#" class="nav-link" data-toggle="dropdown" aria-expanded="false">
                         <figure class="avatar avatar-sm">
-                                 <img src="{{asset('/images/fav.png')}}" height="10px" width="10px">
+                                 <img src="{{asset('/assets/logo.png')}}" height="10px" width="10px">
                         </figure>
                     </a>
                 </div>
@@ -75,8 +75,8 @@
             <div>
                 <div id="navigation-logo">
                     <a href="{{route('admin.index')}}">
-                        <img class="logo" src="{{asset('/images/logo.png')}}" height="auto" width="120px">
-                        <img class="logo-light" src="{{asset('/images/logo.png')}}" height="auto" width="120px" alt="light logo">
+                        <img class="logo" src="{{asset('/assets/logo.png')}}" height="auto" width="120px">
+                        <img class="logo-light" src="{{asset('/assets/logo.png')}}" height="auto" width="120px" alt="light logo">
                     </a>
                 </div>
             </div>
@@ -105,13 +105,21 @@
         <!-- end::page-header -->
     @yield('content')
 
-     <footer>
-            <div class="container-fluid">
-                
-                  
-                </div>
+    <footer>
+        <div class="container-fluid">
+            <div>© 2023 {{$settings->site_name}}, All Rights Reserved</a></div>
+            <div>
+                <nav class="nav">
+                    
+                    <a href="">Home</a>
+                    <a href=""> Pages</a>
+                    <a href=""> News</a>
+                    <a href=""> Jobs</a>
+                    
+                </nav>
             </div>
-        </footer>
+        </div>
+    </footer>
         <!-- end::footer -->
 
     </div>
@@ -122,28 +130,7 @@
 
 <!-- Plugin scripts -->
 <script src="{{asset('/backend/vendors/bundle.js')}}"></script>
-<!-- Chartjs -->
-<script src="{{asset('/backend/vendors/charts/chartjs/chart.min.js')}}"></script>
-<script src="{{asset('/backend/vendors/dataTable/jquery.dataTables.min.js')}}"></script>
-<script src="{{asset('/backend/vendors/dataTable/dataTables.responsive.min.js')}}"></script>
-<script src="{{asset('/backend/vendors/dataTable/dataTables.bootstrap4.min.js')}}"></script>
-<!-- Apex chart -->
-<script src="{{asset('/backend/vendors/charts/apex/apexcharts.min.js')}}"></script>
-<script src="{{asset('/backend/vendors/irregular-data-series.js')}}"></script>
-<script src="{{asset('/backend/vendors/charts/apex/apexcharts.min.js')}}"></script>
-
-<!-- Circle progress -->
-<script src="{{asset('/backend/vendors/circle-progress/circle-progress.min.js')}}"></script>
-<!-- Peity -->
-<script src="{{asset('/backend/vendors/charts/peity/jquery.peity.min.js')}}"></script>
-<script src="{{asset('/backend/js/examples/charts/peity.js')}}"></script>
-
 <script src="{{asset('/backend/vendors/prism/prism.js')}}"></script>
-<script src="{{asset('/backend/js/examples/clockpicker.js')}}"></script>
-<!-- Datepicker -->
-<script src="{{asset('/backend/vendors/datepicker/daterangepicker.js')}}"></script>
-<script src="{{asset('/backend/vendors/clockpicker/bootstrap-clockpicker.min.js')}}"></script>
-<!-- Slick -->
 <script src="{{asset('/backend/vendors/slick/slick.min.js')}}"></script>
 <!-- Vamp -->
 <script src="{{asset('/backend/vendors/vmap/jquery.vmap.min.js')}}"></script>

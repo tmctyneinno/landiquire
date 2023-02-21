@@ -24,7 +24,7 @@
     <div class="service-details-page-wrap">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 order-1 order-lg-0">
+                <div class="col-lg-4  order-lg-0">
                     <!-- Start Service Details Sidebar -->
                     <div class="service-details-sidebar mtm-40 mtm-sm-2 mtm-md-2">
                         <!-- Start Sidebar Item -->
@@ -33,7 +33,7 @@
                             <div class="sidebar-body">
                                 <ul class="service-list">
                                     @foreach ($sidebar as $menu )
-                                    <li><a href="{{route('subpages', $menu->id)}}">{{$menu->name}}</a></li>
+                                    <li><a href="{{route('subpages', encrypt($menu->id))}}">{{$menu->name}}</a></li>
                                     @endforeach
                                  
                                    
@@ -42,16 +42,6 @@
                         </div>
                         <!-- End Sidebar Item -->
 
-                        <!-- Start Sidebar Item -->
-                        <div class="sidebar-single">
-                            <h3 class="sidebar-heading">Download Brochure</h3>
-                            <div class="sidebar-body">
-                                <ul class="service-list">
-                                    <li><a href="#"><i class="fa fa-file-pdf-o"></i>Brochures.PDF</a></li>
-                                    <li><a href="#"><i class="fa fa-file-word-o"></i>Brochures.DOC</a></li>
-                                </ul>
-                            </div>
-                        </div>
                         <!-- End Sidebar Item -->
                     </div>
                 </div>
@@ -62,7 +52,7 @@
                             <div class="project-details-thumb ht-slick-slider" data-slick='{"arrows": false, "dots": true}'>
                               
                                 <figure class="project-thumb-item">
-                                    <img src="{{asset('assets/img/project-details/project-details-2.jpg')}}" alt="Project"/>
+                                    <img src="{{asset('images/'.$pages->metas)}}" alt="Project"/>
                                 </figure>
                             </div>
                             <div class="service-details-info">

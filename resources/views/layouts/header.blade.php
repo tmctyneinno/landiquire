@@ -52,11 +52,11 @@
                         <ul class="main-menu nav">
 
                           @foreach ($menus as $menu )
-                            <li class="@if($menu->has_child) dropdown-navbar @else @endif ">@if($menu->name == 'Home') <a href="{{route('index')}}">{{$menu->name}}</a> @else <a href="{{route('pages', $menu->id)}}">{{$menu->name}}</a> @endif
+                            <li class="@if($menu->has_child) dropdown-navbar @else @endif ">@if($menu->name == 'Home') <a href="{{route('index')}}">{{$menu->name}}</a> @else <a href="{{route('pages', encrypt($menu->id))}}">{{$menu->name}}</a> @endif
                                 @if(count($menu->subMenu) > 0)
                                 <ul class="dropdown-nav">
                                     @forelse ($menu->subMenu as $sub ) 
-                                    <li><a href="{{route('subpages', $sub->id)}}">{{$sub->name}}</a></li>   
+                                    <li><a href="{{route('subpages', encrypt($sub->id))}}">{{$sub->name}}</a></li>   
                                     @empty
                                     @endforelse
                                 </ul>

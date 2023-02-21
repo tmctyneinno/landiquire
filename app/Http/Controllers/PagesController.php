@@ -15,18 +15,20 @@ use App\Models\Industry;
 class PagesController extends Controller
 {
     public function Pages($id){
+        $id = decrypt($id);
         $menuId = Menu::where('id', $id)->first();
-        if($menuId->slug == 'blogs'){
-            return view('frontend.blogs', ['blogs' => Blog::latest()->get(), 'popular' => Blog::where('views', '>', 10)->get()]);
+        //dd( $menuId);
+        if($menuId->slug == 'Blog'){
+       
+            return view('frontend.blogs', ['blogs' => Blog::latest()->get(), 'popular' => Blog::where('views', '>', 0)->get()]);
            }
         if($menuId->slug == 'jobs'){
             
             return view('frontend.jobs',[
-                'jobs' => ClientJob::latest()->get(),
+                'jobs' => ClientJob::where('status', '=', 1)->latest()->get(),
                 'industries' => Industry::get(),
             ]);
         }
-
         if($menuId->slug == 'contact'){
             return view('frontend.contact', [
                 'key' => rand(999,1111).substr(base64_encode('sdsjkdsdsd'), 0, 10),
@@ -50,8 +52,8 @@ class PagesController extends Controller
 
 
     public function Subpages($id){
+        $id = decrypt($id);
         $id = SubMenu::where('id', $id)->first();
-
         $pages = Page::where('sub_menu_id', $id->id)->first();
         if(!$pages){
             return back();
@@ -59,11 +61,8 @@ class PagesController extends Controller
         $pages['pages'] = $pages;
         $pages['breadcrums'] =  $id->name;
         $pages['sidebar'] = SubMenu::where('menu_id', $id->menu_id)->get();
-        
-      
         return view('frontend.subpages', $pages);
     }
-
 
     public function BlogDetails($id){
         $id = decrypt($id);
@@ -97,7 +96,6 @@ class PagesController extends Controller
             'email' => 'required',
             'message' => 'required'
         ]);
-
         $data = [
             'name' =>  $request->name,
             'phone' => $request->phone,
@@ -106,5 +104,6 @@ class PagesController extends Controller
         ];
 
         Mail::to('jesmikky@gmail.com')->send(new ContactUs($data));
+        return back();
     }
 }

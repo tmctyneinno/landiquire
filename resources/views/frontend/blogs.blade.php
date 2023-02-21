@@ -46,7 +46,7 @@
                                             <a href="{{route('blog.details', encrypt($blog->id))}}" class="post-date"><i class="fa fa-clock-o"></i>
                                                 {{$blog->created_at->format('d/m/y')}}</a>
                                         </div>
-                                        <p>{{substr($blog->contents, 0, 100)}}
+                                        <p style="color:#fff">{!! substr($blog->contents, 0, 200) !!}
                                             </p>
                                         <a href="{{route('blog.details', encrypt($blog->id))}}" class="btn btn-brand">Read More</a>
                                     </div>

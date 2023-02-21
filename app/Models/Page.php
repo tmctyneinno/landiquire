@@ -12,7 +12,7 @@ class Page extends Model
 
     protected $table = "pages";
     protected $fillable = [
-        'sub_menu_id', 'title', 'contents', 'metas', 'links', 'slug'
+        'sub_menu_id', 'title', 'contents', 'metas', 'links', 'slug', 'menu_id', 'status'
     ];
 
     public function subMenu(){

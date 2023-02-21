@@ -44,7 +44,7 @@
                         <div class="service-item__info">
                             <h2><a href="#">{{$page->name}}</a></h2>
                             <p>{{$page->title}}</p>
-                            <a href="{{route('subpages', $page->id)}}" class="btn-read-more">Read More</a>
+                            <a href="{{route('subpages', encrypt($page->id))}}" class="btn-read-more">Read More</a>
                         </div>
                     </div>
                     <!-- End Single Service Item -->
