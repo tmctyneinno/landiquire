@@ -46,7 +46,24 @@
                 <i class="fa fa-tasks"></i>&nbsp; Manage Jobs</a>
                 <ul>
                       <li><a href="{{route('admin.JobsCreate')}}">Post Jobs</a></li>
-                      <li><a href="{{route('admin.Jobs.index')}}">Manage Blog</a></li>
+                      <li><a href="{{route('admin.Jobs.index')}}">Manage Jobs</a></li>
+                </ul>
+        </li>  
+        <li class="navigation-divider">Settings</li>
+        <li>
+            <a  href="" data-toggle="tooltip" data-placement="right" title="View User's activities"
+               data-nav-target="#dashboards">
+                <i class="fa fa-globe"></i>&nbsp; Wesbite Settings</a>
+                <ul>
+                      <li><a href="{{route('admin.JobsCreate')}}">Manage Contents</a></li>
+                </ul>
+        </li> 
+        <li>
+            <a  href="" data-toggle="tooltip" data-placement="right" title="View User's activities"
+               data-nav-target="#dashboards">
+                <i class="fa fa-users"></i>&nbsp; Manage Admin</a>
+                <ul>
+                      <li><a href="{{route('admin.JobsCreate')}}">Manage Admin</a></li>
                 </ul>
         </li>  
         </ul>

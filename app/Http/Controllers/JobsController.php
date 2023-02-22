@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Applicant;
+use App\Models\AppliedJob;
 use App\Models\ClientJob;
 use App\Models\Industry;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Illuminate\Http\Request;
 
 class JobsController extends Controller
@@ -29,68 +32,78 @@ class JobsController extends Controller
         $request->validate([
             'title' => 'required',
             'contents' => 'required',
+            'company' => 'required',
+            'industry_id' => 'required',
+            'location' => 'required',
+            'daterangepicker' => 'required',
+            'salary_range' => 'required',
+            'job_type' => 'required',
             'image' => 'required',
         ]);
-
-        //dd($request->all());
-
-        $data = [];
-       try{ 
-        if($request->contents){
-            $data['contents'] = $request->contents;
-        }
-        if($request->title) {
-            $data['title'] = $request->title;
-        }
+        $data = [
+            'title' => $request->title,
+            'job_details' => $request->contents,
+            'company' => $request->company,
+            'industries_id' => $request->industry_id,
+            'location' => $request->location,
+            'deadline' => $request->daterangepicker,
+            'salary_range' => $request->salary_range,
+            'job_type' => $request->job_type,
+        ];
+      // try{ 
         if($request->image){
             $image = $request->file('image');
             $ext = $image->getClientOriginalExtension();
             $fileName = time().'.'.$ext;
             $image->move('images',$fileName);
-            $data['image'] = $fileName;
+            $data['logo'] = $fileName;
         }
-         Blog::create($data);
+         ClientJob::create($data);
+       
         \Session::flash('alert', 'success');
-        \Session::flash('message','Page added successfully');
+        \Session::flash('message','Job Posted successfully');
         return back();
     
-   }catch(\Exception $e){
+   //}catch(\Exception $e){
         \Session::flash('alert', 'error');
         \Session::flash('message','Request Failed, try again');
         return back()->withInput();
-    }
+  //  }
     }
 
-    public function BlogsEdit($id){
-        return view('admin.blogs.edit', [
-            'blog' => ClientJob::where('id', decrypt($id))->first(),
-            'latest' => ClientJob::latest()->take(5)->get()
+    public function JobsEdit($id){
+        return view('admin.jobs.edit', [
+            'job' => ClientJob::where('id', decrypt($id))->first(),
+            'industries' => Industry::get()
         ])
-        ->with('bheading', 'Manage Blogs')
-        ->with('breadcrumb', 'Edit Blog Post');
+        ->with('bheading', 'Manage Jobs')
+        ->with('breadcrumb', 'Edit Jobs');
     }
 
-    public function BlogsUpdate(Request $request, $id){
-        $blog = ClientJob::whereId(decrypt($id))->first();
-        try{ 
-        if($request->contents){
-            $blog->contents = $request->contents;
-        }
-        if($request->title) {
-            $blog->title = $request->title;
-        }
+    public function JobsUpdate(Request $request, $id){
+        $jobs = ClientJob::whereId(decrypt($id))->first();
+    try{
+        $data = [
+            'title' => $request->title,
+            'job_details' => $request->contents,
+            'company' => $request->company,
+            'industries_id' => $request->industry_id,
+            'location' => $request->location,
+            'deadline' => $request->daterangepicker,
+            'salary_range' => $request->salary_range,
+            'job_type' => $request->job_type,
+        ];
         if($request->image){
             $image = $request->file('image');
             $ext = $image->getClientOriginalExtension();
             $fileName = time().'.'.$ext;
             $image->move('images',$fileName);
-            $blog->image = $fileName;
+            $data['logo'] = $fileName;
         }
-        $blog->save();
+        $jobs->fill($data)->save();
         \Session::flash('alert', 'success');
-        \Session::flash('message','Blog added successfully');
+        \Session::flash('message','Job updated successfully');
         return back();
-    
     }catch(\Exception $e){
         \Session::flash('alert', 'error');
         \Session::flash('message','Request Failed, try again');
@@ -99,27 +112,42 @@ class JobsController extends Controller
     }
 
 
-    public function BlogsDelete($id){
-        $blog = ClientJob::whereId(decrypt($id))->first();
-        $blog->delete();
+    public function JobsDelete($id){
+        $job = ClientJob::whereId(decrypt($id))->first();
+        if($job->applicants){
+            \Session::flash('alert', 'error');
+            \Session::flash('message','You cannot delete this job, Candidates already applied');
+            return back();
+        }
+      //  dd($job->Applicants);
+        $job->delete();
         \Session::flash('alert', 'error');
         \Session::flash('message','Page Deleted successfully');
         return back();
     }
 
-    public function BlogsActivate($id){
-        $blog = ClientJob::whereId(decrypt($id))->first();
-        $blog->update(['status' => 1]);
+    public function JobsActivate($id){
+        $job = ClientJob::whereId(decrypt($id))->first();
+        $job->update(['status' => 1]);
         \Session::flash('alert', 'error');
         \Session::flash('message','Page Updated successfully');
         return back();
     }
 
-    public function BlogsDisable($id){
-        $blog = ClientJob::whereId(decrypt($id))->first();
-        $blog->update(['status' => 0]);
+    public function JobsDisable($id){
+        $job = ClientJob::whereId(decrypt($id))->first();
+        $job->update(['status' => 0]);
         \Session::flash('alert', 'error');
         \Session::flash('message','Page Update successfully');
         return back();
 }
+
+    public function JobsApplied($id){
+        return view('admin.jobs.applicants', [
+        'applicants' => AppliedJob::where('client_jobs_id', decrypt($id))->get()
+        ])
+        ->with('bheading', 'Manage Jobs')
+        ->with('breadcrumb', 'Applicants');
+    }
+
 }

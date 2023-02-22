@@ -12,13 +12,13 @@
     <link rel="stylesheet" href="{{asset('/backend/vendors/bundle.css')}}" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
   <!-- Datepicker -->
-
+    <link rel="stylesheet" href="{{asset('/backend/vendors/clockpicker/bootstrap-clockpicker.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('/backend/vendors/datepicker/daterangepicker.css')}}">
     <link rel="stylesheet" href="{{asset('/backend/vendors/slick/slick.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('/backend/vendors/slick/slick-theme.css')}}" type="text/css">
     <!-- Vmap -->
     <link rel="stylesheet" href="{{asset('/backend/vendors/vmap/jqvmap.min.css')}}">
     <link rel="stylesheet" href="{{asset('/backend/css/app.min.css')}}" type="text/css">
-    @yield('css')
 </head>
 <body>
     <!-- App styles  -->
@@ -113,8 +113,7 @@
                     
                     <a href="">Home</a>
                     <a href=""> Pages</a>
-                    <a href=""> News</a>
-                    <a href=""> Jobs</a>
+                    <a href=""> N</a>
                     
                 </nav>
             </div>
@@ -130,7 +129,20 @@
 
 <!-- Plugin scripts -->
 <script src="{{asset('/backend/vendors/bundle.js')}}"></script>
+<!-- Chartjs -->
+
+<!-- Circle progress -->
+<script src="{{asset('/backend/vendors/circle-progress/circle-progress.min.js')}}"></script>
+<!-- Peity -->
+<script src="{{asset('/backend/vendors/charts/peity/jquery.peity.min.js')}}"></script>
+<script src="{{asset('/backend/js/examples/charts/peity.js')}}"></script>
+
 <script src="{{asset('/backend/vendors/prism/prism.js')}}"></script>
+<script src="{{asset('/backend/js/examples/clockpicker.js')}}"></script>
+<!-- Datepicker -->
+<script src="{{asset('/backend/vendors/datepicker/daterangepicker.js')}}"></script>
+<script src="{{asset('/backend/vendors/clockpicker/bootstrap-clockpicker.min.js')}}"></script>
+<!-- Slick -->
 <script src="{{asset('/backend/vendors/slick/slick.min.js')}}"></script>
 <!-- Vamp -->
 <script src="{{asset('/backend/vendors/vmap/jquery.vmap.min.js')}}"></script>

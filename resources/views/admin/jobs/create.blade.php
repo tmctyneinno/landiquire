@@ -42,22 +42,21 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="text" name="lagos"  value="{{old('lagos')}}" class="form-control @error('lagos') is-invalid @enderror" id="exampleInputEmail1"
+                                                <input type="text" name="location"  value="{{old('location')}}" class="form-control @error('location') is-invalid @enderror" id="exampleInputEmail1"
                                                 aria-describedby="emailHelp" placeholder="Enter job location">
-                                               <small id="emailHelp" class="form-text text-muted">Enter job location
-                                                      </small>
-                                                      @error('lagos')
-                                                      <span class="invalid-feedback"> <small> *</small> </span>
-                                                      @enderror
+                                               <small id="emailHelp" class="form-text text-muted">Enter job location </small>
+                                                 @error('location')
+                                                    <span class="invalid-feedback"> <small> * </small> </span>
+                                                @enderror
                                               </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <input type="text" name="daterangepicker" value="{{old('deadline')}}" class="form-control @error('deadline') is-invalid @enderror" id="exampleInputEmail1"
+                                                    <input type="text" name="daterangepicker" value="{{old('daterangepicker')}}" class="form-control @error('daterangepicker') is-invalid @enderror" id="exampleInputEmail1"
                                                     aria-describedby="emailHelp" placeholder="Enter job deadline">
                                                    <small id="emailHelp" class="form-text text-muted">Enter job deadline
                                                           </small>
-                                                          @error('deadline')
+                                                          @error('daterangepicker')
                                                           <span class="invalid-feedback"> <small> *</small> </span>
                                                           @enderror
                                                   </div>

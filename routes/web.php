@@ -74,10 +74,12 @@ Route::group(['prefix' => 'admins', 'as' => 'admin.'], function(){
         Route::get('/wesite/jobs/create', 'JobsCreate')->name('JobsCreate');
         Route::post('/website/jobs/store', 'JobsStore')->name('JobsStore');
         Route::get('/website/jobs/edit/{id}', 'JobsEdit')->name('JobsEdit');
-        Route::post('/website/jobs/update/{id}', 'JobssUpdate')->name('JobsUpdate');
+        Route::post('/website/jobs/update/{id}', 'JobsUpdate')->name('JobsUpdate');
         Route::get('/wensite/jobs/delete/{id}', 'JobsDelete')->name('JobsDelete');
         Route::get('/website/jobs/activate/{id}', 'JobsActivate')->name('JobsActivate');
         Route::get('/webiste/jobs/diabled/{id}', 'JobsDisable')->name('JobsDisable');
+        Route::get('/webiste/jobs/applied/{id}', 'JobsApplied')->name('JobsApplied');
+        Route::get('/webiste/jobs/download/{id}', 'DownloadCV')->name('DownloadCV');
     });
 
 });

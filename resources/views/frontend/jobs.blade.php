@@ -74,10 +74,10 @@
                                                 <span style="float:right"> Posted: {{$job->created_at->diffForHumans()}}</span>
                                                 <h6 style="color:#0099ff">{{$job->title}}</h6> 
                                                 <p style="color:#0099ff">{{$job->company}}</p>
-                                                <span  class="p-1" style="border-radius: 4px; background:#9ab6c957; color:#5f5a5a"> {{$job->location}}</span>   <span class="p-1" style="border-radius: 4px; background:#9ab6c957; color:#5f5a5a"> {{$job->job_type}}</span>   <span class="p-1" style="border-radius: 4px; background:#9ab6c957; color:#5f5a5a"> ₦{{number_format($job->salary_range,2)}}</span> <br>
+                                                <span  class="p-1" style="border-radius: 4px; background:#9ab6c957; color:#5f5a5a"> {{$job->location}}</span>   <span class="p-1" style="border-radius: 4px; background:#9ab6c957; color:#5f5a5a"> {{$job->job_type}}</span>   <span class="p-1" style="border-radius: 4px; background:#9ab6c957; color:#5f5a5a"> ₦{{$job->salary_range}}</span> <br>
                                                <span> Job Function: {{$job->industry->name}}</span> <br>
                                                <hr>
-                                               <span> {{substr($job->job_details,0,250)}} <br> <a href="{{route('job-details', $job->id.'-'.$job->title)}}" class="btn-primary btn-sm"> Apply for this Job</a></span>
+                                               <span> {!! substr($job->job_details,0,500) !!} <br> <a href="{{route('job-details', $job->id.'-'.$job->title)}}" class="btn-primary btn-sm"> Apply for this Job</a></span>
                                             </div>
                                           
                                         </div>

@@ -20,6 +20,7 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <a href="{{route('admin.JobsEdit', encrypt($job->id))}}" class="dropdown-item">Edit</a>
+                                      <a href="{{route('admin.JobsApplied', encrypt($job->id))}}" class="dropdown-item">View Applicants</a>
                                     @if($job->status == 1) 
                                     <a  onclick="return confirm('Are you sure?')" href="{{route('admin.JobsDisable', encrypt($job->id))}}" class="dropdown-item">Disabled</a>
 
@@ -51,11 +52,11 @@
                     <div class="card-body">
                         <div class="small mb-2"></div>
                         <div class="avatar-group">
-                            <div>₦{{number_format($job->salary_range,0,2)}}</div>
+                            <div>₦{{$job->salary_range}}</div>
                          
                         </div> &nbsp; &nbsp; 
-                        <span class=""><i class="fa fa-eye"> </i> {{$job->views}}</span> 
-                        <span style="float:right"> Applicants: {{$job->applicants}}</span>
+                        <span class=""><i class="fa fa-eye"> </i> {{$job->views > 0? $job->views :'0'}}</span> 
+                        <span style="float:right"> Applicants: {{$job->applicants > 0?$job->applicants:'0'  }}</span>
                     </div>
                 </div>
             </div>
