@@ -113,7 +113,7 @@
                     
                     <a href="">Home</a>
                     <a href=""> Pages</a>
-                    <a href=""> N</a>
+                    <a href=""> </a>
                     
                 </nav>
             </div>
@@ -130,6 +130,14 @@
 <!-- Plugin scripts -->
 <script src="{{asset('/backend/vendors/bundle.js')}}"></script>
 <!-- Chartjs -->
+<script src="{{asset('/backend/vendors/charts/chartjs/chart.min.js')}}"></script>
+<script src="{{asset('/backend/vendors/dataTable/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('/backend/vendors/dataTable/dataTables.responsive.min.js')}}"></script>
+<script src="{{asset('/backend/vendors/dataTable/dataTables.bootstrap4.min.js')}}"></script>
+<!-- Apex chart -->
+<script src="{{asset('/backend/vendors/charts/apex/apexcharts.min.js')}}"></script>
+<script src="{{asset('/backend/vendors/irregular-data-series.js')}}"></script>
+<script src="{{asset('/backend/vendors/charts/apex/apexcharts.min.js')}}"></script>
 
 <!-- Circle progress -->
 <script src="{{asset('/backend/vendors/circle-progress/circle-progress.min.js')}}"></script>

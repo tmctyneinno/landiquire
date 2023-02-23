@@ -14,6 +14,7 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\MenuController as MenuPage;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\SettingsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -80,6 +81,22 @@ Route::group(['prefix' => 'admins', 'as' => 'admin.'], function(){
         Route::get('/webiste/jobs/diabled/{id}', 'JobsDisable')->name('JobsDisable');
         Route::get('/webiste/jobs/applied/{id}', 'JobsApplied')->name('JobsApplied');
         Route::get('/webiste/jobs/download/{id}', 'DownloadCV')->name('DownloadCV');
+    });
+
+    Route::controller(SettingsController::class)->group(function(){
+        Route::get('/website/settings/index', 'Index')->name('settings.index');
+        Route::get('/website/settings/testimonias', 'Testimonials')->name('settings.testimonials');
+        Route::get('/website/settings/socials', 'Socials')->name('settings.socials');
+        Route::get('/website/settings/about', 'Abouts')->name('settings.abouts');
+        Route::get('/website/settings/add/testimonial', 'CreateTestimonial')->name('settings.createTestimonial');
+        Route::post('/website/settings/store/testimonial', 'StoreTestimonial')->name('settings.storeTestimonial');
+        Route::get('/website/settings/edit/testimonial/{id}', 'EditTestimonial')->name('settings.editTestimonial');
+        Route::post('/website/settings/update/testimonial/{id}', 'UpdateTestimonial')->name('settings.updateTestimonial');
+        Route::get('/website/settings/delete/testimonial/{id}', 'DeleteTestimonial')->name('settings.deleteTestimonial');
+        Route::post('/website/settings/update/socials', 'UpdateSocials')->name('settings.updateSocials');
+        Route::post('/website/settings/update/settings', 'UpdateSettings')->name('settings.updateSettings');
+
+
     });
 
 });

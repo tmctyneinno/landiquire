@@ -55,7 +55,7 @@
                data-nav-target="#dashboards">
                 <i class="fa fa-globe"></i>&nbsp; Wesbite Settings</a>
                 <ul>
-                      <li><a href="{{route('admin.JobsCreate')}}">Manage Contents</a></li>
+                      <li><a href="{{route('admin.settings.index')}}">Manage Contents</a></li>
                 </ul>
         </li> 
         <li>
