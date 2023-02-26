@@ -7,6 +7,7 @@ use App\Models\AppliedJob;
 use Illuminate\Support\Facades\Session;
 use App\Models\ClientJob;
 use App\Models\Industry;
+use App\Mail\RequestServiceMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 
@@ -82,6 +83,31 @@ class ClientJobController extends Controller
         return back();
     return back()->with('Job Applied successfully');
      
+    }
+
+    public function RequestService(Request $request){
+
+        if(!$request->key){
+            return back()->withInput();
+        }
+
+       // dd($request->services);
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'address' => $request->address,
+            'city' => $request->city,
+            'start_date' => $request->start_date,
+            'end_date' => $request->date,
+            'services' => $request->services
+        ];
+
+        Mail::to('mikkynoble@gmail.com')->send(new RequestServiceMail($data));
+        Session::flash('message', 'Request Sent successfully');
+        Session::flash('alert', 'success');
+        return back();
+
     }
 }
 

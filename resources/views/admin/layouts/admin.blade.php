@@ -10,7 +10,6 @@
   <link rel="icon" href="{{asset('/images/fav2.png')}}">
     <!-- Plugin styles -->
     <link rel="stylesheet" href="{{asset('/backend/vendors/bundle.css')}}" type="text/css">
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
   <!-- Datepicker -->
     <link rel="stylesheet" href="{{asset('/backend/vendors/clockpicker/bootstrap-clockpicker.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('/backend/vendors/datepicker/daterangepicker.css')}}">
@@ -156,7 +155,7 @@
 <script src="{{asset('/backend/vendors/vmap/jquery.vmap.min.js')}}"></script>
 <script src="{{asset('/backend/vendors/vmap/maps/jquery.vmap.usa.js')}}"></script>
 <script src="{{asset('/backend/js/examples/vmap.js')}}"></script>
-<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+<script src="https://cdn.ckeditor.com/4.20.2/standard/ckeditor.js"></script>
 
 <!-- Dashboard scripts -->
 <script src="{{asset('/backend/js/examples/dashboard.js')}}"></script>
@@ -176,21 +175,19 @@
 </div>
 <!-- App scripts -->
 <script src="{{asset('/backend/js/app.min.js')}}"></script>
+{{-- <script>
+    BalloonEditor
+            .create( document.querySelector( '#summernote' ) )
+            .then( editor => {
+                 //   console.log( editor );
+            } )
+            .catch( error => {
+                    //console.error( error );
+            } );
+</script> --}}
+
 <script>
-$(document).ready(function (){
-    $('#myTable').DataTable();
-});
-
-$(document).ready(function() {
-  $('#summernote').summernote();
-  
-});
-
- $('#summernote').summernote({
-        tabsize: 2,
-        height: 200
-      });
-
+    CKEDITOR.replace( 'summernote' );
 </script>
 @yield('script')
 

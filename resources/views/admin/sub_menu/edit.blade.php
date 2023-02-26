@@ -55,7 +55,7 @@
                           </div>
                           <div class="col-md-4">
                         <div class="p-5">
-                             <button type="submit" class=" btn btn-primary w-10 p-3 ">Add Menu</button>
+                             <button type="submit" class=" btn btn-primary w-10 p-3 ">Update Sub Menu</button>
                            </div>
                            </div>
                            </div>

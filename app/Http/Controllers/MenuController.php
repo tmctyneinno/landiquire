@@ -50,7 +50,7 @@ class MenuController extends Controller
     }
 
     public function Edit($id = null){
-        return view('admin.menu.edit', ['menu' => Menu::where('id', decrypt($id)->first())])
+        return view('admin.menu.edit', ['menu' => Menu::where('id', decrypt($id))->first()])
         ->with('bheading', 'Menu Edit')
         ->with('breadcrumb', 'Website Menu');
     }
@@ -146,10 +146,11 @@ class MenuController extends Controller
     }
 
     public function SubMenuEdit($id){
+        $men = SubMenu::where('id', decrypt($id))->pluck('name');
         return view('admin.sub_menu.edit', [
             'submenu' => SubMenu::where('id', decrypt($id))->first()
         ])
-        ->with('bheading', 'Edit '. SubMenu::where('id', decrypt($id))->pluck('name'))
+        ->with('bheading', 'Edit '.$men[0] )
         ->with('breadcrumb', 'SubMenu');
 
     }

@@ -16,10 +16,10 @@
         <i data-feather="edit-3" class="mr-2 width-15 height-15"></i>
         About Us Page
     </a>
-    <a href="#" class="list-group-item d-flex align-items-center">
+    <a href="{{route('admin.settings.sliders')}}" class="list-group-item">
         <i data-feather="star" class="mr-2 width-15 height-15"></i>
-       Home Page Contents
-       
+        Home Page Sliders
     </a>
+  
     
 </div>

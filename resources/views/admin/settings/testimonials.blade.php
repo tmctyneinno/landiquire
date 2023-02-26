@@ -1,25 +1,21 @@
 @extends('admin.layouts.admin')
 @section('content')
-
         <div class="container-fluid h-100">
-
             <div class="row app-block">
                 <div class="col-md-3 app-sidebar">
                     <div class="card">
                         <div class="card-body">
-                            <a href="{{route('admin.settings.createTestimonial')}}" class="btn btn-secondary btn-block" >
+                            <a href="{{route('admin.settings.createTestimonial')}}" class="btn btn-secondary btn-block"  style="color:#fff">
                                 Add New Testimonial
                             </a>
                         </div>
                         <div class="app-sidebar-menu">
                             @include('admin.settings.sidebar')
-                           
                         </div>
                     </div>
                 </div>
                 <div class="col-md-9 app-content">
                     <div class="app-content-overlay"></div>
-                   
                     <div class="card card-body app-content-body">
                         <div class="app-lists">
                             <ul class="list-group list-group-flush">
@@ -46,24 +42,16 @@
                                         <div class="col-md-12">
                                             <p>{!! $tt->content !!}</p>
                                         </div>
-                                            
-                                        
                                     </div>
                                 </div>
                             </li>  
-                                
                                 @empty 
                                 @endforelse
-                               
                             </ul>
-                          
                         </div>
-                       
                     </div>
                 </div>
-                
             </div>
-
         </div>
 
 

@@ -5,15 +5,15 @@
         <div class="row align-items-center">
             <div class="col-md-6 col-lg-4">
                 <div class="page-header-title text-center text-md-start">
-                    <h1>Our Services</h1>
+                    <h1>{{$breadcrums }}</h1>
                 </div>
             </div>
 
             <div class="col-md-6 col-lg-8">
                 <nav class="page-header-breadcrumb text-center text-md-end">
                     <ul class="breadcrumb">
-                        <li><a href="index.html">Home</a></li>
-                        <li class="active"><a href="index.html">Our Services</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li class="active"><a href="index.html">{{$breadcrums }}</a></li>
                     </ul>
                 </nav>
             </div>
@@ -33,10 +33,10 @@
                     <!-- Start Single Service Item -->
                     <div class="service-item">
                         <figure class="service-item__thumb">
-                            <a href="#"><img src="{{asset('assets/img/service/service-01.jpg')}}" alt="Service"/></a>
+                            <a href="{{route('subpages', encrypt($page->id))}}"><img src="{{asset('images/'.$page->image)}}" alt="Service"/></a>
                             <figcaption class="service-item__thumb-hvr">
-                                <a href="#" class="read-more">Read More</a>
-                                <a href="#" class="btn-link-icon" target="_blank"><i
+                                <a href="{{route('subpages', encrypt($page->id))}}" class="read-more"></a>
+                                <a href="{{route('subpages', encrypt($page->id))}}" class="btn-link-icon" target="_blank"><i
                                         class="fa fa-external-link"></i></a>
                             </figcaption>
                         </figure>

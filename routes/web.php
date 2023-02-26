@@ -10,6 +10,7 @@ use App\Http\Controllers\JobsController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ManagePagesController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\FaqContoller;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\MenuController as MenuPage;
@@ -95,8 +96,17 @@ Route::group(['prefix' => 'admins', 'as' => 'admin.'], function(){
         Route::get('/website/settings/delete/testimonial/{id}', 'DeleteTestimonial')->name('settings.deleteTestimonial');
         Route::post('/website/settings/update/socials', 'UpdateSocials')->name('settings.updateSocials');
         Route::post('/website/settings/update/settings', 'UpdateSettings')->name('settings.updateSettings');
+    });
 
-
+    Route::controller(SliderController::class)->group(function(){
+        Route::get('/website/settings/sliders/index', 'Index')->name('settings.sliders');
+        Route::get('/website/settings/sliders/create', 'CreateSlider')->name('sliderCreate');
+        Route::post('/website/settings/sliders/store', 'StoreSlider')->name('sliderStore');
+        Route::get('/website/settings/sliders/edit/{id}', 'EditSlider')->name('sliderEdit');
+        Route::post('/website/settings/sliders/update/{id}', 'UpdateSlider')->name('sliderUpdate');
+        Route::get('/website/settings/sliders/delete/{id}', 'DeleteSlider')->name('sliderDelete');
+        Route::get('/website/settings/sliders/activate/{id}', 'ActivateSlider')->name('sliderActivate');
+        Route::get('/website/settings/sliders/deactivate/{id}', 'DeactivateSlider')->name('sliderDeactivate');
     });
 
 });
@@ -115,16 +125,7 @@ Route::post('/contactus/request', 'ContactEmails')->name('contact-email');
 
 Route::post('/jobs/apply/{id}', [ClientJobController::class, 'ApplyJob'])->name('apply.job');
 Route::get('/job/details/{id}',  [ClientJobController::class, 'Details'])->name('job-details');
-
-
-
-// Route::middleware('auth')->group(function () {
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-// });
-
-
+Route::post('/request/services/',  [ClientJobController::class, 'RequestService'])->name('request-service');
 
 
 require __DIR__.'/auth.php';

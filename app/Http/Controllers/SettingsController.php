@@ -126,22 +126,22 @@ class SettingsController extends Controller
 
     public function UpdateSettings(Request $request){
 
-        $fileName = "";
-        if($request->file('image')){
-            $image = $request->file('image');
-            $ext = $image->getClientOriginalExtension();
-            $fileName = 'logo'.'.'.'png';
-            $image->move('assets',$fileName);
-        }
-
+      
         $data = [
             'site_name' => $request->site_name,
             'site_phone' => $request->site_phone,
             'site_email' => $request->site_email,
             'address' => $request->address,
             'opening_hours' => $request->opening_hours,
-            'logo' => $fileName
         ];
+
+        if($request->file('image')){
+            $image = $request->file('image');
+            $ext = $image->getClientOriginalExtension();
+            $fileName = 'logo'.'.'.$ext;
+            $image->move('assets',$fileName);
+            $data['logo'] = $fileName;
+        }
         $testim = Setting::first();
         $testim->fill($data)->save();
         \Session::flash('alert', 'success');

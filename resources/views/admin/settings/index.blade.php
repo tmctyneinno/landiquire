@@ -18,7 +18,6 @@
               
                 <div class="col-md-9 app-content">
                     <div class="app-content-overlay"></div>
-                   
                     <div class="card card-body app-content-body">
                         <div class="app-lists">
                             <form action="{{route('admin.settings.updateSettings')}}" method="post" enctype="multipart/form-data">
@@ -66,7 +65,7 @@
                                             <div class="text-truncate small"></div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <input type="text" name="title"  value="{{$settings->site_name}}" class="form-control @error('title') is-invalid @enderror" id="exampleInputEmail1"
+                                                    <input type="text" name="site_name"  value="{{$settings->site_name}}" class="form-control @error('title') is-invalid @enderror" id="exampleInputEmail1"
                                                            aria-describedby="emailHelp" placeholder="Change Website Name">
                                                     <small id="emailHelp" class="form-text text-muted">Update website name
                                                     </small>
@@ -94,7 +93,7 @@
                                             <div class="text-truncate small"></div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <input type="text" name="phone"  value="{{$settings->site_phone}}" class="form-control @error('phone') is-invalid @enderror" id="exampleInputEmail1"
+                                                    <input type="text" name="site_phone"  value="{{$settings->site_phone}}" class="form-control @error('phone') is-invalid @enderror" id="exampleInputEmail1"
                                                            aria-describedby="emailHelp" placeholder="Change Phone Number">
                                                     <small id="emailHelp" class="form-text text-muted">Change Phone Number
                                                     </small>
@@ -122,7 +121,7 @@
                                             <div class="text-truncate small"></div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <input type="text" name="email"  value="{{$settings->site_email}}" class="form-control @error('title') is-invalid @enderror" id="exampleInputEmail1"
+                                                    <input type="text" name="site_email"  value="{{$settings->site_email}}" class="form-control @error('title') is-invalid @enderror" id="exampleInputEmail1"
                                                            aria-describedby="emailHelp" placeholder="Change Website Email">
                                                     <small id="emailHelp" class="form-text text-muted">Update website Email
                                                     </small>

@@ -11,4 +11,8 @@ class SubMenu extends Model
 
     protected $fillable = ['menu_id', 'name', 'image', 'title', 'is_active'];
     protected $table = 'sub_menus';
+
+    public function Menu(){
+        return $this->belongsTo(Menu::class);
+    }
 }
