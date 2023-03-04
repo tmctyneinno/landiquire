@@ -1477,8 +1477,12 @@ button:focus {
 04. Header Style CSS
 ========================*/
 /* 4.1 - Start Pre Header Area */
-.prehedaer-area-wrapper {
+/* .prehedaer-area-wrapper {
     background-color: #EEEEEE;
+} */
+
+.prehedaer-area-wrapper {
+    background-color: #575863;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991.98px), only screen and (max-width: 767.98px) {
@@ -1499,8 +1503,15 @@ button:focus {
     }
 }
 
-.pre-header-item {
+/* .pre-header-item {
     color: #222222;
+    font-size: 15px;
+    margin-right: 20px;
+} */
+
+
+.pre-header-item {
+    color: #fff;
     font-size: 15px;
     margin-right: 20px;
 }
@@ -1509,12 +1520,22 @@ button:focus {
     margin-right: 20px;
 }
 
-.pre-header-item a {
+/* .pre-header-item a {
     color: #222222;
+} */
+
+
+.pre-header-item a {
+    color: #fff;
 }
 
-.pre-header-item i {
+/* .pre-header-item i {
     color: #FA9A00;
+    margin-right: 10px;
+} */
+
+.pre-header-item i {
+    color: #fff;
     margin-right: 10px;
 }
 
@@ -3777,7 +3798,7 @@ Team Member Style CSS
 17. Page Header Style CSS
 ============================*/
 .page-header-area {
-    background: #ddd url("../img/extra/page-title-bg.jpg") no-repeat center center;
+    background: #ddd url("../Banner.jpg") no-repeat center center;
     background-size: cover;
     position: relative;
     padding: 90px 0;
@@ -5820,8 +5841,15 @@ Start Comment Area Wrapper
 /*=====================
 28. Social Icons Style
 =======================*/
-.social-icons a {
+/* .social-icons a {
     color: #888888;
+    display: inline-block;
+    padding: 15px;
+    position: relative;
+} */
+
+.social-icons a {
+    color: #fff;
     display: inline-block;
     padding: 15px;
     position: relative;

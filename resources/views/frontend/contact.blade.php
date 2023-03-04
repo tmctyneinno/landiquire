@@ -32,7 +32,7 @@
 
                 <div class="col-lg-6 order-2 order-lg-2">
                     <div class="contact-map mt-md-50 mt-sm-30">
-                        <div id="map_content" class="h-100" data-lat="38.907192" data-lng="-77.036873"
+                        <div id="map_content" class="h-100" data-lat="6.5095" data-lng="3.3711"
                              data-zoom="12"></div>
                     </div>
                 </div>

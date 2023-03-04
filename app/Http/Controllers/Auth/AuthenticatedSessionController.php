@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\AdminActivity;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
@@ -29,6 +31,11 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+        AdminActivity::create([
+            'login_ip' => $request->getClientIp(),
+            'user_id' => $request->id
+        ]);
+
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 
@@ -45,4 +52,9 @@ class AuthenticatedSessionController extends Controller
 
         return redirect('/');
     }
+
+    
+
+
 }
+

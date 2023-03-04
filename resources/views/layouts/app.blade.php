@@ -14,6 +14,20 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,600,700" rel="stylesheet"/>
 
     <!--== All Vendor CSS ==-->
+    {{-- <link href="{{asset('assets/css/slicknav.min.css')}}" rel="stylesheet"/>
+    <link href="{{asset('assets/css/slick.min.css')}}" rel="stylesheet"/>
+    <link href="{{asset('assets/css/settings.css')}}" rel="stylesheet"/>
+    <link href="{{asset('assets/css/pe-7-stroke-icon.css')}}" rel="stylesheet"/>
+    <link href="{{asset('assets/css/nice-select.min.css')}}" rel="stylesheet"/>
+    <link href="{{asset('assets/css/magnific-popup.min.css')}}" rel="stylesheet"/>
+    <link href="{{asset('assets/css/leaflet.min.css')}}" rel="stylesheet"/>
+    <link href="{{asset('assets/css/jquery-ui.min.css')}}" rel="stylesheet"/>
+    <link href="{{asset('assets/css/helper.min.css')}}" rel="stylesheet"/>
+    <link href="{{asset('assets/css/font-awesome.min.css')}}" rel="stylesheet"/>
+    <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet"/>
+    <!--== Main Style CSS ==--> --}}
+    <link href="{{asset('assets/css/style.css')}}" rel="stylesheet"/>
+
     <link href="{{asset('assets/css/slicknav.min.css')}}" rel="stylesheet"/>
     <link href="{{asset('assets/css/slick.min.css')}}" rel="stylesheet"/>
     <link href="{{asset('assets/css/settings.css')}}" rel="stylesheet"/>

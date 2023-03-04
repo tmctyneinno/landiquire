@@ -2,110 +2,74 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Faq;
 use Illuminate\Http\Request;
 
 class FaqContoller extends Controller
 {
     //
 
-
-    ### ========= user pages ==============
     public function Index(){
-        return view('admin.settings.sliders', [
-            'sliders' => Slider::latest()->get()
+        return view('admin.faq.index', [
+            'faqs' => Faq::latest()->get()
         ])
-        ->with('bheading', 'Website Settings')
-        ->with('breadcrumb', 'Website Settings');
+        ->with('bheading', 'Manage Faq')
+        ->with('breadcrumb', 'Manage Faq');
     }
-    public function CreateSlider(){
-        return view('admin.settings.create_sliders')
-        ->with('bheading', 'Website Settings')
-        ->with('breadcrumb', 'Website Settings');
+    public function Create(){
+        return view('admin.faq.create')
+        ->with('bheading', 'Manage Faqs')
+        ->with('breadcrumb', 'Manage Faq');
     }
 
-    public function StoreSlider(Request $request){
+    public function Store(Request $request){
         $request->validate([
-            'images' => 'required',
-            'content' => 'required',
+            'contents' => 'required',
             'title' => 'required',
         ]);
 
-       //dd(request()->file('images'));
-
-        if($request->file('image')){
-            $image = $request->file('image');
-            $ext = $image->getClientOriginalExtension();
-            $name = pathinfo($image, PATHINFO_FILENAME);
-            $fileName = $name.time().'.'.$ext;
-            $image->move('image',$fileName);
-            $filename[] = $fileName;
-    }else{ 
-        $file = "";
-    }
         $data = [
-            'image' =>  $file,
-            'content' => $request->content,
+            'content' => $request->contents,
             'title' =>  $request->title,
         ];
 
-        Slider::create($data);
+        Faq::create($data);
         \Session::flash('alert', 'success');
-        \Session::flash('alert', 'Slider Added Successfully');
+        \Session::flash('alert', 'Faq Added Successfully');
         return back();
     }
 
-    public function EditSlider($id){
-        $slider = Slider::where('id', decrypt($id))->first();
-        return view('admin.settings.edit_sliders')
-        ->with('bheading', 'Website Settings')
-        ->with('breadcrumb', 'Website Settings');
+    public function Edit($id){
+        return view('admin.faq.edit', [
+            'faq' => Faq::where('id', decrypt($id))->first()
+        ])
+        ->with('bheading', 'Manage Faqs')
+        ->with('breadcrumb', 'Manage Faqs');
     }
 
-    public function UpdateSlider(Request $request, $id){
-        if($request->file('image')){
-            $image = $request->file('image');
-            $ext = $image->getClientOriginalExtension();
-            $name = pathinfo($image, PATHINFO_FILENAME);
-            $fileName = $name.time().'.'.$ext;
-            $image->move('images',$fileName);
-    }
+    public function Update(Request $request, $id){
         $data = [
-            'image' =>  $fileName,
-            'content' => $request->content,
+            'content' => $request->contents,
             'title' =>  $request->title,
         ];
 
-        Slider::where('id', decrypt($id))->fill($data)->save();
+        $faq = Faq::where('id', decrypt($id))->first();
+        $faq->fill($data)->save();
         \Session::flash('alert', 'success');
-        \Session::flash('alert', 'Slider Updated Successfully');
+        \Session::flash('alert', 'FAQ Updated Successfully');
+        return back();
     }
 
-    public function DeleteSlider($id){
-        $slider = Slider::where('id', decrypt($id))->first();
-        if($slider){
-            $slider->delete();
+    public function Delete($id){
+        $data = Faq::where('id', decrypt($id))->first();
+        if($data){
+            $data->delete();
             \Session::flash('alert', 'error');
-            \Session::flash('alert', 'Slider Deleted Successfully');
+            \Session::flash('alert', 'FAQ Deleted Successfully');
             return back();
         }
         \Session::flash('alert', 'error');
         \Session::flash('alert', 'Somthing went wrong');
-        return back();
-    }
-
-    public function ActivateSlider($id){
-        $slid = Slider::where('id', decrypt($id))->first();
-        $slid->update(['status' => 1]);
-        \Session::flash('alert', 'success');
-        \Session::flash('alert', 'Slider Activated Successfully');
-        return back();
-    }
-    
-    public function DeactivateSlider($id){
-        $slid = Slider::where('id', decrypt($id))->first();
-        $slid->update(['status' => null]);
-        \Session::flash('alert', 'error');
-        \Session::flash('alert', 'Slider Deactivated Successfully');
         return back();
     }
 }

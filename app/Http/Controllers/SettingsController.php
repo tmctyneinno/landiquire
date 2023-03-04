@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
+use App\Models\User;
 use App\Models\Setting;
 
 class SettingsController extends Controller
@@ -133,6 +134,7 @@ class SettingsController extends Controller
             'site_email' => $request->site_email,
             'address' => $request->address,
             'opening_hours' => $request->opening_hours,
+            'about' => $request->about_us
         ];
 
         if($request->file('image')){
@@ -149,4 +151,38 @@ class SettingsController extends Controller
         return back();
     }
 
+    public function UserAccount(){
+        $user = User::where('id', auth()->user()->id)->first();
+        return view('admin.settings.account', ['user' => $user])
+        ->with('bheading', 'Website Settings')
+        ->with('breadcrumb', 'Website Settings');
+    }
+
+    public function UpdateAccount(Request $request){
+        $data = [];
+        if($request->name){
+            $data['name'] = $request->name;
+        }
+        if($request->email){
+            $data['email'] = $request->email;
+        }
+          if($request->phone){
+            $data['phone'] = $request->phone;
+        }
+        if($request->password){
+            $data['password'] = bcrypt($request->password);
+        } 
+        $user = User::where('id', auth()->user()->id)->first();
+      $ss =   $user->fill($data)->save();
+      if($ss){
+        \Session::flash('alert', 'success');
+        \Session::flash('message', 'Details Updated Successfully');
+        return back();
+      }else{
+        \Session::flash('alert', 'error');
+        \Session::flash('message', 'Request not completed, Nothing changed ');
+        return back();
+
+      }
+    }
 }

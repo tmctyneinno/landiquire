@@ -8,6 +8,7 @@ use App\Models\Menu;
 use App\Models\SubMenu;
 use Illuminate\Support\Facades\Mail;
 use App\Models\Page;
+use App\Models\Faq;
 use App\Models\ClientJob;
 use App\Mail\ContactUs;
 use App\Models\Industry;
@@ -29,7 +30,9 @@ class PagesController extends Controller
         }
 
         if($menuId->slug == "FAQ"){
-            return view('frontend.faq');
+            return view('frontend.faq', [
+                'faqs' => Faq::latest()->get()
+            ]);
         }
         if($menuId->slug == 'contact'){
             return view('frontend.contact', [

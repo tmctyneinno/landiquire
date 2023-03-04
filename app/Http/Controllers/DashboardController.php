@@ -13,8 +13,6 @@ class DashboardController extends Controller
     //
 
     public function Index(){
-
-        
         return view('frontend.dashboard', [
             'sliders' => Slider::where('status', 1)->latest()->get(),
             'blogs' => Blog::where('status', 1)->latest()->get(),

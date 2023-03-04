@@ -11,4 +11,8 @@ class AppliedJob extends Model
 
     protected $table = 'applied_jobs';
     protected $fillable = ['client_jobs_id', 'name', 'email', 'phone', 'cv'];
+
+    public function CientJobs(){
+        return $this->belongsTo(ClientJob::class, 'client_jobs_id', 'id');
+    }
 }

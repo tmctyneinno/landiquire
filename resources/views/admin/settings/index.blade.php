@@ -195,6 +195,36 @@
                                        
                                     </div>
                                 </li>
+
+
+                                <li class="list-group-item">
+                                    <div class="flex-grow-1 min-width-0">
+                                        <div class="mb-1 d-flex justify-content-between align-items-center">
+                                            <div class="text-truncate app-list-title">Website About Page</div>
+                                            <div class="pl-3 d-flex">
+                                                <span class="text-nowrap text-muted"></span>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="text-muted d-flex justify-content-between">
+                                            <div class="text-truncate small"></div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <textarea name="about_us" style="height: 125px"  rows="10" cols="100" class="form-control @error('about_us') is-invalid @enderror"> {{$settings->about}}</textarea>
+                                                    <small id="emailHelp" class="form-text text-muted">About Us
+                                                    </small>
+                                                    @error('about_us')
+                                                    <span class="invalid-feedback"> <small> * </small> </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                                
+                                            
+                                        </div>
+                                  
+                                       
+                                    </div>
+                                </li>
                                 <div style="float:right" class="pl-5 pt-3">
 
                                     <button type="submit" class="btn btn-primary w-20">Update Settings</button>

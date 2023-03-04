@@ -576,6 +576,7 @@ class ComposerStaticInitf69454b3c0d7c1420b211f40f7792f6d
         'App\\Mail\\SendJobEmail' => __DIR__ . '/../..' . '/app/Mail/SendJobEmail.php',
         'App\\Models\\About' => __DIR__ . '/../..' . '/app/Models/About.php',
         'App\\Models\\Admin' => __DIR__ . '/../..' . '/app/Models/Admin.php',
+        'App\\Models\\AdminActivity' => __DIR__ . '/../..' . '/app/Models/AdminActivity.php',
         'App\\Models\\AdminNotify' => __DIR__ . '/../..' . '/app/Models/AdminNotify.php',
         'App\\Models\\Applicant' => __DIR__ . '/../..' . '/app/Models/Applicant.php',
         'App\\Models\\AppliedJob' => __DIR__ . '/../..' . '/app/Models/AppliedJob.php',

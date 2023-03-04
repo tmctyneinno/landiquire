@@ -49,6 +49,7 @@ return array(
     'App\\Mail\\SendJobEmail' => $baseDir . '/app/Mail/SendJobEmail.php',
     'App\\Models\\About' => $baseDir . '/app/Models/About.php',
     'App\\Models\\Admin' => $baseDir . '/app/Models/Admin.php',
+    'App\\Models\\AdminActivity' => $baseDir . '/app/Models/AdminActivity.php',
     'App\\Models\\AdminNotify' => $baseDir . '/app/Models/AdminNotify.php',
     'App\\Models\\Applicant' => $baseDir . '/app/Models/Applicant.php',
     'App\\Models\\AppliedJob' => $baseDir . '/app/Models/AppliedJob.php',

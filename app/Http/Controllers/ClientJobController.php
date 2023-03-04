@@ -75,7 +75,7 @@ class ClientJobController extends Controller
        ]);
 
        }
-      //  Mail::to('support@jasmine.com.ng')->send(new SendJobEmail($data));
+      //  Mail::to('support@ncicworld.com.ng')->send(new SendJobEmail($data));
         Mail::to($request->email)->send(new SendClientEmail($data));
        
         Session::flash('message', 'Application completed successfully');

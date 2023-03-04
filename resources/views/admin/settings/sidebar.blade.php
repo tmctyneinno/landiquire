@@ -5,21 +5,19 @@
         
     </a>
     <a href="{{route('admin.settings.testimonials')}}" class="list-group-item">
-        <i data-feather="user" class="mr-2 width-15 height-15"></i>
+        <i class="fa fa-bullhorn" class="mr-2 width-15 height-15"></i>
         Testimonials
     </a>
     <a href="{{route('admin.settings.socials')}}" class="list-group-item">
         <i data-feather="phone" class="mr-2 width-15 height-15"></i>
         Social Links
     </a>
-    <a href="{{route('admin.settings.abouts')}}" class="list-group-item">
-        <i data-feather="edit-3" class="mr-2 width-15 height-15"></i>
-        About Us Page
-    </a>
+   
     <a href="{{route('admin.settings.sliders')}}" class="list-group-item">
         <i data-feather="star" class="mr-2 width-15 height-15"></i>
-        Home Page Sliders
+        Page Sliders
     </a>
+  
   
     
 </div>

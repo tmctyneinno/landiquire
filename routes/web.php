@@ -6,6 +6,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\ClientJobController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\JobsController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ManagePagesController;
@@ -30,8 +31,9 @@ use App\Http\Controllers\SettingsController;
 
 
 Route::group(['prefix' => 'admins', 'as' => 'admin.'], function(){
-
+Route::middleware('auth')->group(function(){
     Route::get('/', [AdminDashboardController::class, 'Index'])->name('index');
+    Route::get('/index', [AdminDashboardController::class, 'Index'])->name('index');
     Route::controller(MenuPage::class)->group(function(){
         Route::get('/website/menus', 'Index')->name('menu.index');
         Route::get('/website/menu/create',  'Create')->name('addMenu');
@@ -96,6 +98,8 @@ Route::group(['prefix' => 'admins', 'as' => 'admin.'], function(){
         Route::get('/website/settings/delete/testimonial/{id}', 'DeleteTestimonial')->name('settings.deleteTestimonial');
         Route::post('/website/settings/update/socials', 'UpdateSocials')->name('settings.updateSocials');
         Route::post('/website/settings/update/settings', 'UpdateSettings')->name('settings.updateSettings');
+        Route::get('/website/admin/user', 'UserAccount')->name('userAccount');
+        Route::post('/website/admin/uuser/account', 'UpdateAccount')->name('UpdateAccount');
     });
 
     Route::controller(SliderController::class)->group(function(){
@@ -109,6 +113,16 @@ Route::group(['prefix' => 'admins', 'as' => 'admin.'], function(){
         Route::get('/website/settings/sliders/deactivate/{id}', 'DeactivateSlider')->name('sliderDeactivate');
     });
 
+    Route::controller(FaqContoller::class)->group(function(){
+        Route::get('/website/faq/faq', 'Index')->name('faq.index');
+        Route::get('/website/faq/create', 'Create')->name('faqCreate');
+        Route::post('/website/faq/store', 'Store')->name('faqStore');
+        Route::get('/website/faq/edit/{id}', 'Edit')->name('faqEdit');
+        Route::post('/website/faq/update/{id}', 'Update')->name('faqUpdate');
+        Route::get('/website/faq/delete/{id}', 'Delete')->name('faqDelete');
+    });
+
+});
 });
 
 

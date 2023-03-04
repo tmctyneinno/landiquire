@@ -24,32 +24,20 @@
                         </h6>
                             <div class="slider-for">
                                
-                                @php 
-                                    $image = json_decode($ss->image);
-                                     @endphp
-                                 @foreach($image as $img)
-                                 
-                               
                                 <div class="slick-slide-item">
-                                    <img src="{{asset('images/'.$img)}}" class="img-fluid" style="width:100%"
+                                    <img src="{{asset('images/'.$ss->image)}}" class="img-fluid" style="width:100%"
                                          alt="image">
                                 </div>
-                                @endforeach
-                              
-                                
                                 
                             </div>
                           
                             
                             <div class="slider-nav">
-                                @php 
-                                    $images = json_decode($ss->image);
-                                     @endphp
-                                 @foreach($images as $imgs)
+                              
                                 <div class="slick-slide-item">
-                                    <img src="{{asset('images/'.$imgs)}}" class="img-fluid" alt="image">
+                                    <img src="{{asset('images/'.$ss->image)}}" class="img-fluid" alt="image">
                                 </div>
-                                @endforeach
+                         
                                 
                             </div>
                             <div data-label="Slider Title Text" class="demo-code-preview">
