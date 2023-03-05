@@ -8,7 +8,7 @@
                     <div class="widget-item">
                         <div class="widget-body">
                             <img class="mb-24" src="{{asset('/assets/logo.png')}}" alt="Logo"/>
-                            <p>{{$settings->about}}.</p>
+                            <p style="color:#211d1d">{{$settings->about}}.</p>
                             <div class="social-icons social-icons--two mt-22">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
@@ -26,13 +26,13 @@
                     <div class="widget-item">
                         <div class="widget-body">
                             <div class="widget-title">
-                                <h3>Help Links</h3>
+                                <h3 style="color:#211d1d">Help Links</h3>
                             </div>
 
                             <div class="widget-body">
                                 <ul class="list list-6">
                                     @foreach ($menus as $menu )
-                                    <li> <a href="{{route('pages', $menu->id)}}">{{$menu->name}}</a> </li>
+                                    <li > <a style="color:#211d1d" href="{{route('pages', $menu->id)}}">{{$menu->name}}</a> </li>
                                     @endforeach
                                
                                 </ul>
@@ -47,15 +47,15 @@
                     <div class="widget-item">
                         <div class="widget-body">
                             <div class="widget-title">
-                                <h3>Our Office</h3>
+                                <h3 style="color:#211d1d">Our Office</h3>
                             </div>
 
                             <div class="widget-body">
                                 <div class="office-info">
-                                    <p><i class="fa fa-map-marker"></i> {{$settings->address}}.</p>
-                                    <p><i class="fa fa-phone"></i>  {{$settings->site_phone}}</p>
-                                    <p><i class="fa fa-envelope-o"></i>  {{$settings->site_email}}</p>
-                                    <p><i class="fa fa-clock-o"></i>  {{$settings->opening_hours}}</p>
+                                    <p style="color:#211d1d"><i class="fa fa-map-marker"></i> {{$settings->address}}.</p>
+                                    <p style="color:#211d1d"><i class="fa fa-phone"></i>  {{$settings->site_phone}}</p>
+                                    <p style="color:#211d1d"><i class="fa fa-envelope-o"></i>  {{$settings->site_email}}</p>
+                                    <p style="color:#211d1d"><i class="fa fa-clock-o"></i>  {{$settings->opening_hours}}</p>
                                 </div>
                             </div>
                         </div>

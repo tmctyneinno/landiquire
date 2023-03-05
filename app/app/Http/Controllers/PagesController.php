@@ -45,6 +45,7 @@ class PagesController extends Controller
                 'key' => rand(999,1111).substr(base64_encode('sdsjkdsdsd'), 0, 10),
             ]);
         }
+       
         if($menuId->has_child){
             $pages['pages'] = SubMenu::where(['menu_id' => $menuId->id, 'is_active' => 1])->get();
             $pages['breadcrums'] = $pages['pages'][0]->name;

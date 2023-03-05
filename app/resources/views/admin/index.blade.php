@@ -42,9 +42,10 @@
                             <tbody>
                             @forelse ($logins as $login)
                             <tr>
-                                <td> @php $details = json_decode(file_get_contents("http://ipinfo.io/$login->login_ip/json"));
-                                    // echo $details->city.", ".$details->country;
-                                    @endphp
+                                <td> 
+                                    {{-- @php $details = json_decode(file_get_contents("http://ipinfo.io/$login->login_ip/json"));
+                                    echo $details->city.", ".$details->country;
+                                    @endphp --}}
                                     </td>
                                 <td class="text-center">{{$login->login_ip}}</td>
                                 <td class="text-center text-success">{{$login->created_at}}</td>

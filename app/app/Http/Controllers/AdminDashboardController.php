@@ -13,11 +13,11 @@ class AdminDashboardController extends Controller
 
     public function Index(){
         return view('admin.index', [
-            'applicants' => AppliedJob::latest()->take(3)->get(),
+            'applicants' => AppliedJob::latest()->take(5)->get(),
             'applicant' => AppliedJob::latest()->get(),
             'blogs' =>  Blog::get(),
             'jobs' => ClientJob::get(),
-            'logins' => AdminActivity::get()
+            'logins' => AdminActivity::take(5)->get()
         ])
         ->with('bheading', 'Index')
         ->with('breadcrumb', 'Index');

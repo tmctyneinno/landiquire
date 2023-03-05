@@ -108,13 +108,7 @@
         <div class="container-fluid">
             <div>© 2023 {{$settings->site_name}}, All Rights Reserved</a></div>
             <div>
-                <nav class="nav">
-                    
-                    <a href="">Home</a>
-                    <a href=""> Pages</a>
-                    <a href=""> </a>
-                    
-                </nav>
+                
             </div>
         </div>
     </footer>
