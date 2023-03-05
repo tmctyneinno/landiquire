@@ -1893,21 +1893,35 @@ button:focus {
 /*=========================
 30. Footer Area Style Css
 ===========================*/
-.footer-widget-area {
+/* .footer-widget-area {
     background-color: #343434;
+    padding: 50px 0;
+    position: relative;
+} */
+
+.footer-widget-area {
+    background-color: #ffffff;
     padding: 50px 0;
     position: relative;
 }
 
-.footer-widget-area:before,
+/* .footer-widget-area:before,
 .footer-widget-area:after {
     background-color: #343434;
     content: '';
     position: absolute;
     height: 30px;
     width: 750px;
-}
+} */
 
+.footer-widget-area:before,
+.footer-widget-area:after {
+    background-color: hsla(0, 0%, 100%, 0);
+    content: '';
+    position: absolute;
+    height: 30px;
+    width: 750px;
+}
 @media only screen and (min-width: 992px) and (max-width: 1199.98px), only screen and (min-width: 768px) and (max-width: 991.98px), only screen and (max-width: 767.98px) {
 
     .footer-widget-area:before,
@@ -1932,13 +1946,15 @@ button:focus {
     transform: skew(50deg, 0deg);
 }
 
-.footer-widget-area:before {
+/* .footer-widget-area:before {
     left: -17px;
     top: 100%;
     -webkit-transform: skew(-50deg, 0deg);
     -ms-transform: skew(-50deg, 0deg);
     transform: skew(-50deg, 0deg);
-}
+} */
+
+
 
 .widget-item {
     color: #cccccc;
@@ -3798,7 +3814,7 @@ Team Member Style CSS
 17. Page Header Style CSS
 ============================*/
 .page-header-area {
-    background: #ddd url("../Banner.jpg") no-repeat center center;
+    background: #ddd url("../../images/banner.jpg") no-repeat center center;
     background-size: cover;
     position: relative;
     padding: 90px 0;
