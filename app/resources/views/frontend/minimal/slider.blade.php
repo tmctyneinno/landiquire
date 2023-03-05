@@ -16,7 +16,7 @@
                      <!-- LAYERS -->
  
                      <!-- LAYER NR. 2 -->
-                     <div class="tp-caption tp-resizeme" id="slide-1-layer-2" data-x="['left','left','left','left']"
+                     <div class="tp-caption tp-resizeme" id="slide-1-layer-2" data-x="['{{$slider->align}}','{{$slider->align}}','{{$slider->align}}','{{$slider->align}}']"
                           data-hoffset="['10','50','10','15']" data-y="['middle','middle','middle','middle']"
                           data-voffset="['-60','-60','-90','-76']" data-width="none" data-height="none"
                           data-whitespace="nowrap" data-type="text" data-responsive_offset="on"
@@ -27,7 +27,7 @@
                      </div>
  
                      <!-- LAYER NR. 3 -->
-                     <h1 class="tp-caption   tp-resizeme" id="slide-1-layer-3" data-x="['left','left','left','left']"
+                     <h1 class="tp-caption   tp-resizeme" id="slide-1-layer-3" data-x="['{{$slider->align}}','{{$slider->align}}','{{$slider->align}}','{{$slider->align}}']"
                          data-hoffset="['10','50','10','15']" data-y="['middle','middle','middle','middle']"
                          data-voffset="['0','0','-30','-30']" data-fontsize="['70','70','70','40']"
                          data-lineheight="['70','70','70','40']" data-width="none" data-height="none"
@@ -38,7 +38,7 @@
                          {{$slider->title}}</h1>
  
                      <!-- LAYER NR. 4 -->
-                     <div class="tp-caption   tp-resizeme" id="slide-1-layer-4" data-x="['left','left','left','left']"
+                     <div class="tp-caption   tp-resizeme" id="slide-1-layer-4" data-x="['{{$slider->align}}','{{$slider->align}}','{{$slider->align}}','{{$slider->align}}']"
                           data-hoffset="['10','50','10','15']" data-y="['middle','middle','middle','middle']"
                           data-voffset="['61','61','31','14']" data-width="none" data-height="none"
                           data-whitespace="nowrap" data-type="text" data-responsive_offset="on"
@@ -50,7 +50,7 @@
  
                      <!-- LAYER NR. 5 -->
                      <div class="tp-caption bttn-primary-bg rev-btn  tp-resizeme  transit-md" id="slide-1-layer-8"
-                          data-x="['left','center','left','left']" data-hoffset="['11','-378','11','16']"
+                          data-x="['{{$slider->align}}','center','{{$slider->align}}','{{$slider->align}}']" data-hoffset="['11','-378','11','16']"
                           data-y="['top','top','middle','middle']" data-voffset="['392','391','89','75']"
                           data-fontsize="['15','16','16','16']" data-fontweight="['700','600','600','600']"
                           data-width="none" data-height="none" data-whitespace="nowrap" data-type="button"
@@ -58,7 +58,7 @@
                           data-frames='[{"delay":500,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"nothing"},{"frame":"hover","speed":"0","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(250,154,0,1);bg:transparent;bw:2 2 2 2;"}]'
                           data-textAlign="['left','left','left','left']" data-paddingtop="[15,15,15,15]"
                           data-paddingright="[25,25,25,25]" data-paddingbottom="[15,15,15,15]">
-                         Learn More
+                        <a href="{{route('pages', encrypt(5))}}" style="color:#fff"> Learn More</a> 
                      </div>
                  </li>
                  @empty
