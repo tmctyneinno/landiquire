@@ -24,7 +24,7 @@
                                 <div class="dropdown-menu dropdown-menu-right">
                                     
                                     <a href="{{route('admin.PagesEdit', encrypt($page->id))}}" class="dropdown-item">Edit</a>
-                                    @if($page->status == 1) 
+                                    @if($page->is_active == 1) 
                                     <a  onclick="return confirm('Are you sure?')" href="{{route('admin.PagesDisable', encrypt($page->id))}}" class="dropdown-item">Disabled</a>
 
                                     @else

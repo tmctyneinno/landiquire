@@ -85,10 +85,7 @@
                                     </form>
                                 </div>
                             </li>
-                            <li><a href="cart.html" class="btn-cart"><i class="pe-7s-cart"></i></a></li>
-                            <li class="d-lg-none">
-                                <button class="btn-canvas-open"><i class="pe-7s-menu"></i></button>
-                            </li>
+                            
                         </ul>
                     </div>
                     <!-- End Header Action Area -->
