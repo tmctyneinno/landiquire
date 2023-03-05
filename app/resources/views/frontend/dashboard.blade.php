@@ -166,18 +166,10 @@
 </section>
 <!-- End Testimonial Wrapper -->
 
-<section class="testimonial-area-wrapper mt-90 mt-sm-60 bg-img">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-10 m-auto">
-                <!-- Start Section Title -->
-                
-                <!-- End Section Title -->
-            </div>
-        </div>
+<div class=" p-4">
+     
 
        
-    </div>
-</section>
+</div>
 
 @endsection
