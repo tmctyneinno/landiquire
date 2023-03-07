@@ -23,10 +23,7 @@
                         <!-- End Section Title -->
 
                         <!-- Start Service Slider Arrows -->
-                        <div class="ht-slick-arrows">
-                            <button id="service-prev"><i class="fa fa-angle-left"></i></button>
-                            <button id="service-next"><i class="fa fa-angle-right"></i></button>
-                        </div>
+                        
                         <!-- End Service Slider Arrows -->
                     </div>
 
@@ -34,7 +31,7 @@
                     <div class="service-content-inner">
                         <div class="ht-slick-wrapper">
                             <div class="ht-slick-slider slick-row-30"
-                                data-slick='{"slidesToShow": 2, "prevArrow":"#service-prev", "nextArrow":"#service-next", "responsive":[{"breakpoint": 992,"settings":{"slidesToShow": 1}}]}'>
+                                data-slick='{"slidesToShow": 3, "prevArrow":"#service-prev", "nextArrow":"#service-next", "responsive":[{"breakpoint": 992,"settings":{"slidesToShow": 1}}]}'>
                                 <!-- Start Single Service Item -->
                                 
                                 @forelse ($services as $ss )
@@ -79,7 +76,7 @@
             <div class="col-lg-10 m-auto">
                 <!-- Start Section Title -->
                 <div class="section-title-wrap layout--2 white mb-38">
-                    <h2>Our Safety Services</h2>
+                    <h4 style="color: #fff">Need any advice on how best NCIC can serve you?</h4>
                 </div>
                 <!-- End Section Title -->
             </div>
@@ -95,11 +92,11 @@
                             {"breakpoint": 992,"settings":{"slidesToShow": 2}}]}'>
                             <!-- Start Single Testimonial Item -->
                             <div class="testimonial-item">
-                                <p style="color:#fff; font-size:25px; text-align:center; font-weight:bolder">Our technical safety engineers with extensive backgrounds and knowledge in process engineering, loss control, prevention and HSE Technologies</p>
+                                <p style="color:#fff; font-size:25px; text-align:center; font-weight:bolder">Do contact us at {{$settings->site_email}} or call {{$settings->site_phone}}</p>
                                 
                                  
                                     
-                                       <p style="color:#fff; font-size:25px; text-align:center"> <button class="btn btn-primary">Learn More </button></p>
+                                       <p style="color:#fff; font-size:25px; text-align:center"> <a href="{{route('pages', encrypt(5))}}" class="btn btn-primary">Contact Us </a></p>
                                     
                               
                             </div>
