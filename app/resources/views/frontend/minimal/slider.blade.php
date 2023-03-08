@@ -51,7 +51,7 @@
                      </div>
  
                      <!-- LAYER NR. 5 -->
-                     <div class="tp-caption bttn-primary-bg rev-btn  tp-resizeme  transit-md" id="slide-{{$x}}-layer-{{$y + 6}}"
+                     <div class="tp-caption bttn-primary-bg rev-btn  tp-resizeme  transit-md" id="slide-{{$x}}-layer-{{$y+6}} "
                           data-x="['{{$slider->align}}','center','{{$slider->align}}','{{$slider->align}}']" data-hoffset="['11','-378','11','16']"
                           data-y="['top','top','middle','middle']" data-voffset="['392','391','89','75']"
                           data-fontsize="['15','16','16','16']" data-fontweight="['700','600','600','600']"
@@ -60,13 +60,12 @@
                           data-frames='[{"delay":500,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"nothing"},{"frame":"hover","speed":"0","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(250,154,0,1);bg:transparent;bw:2 2 2 2;"}]'
                           data-textAlign="['left','left','left','left']" data-paddingtop="[15,15,15,15]"
                           data-paddingright="[25,25,25,25]" data-paddingbottom="[15,15,15,15]">
-                        <a href="{{route('pages', encrypt(5))}}" style="color:#fff"> Learn More</a> 
+                        <a href="{{route('pages', encrypt(5))}}" style="color:#fff" class="btn btn-secondary"> Learn More</a> 
                      </div>
                  </li>
+                
                  @php  
                     $x = $x + 1;
-
-                    print_r($x);
                  @endphp
                  @empty
                  @endforelse

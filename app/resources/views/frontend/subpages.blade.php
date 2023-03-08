@@ -43,7 +43,8 @@
 
                 <div class="col-lg-9 order-0">
                     <div class="service-details-content">
-                        
+                        <h2>{{$pages->title}}</h2>
+                        <hr>
                             <div class="project-details-thumb ht-slick-slider" data-slick='{"arrows": false, "dots": true}'>
                               
                                 <figure class="project-thumb-item">
@@ -51,7 +52,7 @@
                                 </figure>
                             </div>
                             <div class="service-details-info">
-                            <h2>{{$pages->title}}</h2>
+                            
                             <p>{!! $pages->contents !!}</p>
 
                             
