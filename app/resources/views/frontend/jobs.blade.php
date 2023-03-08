@@ -2,7 +2,7 @@
 @section('contents')
 
 
-<div class="page-header-area">
+<div class="page-header-area" style="background: #ddd url('{{asset('/images/1677505927.jpg')}}') no-repeat center">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-6 col-lg-5">
@@ -28,12 +28,15 @@
 <div class="page-content-wrap pt-90 pt-sm-60 pb-90 pb-sm-60 mb-xl-30">
     <div class="about-us-page-area">
         <div class="container">
-            <div class="row">
+         <div class="row">
                 <div class="col-lg-4 order-1 ">
                     <!-- Start Service Details Sidebar -->
                     <div class="service-details-sidebar mtm-40 mtm-sm-2 mtm-md-2">
                         <!-- Start Sidebar Item -->
+                       
                         <div class="sidebar-single" style="background: #fff">
+                            <a href="{{asset('/assets/NCIC-HR.pdf')}}" target="_blank" class="btn btn-secondary">Download Company brochure</a>
+                            <hr>
                             <h3 class="sidebar-heading">Industries</h3>
                             <hr>
                             <div class="sidebar-body">
