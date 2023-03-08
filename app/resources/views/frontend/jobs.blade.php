@@ -2,7 +2,7 @@
 @section('contents')
 
 
-<div class="page-header-area" style="background: #ddd url('{{asset('/images/1677505927.jpg')}}') no-repeat center">
+<div class="page-header-area" style="background: #ddd url('{{asset('/images/leadspace.jpeg')}}') no-repeat center">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-6 col-lg-5">

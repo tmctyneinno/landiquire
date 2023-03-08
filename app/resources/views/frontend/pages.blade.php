@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('contents')
-<div class="page-header-area">
+<div class="page-header-area" style="background: #ddd url('{{asset('/images/serice.jpeg')}}') no-repeat center">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-6 col-lg-4">
