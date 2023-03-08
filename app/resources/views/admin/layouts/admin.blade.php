@@ -18,8 +18,12 @@
     <!-- Vmap -->
     <link rel="stylesheet" href="{{asset('/backend/vendors/vmap/jqvmap.min.css')}}">
     <link rel="stylesheet" href="{{asset('/backend/css/app.min.css')}}" type="text/css">
-</head>
-<body>
+    <script src="https://cdn.ckeditor.com/4.20.2/full/ckeditor.js"></script>
+
+
+
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs4.min.css" integrity="sha512-ngQ4IGzHQ3s/Hh8kMyG4FC74wzitukRMIcTOoKT3EyzFZCILOPF0twiXOQn75eDINUfKBYmzYn2AA8DkAk8veQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> --}}
+    <body>
     <!-- App styles  -->
 <div class="preloader">
     <div class="preloader-icon"></div>
@@ -149,9 +153,9 @@
 <script src="{{asset('/backend/vendors/vmap/jquery.vmap.min.js')}}"></script>
 <script src="{{asset('/backend/vendors/vmap/maps/jquery.vmap.usa.js')}}"></script>
 <script src="{{asset('/backend/js/examples/vmap.js')}}"></script>
-<script src="https://cdn.ckeditor.com/4.20.2/standard/ckeditor.js"></script>
+{{-- <script src="https://cdn.ckeditor.com/4.20.2/standard/ckeditor.js"></script> --}}
 
-<!-- Dashboard scripts -->
+
 <script src="{{asset('/backend/js/examples/dashboard.js')}}"></script>
 <div class="colors"> <!-- To use theme colors with Javascript -->
     <div class="bg-primary"></div>
@@ -170,19 +174,42 @@
 <!-- App scripts -->
 <script src="{{asset('/backend/js/app.min.js')}}"></script>
 {{-- <script>
-    BalloonEditor
-            .create( document.querySelector( '#summernote' ) )
-            .then( editor => {
-                 //   console.log( editor );
-            } )
-            .catch( error => {
-                    //console.error( error );
-            } );
+   $(document).ready(function() {
+        $('#summernote').summernote({
+            height: 400, 
+        });
+    });
 </script> --}}
-
 <script>
     CKEDITOR.replace( 'summernote' );
 </script>
+{{-- <script>
+    ClassicEditor
+        .create( document.querySelector( '#summernote' ), {
+            toolbar: {
+    items: [
+        'heading', '|',
+        'alignment', '|',
+        'bold', 'italic', 'strikethrough', 'underline', 'subscript', 'superscript', '|',
+        'link', '|',
+        'bulletedList', 'numberedList', 'todoList',
+        'fontfamily', 'fontsize', 'fontColor', 'fontBackgroundColor', '|',
+        'code', 'codeBlock', '|',
+        'insertTable', '|',
+        'outdent', 'indent', '|',
+        'uploadImage', 'blockQuote', '|',
+        'undo', 'redo',
+        'fontfamily', 'fontsize', '|',
+        'fontColor', 'fontBackgroundColor', '|',
+    ],
+    shouldNotGroupWhenFull: false
+}
+        } )
+        
+        .catch( error => {
+            console.error( error );
+        } );
+</script> --}}
 @yield('script')
 
 

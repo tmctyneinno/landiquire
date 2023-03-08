@@ -63,7 +63,7 @@ let message = {!! json_encode(Session::get('message')) !!};
 let msg = {!! json_encode(Session::get('alert')) !!};
 //alert(msg);
 toastr.options = {
-        timeOut: 3000,
+        timeOut: 6000,
         progressBar: true,
         showMethod: "slideDown",
         hideMethod: "slideUp",
