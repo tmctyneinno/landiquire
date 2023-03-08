@@ -6,7 +6,7 @@
         <div class="row align-items-center">
             <div class="col-md-6 col-lg-4">
                 <div class="page-header-title text-center text-md-start">
-                    <h1>Blog Grid Right Sidebar</h1>
+                    <h1>{{$breadcrums }}</h1>
                 </div>
             </div>
 

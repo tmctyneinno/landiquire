@@ -20,27 +20,35 @@ class PagesController extends Controller
         $menuId = Menu::where('id', $id)->first();
         //dd( $menuId);
         if($menuId->slug == 'Blog'){
-            return view('frontend.blogs', ['blogs' => Blog::latest()->get(), 'popular' => Blog::where('views', '>', 0)->get()]);
+
+            return view('frontend.blogs', 
+            ['blogs' => Blog::latest()->get(), 'popular' => Blog::where('views', '>', 0)->get(),
+            'breadcrums' => 'Blogs',
+        ]);
            }
         if($menuId->slug == 'jobs'){
             return view('frontend.jobs',[
                 'jobs' => ClientJob::where('status', '=', 1)->latest()->get(),
+                'breadcrums' => 'Jobs',
                 'industries' => Industry::get(),
             ]);
         }
 
         if($menuId->slug == "FAQ"){
             return view('frontend.faq', [
-                'faqs' => Faq::latest()->get()
+                'faqs' => Faq::latest()->get(),
+                'breadcrums' => 'Faq',
             ]);
         }
         if($menuId->slug == 'contact'){
             return view('frontend.contact', [
+                'breadcrums' => 'Contact Us',
                 'key' => rand(999,1111).substr(base64_encode('sdsjkdsdsd'), 0, 10),
             ]);
         }
         if($menuId->slug == 'quote'){
             return view('frontend.quotation', [
+                'breadcrums' => 'Send Quotation',
                 'services' => SubMenu::where('menu_id', 2)->get(),
                 'key' => rand(999,1111).substr(base64_encode('sdsjkdsdsd'), 0, 10),
             ]);
@@ -48,7 +56,7 @@ class PagesController extends Controller
        
         if($menuId->has_child){
             $pages['pages'] = SubMenu::where(['menu_id' => $menuId->id, 'is_active' => 1])->get();
-            $pages['breadcrums'] = $pages['pages'][0]->name;
+            $pages['breadcrums'] = $pages['pages'][0]->Menu->name;
             return view('frontend.pages', $pages);
         }else{
             $pages = Page::where('menu_id', $menuId->id)->first();
