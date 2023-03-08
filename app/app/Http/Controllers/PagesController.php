@@ -66,6 +66,7 @@ class PagesController extends Controller
             $pages['pages'] = Page::where('menu_id', $menuId->id)->first();
             $pages['breadcrums'] =  $menuId->name;
             $pages['sidebar'] = Menu::get();
+            $pages['menus'] = Menu::get();
             return view('frontend.subpages', $pages);
         }
     }
