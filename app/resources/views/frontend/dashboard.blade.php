@@ -85,7 +85,7 @@
     </div>
 </section>
 <!-- End Service Area Wrapper -->
-<section class="testimonial-area-wrapper mt-90 mt-sm-60 bg-img" data-bg="{{asset('images/serice.jpeg')}}">
+<section class="testimonial-area-wrapper mt-90 mt-sm-60 bg-img" data-bg="{{asset('images/serice.jpg')}}">
     <div class="container">
         <div class="row">
             <div class="col-lg-10 m-auto">
