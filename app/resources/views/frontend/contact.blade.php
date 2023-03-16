@@ -6,15 +6,15 @@
         <div class="row align-items-center">
             <div class="col-md-6 col-lg-4">
                 <div class="page-header-title text-center text-md-start">
-                    <h1>Contact Us</h1>
+                    {{-- <h1>Contact Us</h1> --}}
                 </div>
             </div>
 
             <div class="col-md-6 col-lg-8">
                 <nav class="page-header-breadcrumb text-center text-md-end">
                     <ul class="breadcrumb">
-                        <li><a href="">Home</a></li>
-                        <li class="active"><a href="">Contact Us</a></li>
+                        {{-- <li><a href="">Home</a></li>
+                        <li class="active"><a href="">Contact Us</a></li> --}}
                     </ul>
                 </nav>
             </div>
