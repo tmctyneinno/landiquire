@@ -71,7 +71,7 @@
                 <div class="col-7 col-lg-2">
                     <!-- Start Header Action Area -->
                     <div class="header-action-area">
-                        <ul class="action-buttons nav justify-content-end">
+                        {{-- <ul class="action-buttons nav justify-content-end">
                             <li>
                                 <a href="#" class="btn-search">
                                     <i class="pe-7s-search"></i>
@@ -86,7 +86,7 @@
                                 </div>
                             </li>
                             
-                        </ul>
+                        </ul> --}}
                     </div>
                     <!-- End Header Action Area -->
                 </div>
