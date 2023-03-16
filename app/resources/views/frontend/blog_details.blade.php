@@ -12,11 +12,11 @@
 
             <div class="col-md-6 col-lg-8">
                 <nav class="page-header-breadcrumb text-center text-md-end">
-                    <ul class="breadcrumb">
-                        {{-- <li><a href="index.html">Home</a></li>
+                    {{-- <ul class="breadcrumb">
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="blog.html">Blog</a></li>
-                        <li class="active"><a href="index.html">Blog Details</a></li> --}}
-                    </ul>
+                        <li class="active"><a href="index.html">Blog Details</a></li>
+                    </ul> --}}
                 </nav>
             </div>
         </div>

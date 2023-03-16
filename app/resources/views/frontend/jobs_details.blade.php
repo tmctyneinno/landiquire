@@ -13,11 +13,11 @@
 
             <div class="col-md-6 col-lg-7">
                 <nav class="page-header-breadcrumb text-center text-md-end">
-                    <ul class="breadcrumb">
-                        {{-- <li><a href="">Home</a></li>
+                    {{-- <ul class="breadcrumb">
+                        <li><a href="">Home</a></li>
                         <li><a href="">Jobs</a></li>
-                        <li class="active"><a href="">{{$job->industry->name}}</a></li> --}}
-                    </ul>
+                        <li class="active"><a href="">{{$job->industry->name}}</a></li>
+                    </ul> --}}
                 </nav>
             </div>
         </div>
