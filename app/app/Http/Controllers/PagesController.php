@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Models\Page;
 use App\Models\Faq;
 use App\Models\ClientJob;
+use Illuminate\Support\Facades\Session;
 use App\Mail\ContactUs;
 use App\Models\Industry;
 
@@ -116,8 +117,18 @@ class PagesController extends Controller
             'name' => 'required',
             'phone' => 'required',
             'email' => 'required',
-            'message' => 'required'
+            'message' => 'required',
+            'captcha' => 'required',
+            
         ]);
+        $capt = captcha_check($request->captcha);
+        if(!$capt){
+            Session::flash('message', 'Captcha does not match, try again');
+            Session::flash('alert', 'danger');
+            return back()->withInput($request->all());
+           
+        }
+       
         $data = [
             'name' =>  $request->name,
             'phone' => $request->phone,

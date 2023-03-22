@@ -90,6 +90,10 @@
                                         <textarea name="message" id="con_message" cols="30" rows="8"
                                                   placeholder="Write your Message*" required></textarea>
                                     </div>
+                                    <p> @php echo captcha_img() @endphp </p>
+                                    <p><input type="text" placeholder="Enter captcha" name="captcha">
+                                     </p>
+
 
                                     <div class="form-input-item">
                                         <button type="submit" class="btn btn-brand">Send Message</button>
