@@ -1,27 +1,30 @@
 @extends('layouts.app')
 @section('contents')
 
-<div class="page-header-area">
+@if(isset($breadcrums))
+<div class="page-header-area" style="background: #ddd url('{{asset('/images/'.$breadcrums->image)}}')  center">
+   @else 
+   <div class="page-header-area" style="background: #ddd url('{{asset('/images')}}') no-repeat center">
+   @endif
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-6 col-lg-4">
                 <div class="page-header-title text-center text-md-start">
-                    {{-- <h1>Request a Service</h1> --}}
+                    {{-- <h1>Blog Details</h1> --}}
                 </div>
             </div>
 
             <div class="col-md-6 col-lg-8">
-                <nav class="page-header-breadcrumb text-center text-md-end">
-                    {{-- <ul class="breadcrumb">
-                        <li><a href="">Home</a></li>
-                        <li class="active"><a href="">Request a Service<</a></li>
-                    </ul> --}}
-                </nav>
+                {{-- <nav class="page-header-breadcrumb text-center text-md-end">
+                    <ul class="breadcrumb">
+                        <li><a href="{{route('index')}}">Home</a></li>
+                        <li class="active"><a href="">Blog Details</a></li>
+                    </ul>
+                </nav> --}}
             </div>
         </div>
     </div>
 </div>
-<!-- End Page Header Area -->
 
 <!-- Start Page Content Wrapper -->
 <div class="page-content-wrap pt-90 pt-sm-60 pb-90 pb-sm-60 mb-xl-30">
@@ -48,7 +51,7 @@
 
                                         <div class="col-lg-3">
                                             <div class="form-input-item">
-                                                <input type="text" name="phone" placeholder="Your Phone"/>
+                                                <input type="text" name="phone" placeholder="Your Phone*"/>
                                             </div>
                                         </div>
                                         <input type="hidden" name="key" value="{{$key}}"> 
@@ -62,7 +65,7 @@
                                       
                                             <div class="col-lg-3">
                                                 <div class="form-input-item">
-                                                    <input type="text" name="address" placeholder="Your Address*" required/>
+                                                    <input type="text" name="address" placeholder="Your Address" required/>
                                                 </div>
                                             </div>
 
@@ -96,7 +99,10 @@
 
 
                                     <div class="row mb-20">
-                                        Kindly select your current need
+                                        <div class="section-title-wrap mb-36 mb-sm-26">
+                                            <h6> Kindly select your current need</h6>
+                                        </div>
+                                       
                                         @foreach ($services as $service )
                                            
                                         <div class="col-lg-2">

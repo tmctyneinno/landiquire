@@ -1,28 +1,29 @@
 @extends('layouts.app')
 @section('contents')
-
-
-<div class="page-header-area">
+@if(isset($breadcrums))
+<div class="page-header-area" style="background: #ddd url('{{asset('/images/'.$breadcrums->image)}}')  center">
+   @else 
+   <div class="page-header-area" style="background: #ddd url('{{asset('/images')}}') no-repeat center">
+   @endif
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-md-6 col-lg-5">
+            <div class="col-md-6 col-lg-4">
                 <div class="page-header-title text-center text-md-start">
-                    {{-- <h1>FAQ</h1> --}}
+                    {{-- <h1>Blog Details</h1> --}}
                 </div>
             </div>
 
-            <div class="col-md-6 col-lg-7">
-                <nav class="page-header-breadcrumb text-center text-md-end">
-                    {{-- <ul class="breadcrumb">
-                        <li><a href="">Home</a></li>
-                        <li class="active"><a href="">FAQ</a></li>
-                    </ul> --}}
-                </nav>
+            <div class="col-md-6 col-lg-8">
+                {{-- <nav class="page-header-breadcrumb text-center text-md-end">
+                    <ul class="breadcrumb">
+                        <li><a href="{{route('index')}}">Home</a></li>
+                        <li class="active"><a href="">Blog Details</a></li>
+                    </ul>
+                </nav> --}}
             </div>
         </div>
     </div>
 </div>
-<!-- End Page Header Area -->
 
 
 <section class="news-why-choose-area mt-90 mt-sm-60">

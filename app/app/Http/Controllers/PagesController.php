@@ -23,13 +23,14 @@ class PagesController extends Controller
 
             return view('frontend.blogs', 
             ['blogs' => Blog::latest()->get(), 'popular' => Blog::where('views', '>', 0)->get(),
-            'breadcrums' => 'Blogs',
+            'breadcrums' => $menuId,
         ]);
            }
         if($menuId->slug == 'jobs'){
+       
             return view('frontend.jobs',[
                 'jobs' => ClientJob::where('status', '=', 1)->latest()->get(),
-                'breadcrums' => 'Jobs',
+                'breadcrums' => Menu::where('slug', 'jobs')->first(),
                 'industries' => Industry::get(),
             ]);
         }
@@ -37,18 +38,18 @@ class PagesController extends Controller
         if($menuId->slug == "FAQ"){
             return view('frontend.faq', [
                 'faqs' => Faq::latest()->get(),
-                'breadcrums' => 'Faq',
+                'breadcrums' => $menuId,
             ]);
         }
         if($menuId->slug == 'contact'){
             return view('frontend.contact', [
-                'breadcrums' => 'Contact Us',
+                'breadcrums' => $menuId,
                 'key' => rand(999,1111).substr(base64_encode('sdsjkdsdsd'), 0, 10),
             ]);
         }
         if($menuId->slug == 'quote'){
             return view('frontend.quotation', [
-                'breadcrums' => 'Send Quotation',
+                'breadcrums' => $menuId,
                 'services' => SubMenu::where('menu_id', 2)->get(),
                 'key' => rand(999,1111).substr(base64_encode('sdsjkdsdsd'), 0, 10),
             ]);
@@ -56,7 +57,7 @@ class PagesController extends Controller
        
         if($menuId->has_child){
             $pages['pages'] = SubMenu::where(['menu_id' => $menuId->id, 'is_active' => 1])->get();
-            $pages['breadcrums'] = $pages['pages'][0]->Menu->name;
+            $pages['breadcrums'] = $pages['pages'][0]->Menu;
             return view('frontend.pages', $pages);
         }else{
             $pages = Page::where('menu_id', $menuId->id)->first();
@@ -64,7 +65,7 @@ class PagesController extends Controller
             return back();
         }
             $pages['pages'] = Page::where('menu_id', $menuId->id)->first();
-            $pages['breadcrums'] =  $menuId->name;
+            $pages['breadcrums'] =  $menuId;
             $pages['sidebar'] = Menu::get();
             $pages['menus'] = Menu::get();
             return view('frontend.subpages', $pages);
@@ -80,7 +81,7 @@ class PagesController extends Controller
             return back();
         }
         $pages['pages'] = $pages;
-        $pages['breadcrums'] =  $id->name;
+        $pages['breadcrums'] =  $id;
         $pages['sidebar'] = SubMenu::where(['is_active' =>1, 'menu_id' =>$id->menu_id])->get();
         return view('frontend.subpages', $pages);
     }

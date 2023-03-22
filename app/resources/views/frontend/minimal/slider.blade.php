@@ -60,7 +60,7 @@
                           data-frames='[{"delay":500,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"nothing"},{"frame":"hover","speed":"0","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgba(250,154,0,1);bg:transparent;bw:2 2 2 2;"}]'
                           data-textAlign="['left','left','left','left']" data-paddingtop="[15,15,15,15]"
                           data-paddingright="[25,25,25,25]" data-paddingbottom="[15,15,15,15]">
-                        <a href="{{route('pages', encrypt(5))}}" style="color:#fff" class="btn btn-secondary"> Learn More</a> 
+                          <a href="{{$slider->links}}" style="color:#fff" class="btn btn-primary"> Learn More</a> 
                      </div>
                  </li>
                 

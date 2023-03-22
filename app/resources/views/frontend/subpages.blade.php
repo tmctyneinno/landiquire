@@ -1,21 +1,25 @@
 @extends('layouts.app')
 @section('contents')
-<div class="page-header-area">
+@if(isset($breadcrums))
+<div class="page-header-area" style="background: #ddd url('{{asset('/images/'.$breadcrums->image)}}')  center">
+   @else 
+   <div class="page-header-area" style="background: #ddd url('{{asset('/images')}}') no-repeat center">
+   @endif
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-6 col-lg-4">
                 <div class="page-header-title text-center text-md-start">
-                    {{-- <h1> {{$breadcrums }}</h1> --}}
+                    {{-- <h1>Blog Details</h1> --}}
                 </div>
             </div>
 
             <div class="col-md-6 col-lg-8">
-                <nav class="page-header-breadcrumb text-center text-md-end">
-                    {{-- <ul class="breadcrumb">
+                {{-- <nav class="page-header-breadcrumb text-center text-md-end">
+                    <ul class="breadcrumb">
                         <li><a href="{{route('index')}}">Home</a></li>
-                        <li class="active"><a href="#">{{$breadcrums }}</a></li>
-                    </ul> --}}
-                </nav>
+                        <li class="active"><a href="">Blog Details</a></li>
+                    </ul>
+                </nav> --}}
             </div>
         </div>
     </div>
@@ -50,6 +54,7 @@
                     <aside class="sidebar-wrapper">
                         <!-- Start Single Sidebar -->
                         <div class="sidebar-item">
+                          
                             <h3 class="sidebar-title">{{$pages->menu?$pages->Menu->name:$pages->subMenu->Menu->name}}</h3>
                             <div class="sidebar-body">
                                 <ul class="sidebar-list">
@@ -64,6 +69,8 @@
                                 </ul>
                             </div>
                         </div>
+                        <a href="{{asset('/assets/NCIC-HR.pdf')}}" target="_blank" class="btn btn-secondary">Download Company brochure</a>
+                           
                     </aside>
                     
                 </div>

@@ -26,6 +26,7 @@ class SliderController extends Controller
             'image' => 'required',
             'content' => 'required',
             'title' => 'required',
+            'link' => 'integer|required'
         ]);
        //dd(request()->file('images'));
 
@@ -35,11 +36,13 @@ class SliderController extends Controller
             $fileName = time().'.'.$ext;
             $image->move('images',$fileName);
     }
+    $link = route('subpages', encrypt($request->link));
         $data = [
             'image' =>   $fileName,
             'content' => $request->content,
             'title' =>  $request->title,
-            'status' => 1
+            'status' => 1,
+            'links' => $link
         ];
 
         Slider::create($data);
@@ -48,30 +51,38 @@ class SliderController extends Controller
         return back();
     }
 
+   
     public function EditSlider($id){
         $slider = Slider::where('id', decrypt($id))->first();
-        return view('admin.settings.edit_sliders')
+        return view('admin.settings.edit_sliders',['slider'  => $slider , 'services' => subMenu::get()])
         ->with('bheading', 'Website Settings')
         ->with('breadcrumb', 'Website Settings');
     }
 
     public function UpdateSlider(Request $request, $id){
+
+        $sl = Slider::where('id', decrypt($id))->first();
+        
         if($request->file('image')){
             $image = $request->file('image');
             $ext = $image->getClientOriginalExtension();
-            $fileName = time().'.'.$ext;
+            $name = pathinfo($image, PATHINFO_FILENAME);
+            $fileName = $name.time().'.'.$ext;
             $image->move('images',$fileName);
+    }else{
+        $fileName = $sl->image;
     }
+    $link = route('subpages', encrypt($request->link));
         $data = [
             'image' =>  $fileName,
             'content' => $request->content,
             'title' =>  $request->title,
+            'links' => $link
         ];
-
-        $sl = Slider::where('id', decrypt($id))->first();
          $sl->fill($data)->save();
         \Session::flash('alert', 'success');
         \Session::flash('alert', 'Slider Updated Successfully');
+        return back();
     }
 
     public function DeleteSlider($id){

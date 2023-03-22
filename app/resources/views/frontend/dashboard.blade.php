@@ -8,22 +8,7 @@
 <!-- Start Slider Area Wrapper -->
 @include('frontend.minimal.slider')
 <!-- End Slider Area Wrapper -->
-<div class="call-to-action-wrapper layout--2">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center text-lg-start">
-                <div class="call-action-inner d-lg-flex align-items-center justify-content-between">
-                    <div class="call-action-inner-left mb-sm-22 mb-md-32 text-center text-lg-start">
-                        <h2>Are you looking for First-Class Human Resources Consultant?</h2>
-                    </div>
-                    <div class="call-action-inner-right btn-group text-center text-lg-end">
-                        <a href="{{route('pages', encrypt(5))}}" class="btn btn-bordered">Contact Us</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 <!-- Start Service Area Wrapper -->
 <section class="service-area-wrapper mt-90 mt-sm-60">
     <div class="container">

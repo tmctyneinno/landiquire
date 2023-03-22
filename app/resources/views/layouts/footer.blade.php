@@ -32,7 +32,9 @@
                             <div class="widget-body">
                                 <ul class="list list-6">
                                     @foreach ($menus as $menu )
-                                    <li > <a style="color:#211d1d" href="{{route('pages', encrypt($menu->id))}}">{{$menu->name}}</a> </li>
+                                    <li > 
+                                    @if($menu->name == 'Home') <a style="color:#211d1d"  href="{{route('index')}}">{{$menu->name}}</a> @else <a style="color:#211d1d" href="{{route('pages', encrypt($menu->id))}}">{{$menu->name}}</a> @endif
+                                   </li>
                                     @endforeach
                                
                                 </ul>
@@ -107,9 +109,9 @@
                     <div class="social-icons">
                         <a href="{{$settings->facebook}}"><i class="fa fa-facebook"></i></a>
                         <a href="{{$settings->twitter}}"><i class="fa fa-twitter"></i></a>
-                        <a href="{{$settings->linkedIn}}"><i class="fa fa-linkedin"></i></a>
+                        {{-- <a href="{{$settings->linkedIn}}"><i class="fa fa-linkedin"></i></a> --}}
                         <a href="{{$settings->intagram}}"><i class="fa fa-instagram"></i></a>
-                        <a href="{{$settings->pinterest}}"><i class="fa fa-pinterest"></i></a>
+                        {{-- <a href="{{$settings->pinterest}}"><i class="fa fa-pinterest"></i></a> --}}
                     </div>
 
                     <div class="copyright-text">
