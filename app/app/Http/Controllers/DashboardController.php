@@ -14,7 +14,7 @@ class DashboardController extends Controller
 
     public function Index(){
         return view('frontend.dashboard', [
-            'sliders' => Slider::where('status', 1)->latest()->get(),
+            'sliders' => Slider::where('status', 1)->get(),
             'blogs' => Blog::where('status', 1)->latest()->get(),
             'services' => SubMenu::where('menu_id', 2)->get(),
             'testimonials' => Testimonial::latest()->get()
