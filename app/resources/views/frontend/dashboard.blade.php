@@ -77,36 +77,18 @@
                 <!-- Start Section Title -->
                 <div class="section-title-wrap layout--2 white mb-38">
                     <h4 style="color: #fff">Need any advice on how best NCIC can serve you?</h4>
+                    <p style="color:#fff; font-size:25px; text-align:center; font-weight:bolder">Do contact us at {{$settings->site_email}} or call {{$settings->site_phone}}</p>
+                    
+                     
+                        
+                           <p style="color:#fff; font-size:25px; text-align:center"> <a href="{{route('pages', encrypt(5))}}" class="btn btn-primary">Contact Us </a></p>
                 </div>
+                
                 <!-- End Section Title -->
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-12 m-0">
-                <div class="testimonial-content-wrap">
-                    <div class="ht-slick-wrapper">
-                        <div class="ht-slick-slider slick-row-30"
-                            data-slick='{"slidesToShow": 1, "dots": false, "autoplay": false, "arrows": false, 
-                            "responsive":[{"breakpoint": 768,"settings":{"slidesToShow": 1}}, 
-                            {"breakpoint": 992,"settings":{"slidesToShow": 2}}]}'>
-                            <!-- Start Single Testimonial Item -->
-                            <div class="testimonial-item">
-                                <p style="color:#fff; font-size:25px; text-align:center; font-weight:bolder">Do contact us at {{$settings->site_email}} or call {{$settings->site_phone}}</p>
-                                
-                                 
-                                    
-                                       <p style="color:#fff; font-size:25px; text-align:center"> <a href="{{route('pages', encrypt(5))}}" class="btn btn-primary">Contact Us </a></p>
-                                    
-                              
-                            </div>
-                           
-                            <!-- End Single Testimonial Item -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+       
     </div>
 </section>
 
