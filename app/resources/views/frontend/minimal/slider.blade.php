@@ -11,7 +11,6 @@
                      data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="default"
                      data-thumb="{{asset('images/'.$slider->image)}}" data-rotate="0"
                      data-saveperformance="off" data-title="Slide">
-                     <!-- MAIN IMAGE -->
                      <img src="{{asset('images/'.$slider->image)}}" alt="slider" data-bgposition="center center"
                           data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg"
                           data-no-retina>
@@ -25,7 +24,6 @@
                           data-frames='[{"delay":150,"split":"chars","split_direction":"forward","splitdelay":0.05,"speed":2000,"frame":"0","from":"y:[-100%];z:0;rZ:35deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power2.easeIn"}]'
                           data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
                           data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]">
-                         
                      </div>
  
                      <!-- LAYER NR. 3 -->

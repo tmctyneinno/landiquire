@@ -50,7 +50,7 @@
 
                                     <div class="service-item__info">
                                         <h2><a href="{{route('subpages', encrypt($ss->id))}}">{{$ss->name}}</a></h2>
-                                        <p>{{substr($ss->title,0,150)}}.</p>
+                                        <p>{{$ss->title}}.</p>
                                         <a href="{{route('subpages', encrypt($ss->id))}}" class="btn-read-more">Read More</a>
                                     </div>
                                 </div>
