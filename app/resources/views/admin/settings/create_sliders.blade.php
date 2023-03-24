@@ -7,7 +7,7 @@
                 <div class="col-md-3 app-sidebar">
                     <div class="card">
                         <div class="card-body">
-                            <a href="{{route('admin.sliderCreate')}}" class="btn btn-secondary btn-block"  style="color:#fff">
+                            <a href="{{route('admin.sliderCreate')}}" class="badge bg-info p-2"  style="color:#fff">
                                 Add New Slider
                             </a>
                         </div>

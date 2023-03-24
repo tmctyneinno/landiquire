@@ -18,7 +18,9 @@ class SliderController extends Controller
         ->with('breadcrumb', 'Website Settings');
     }
     public function CreateSlider(){
-        return view('admin.settings.create_sliders')
+        return view('admin.settings.create_sliders', [
+            'services' => SubMenu::where('menu_id', 2)->get(),
+        ])
         ->with('bheading', 'Website Settings')
         ->with('breadcrumb', 'Website Settings');
     }
