@@ -47,7 +47,7 @@
                           data-frames='[{"delay":500,"speed":2000,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"nothing"}]'
                           data-textAlign="['left','left','left','left']" data-paddingtop="[0,0,0,0]"
                           data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]">
-                        <span style="color:#fff; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;" > {!! $slider->content !!}</span> 
+                        <span style="color:#fff; text-shadow: -1px -1px 0 #8b8989, 1px -1px 0 #000, -1px 1px 0 #656565, 1px 1px 0 #908e8e;" > {!! $slider->content !!}</span> 
                      </div>
  
                      <!-- LAYER NR. 5 -->
