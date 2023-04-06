@@ -11,6 +11,7 @@ use App\Http\Controllers\JobsController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ManagePagesController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ClientLogoController;
 use App\Http\Controllers\FaqContoller;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\SliderController;
@@ -111,6 +112,13 @@ Route::middleware('auth')->group(function(){
         Route::get('/website/settings/sliders/delete/{id}', 'DeleteSlider')->name('sliderDelete');
         Route::get('/website/settings/sliders/activate/{id}', 'ActivateSlider')->name('sliderActivate');
         Route::get('/website/settings/sliders/deactivate/{id}', 'DeactivateSlider')->name('sliderDeactivate');
+    });
+
+    Route::controller(ClientLogoController::class)->group(function(){
+        Route::get('/website/settings/logo/index', 'Index')->name('settings.logo');
+        Route::get('/website/settings/logo/create', 'Create')->name('logoCreate');
+        Route::post('/website/settings/logo/store', 'Store')->name('logoStore');
+        Route::get('/website/settings/logo/delete/{id}', 'Delete')->name('logoDelete');
     });
 
     Route::controller(FaqContoller::class)->group(function(){

@@ -141,6 +141,53 @@
                 </div>
             </div>
         </div>
+
+       
+    </div>
+</section>
+<section class="our-client-wrapper mt-90 mt-sm-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-header-wrap mb-44 mb-sm-30">
+                    <!-- Start Section Title -->
+                    <div class="section-title-wrap">
+                        <h2>Our Clients</h2>
+                    </div>
+                    <!-- End Section Title -->
+
+                    <!-- Start News Slider Arrows -->
+                    <div class="ht-slick-arrows ht-slick-arrows--two">
+                        <button id="client-prev"><i class="fa fa-angle-left"></i></button>
+                        <button id="client-next"><i class="fa fa-angle-right"></i></button>
+                    </div>
+                    <!-- End News Slider Arrows -->
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <!-- Start Our Clients Content -->
+                <div class="our-client-content">
+                    <div class="ht-slick-slider slick-row-20"
+                         data-slick='{"slidesToShow": 6, "autoplay": true, "prevArrow":"#client-prev", "nextArrow":"#client-next", "responsive":[{"breakpoint": 481,"settings":{"slidesToShow": 2}}, {"breakpoint": 801,"settings":{"slidesToShow": 3}}, {"breakpoint": 992,"settings":{"slidesToShow": 4}}]}'>
+                        <!-- Start Single Client Logo Item -->
+
+                        @forelse ($logos as $item)
+                        <div class="client-item">
+                            <a href="#"><img src="{{asset('images/'.$item->image)}}" alt="Brand Logo"/></a>
+                        </div>
+                        <!-- End Single Client Logo Item -->
+                        @empty
+                        @endforelse
+
+                       
+                    </div>
+                </div>
+                <!-- End Our Clients Content -->
+            </div>
+        </div>
     </div>
 </section>
 <!-- End Testimonial Wrapper -->
