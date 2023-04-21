@@ -95,56 +95,7 @@
 
 
 <!-- Start Testimonial Wrapper -->
-<section class="testimonial-area-wrapper mt-90 mt-sm-60 bg-img" data-bg="assets/img/testimonial/home1-testi-bg.jpg">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-10 m-auto">
-                <!-- Start Section Title -->
-                <div class="section-title-wrap layout--2 white mb-38">
-                    <h2>Testimonial</h2>
-                </div>
-                <!-- End Section Title -->
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col-12">
-                <div class="testimonial-content-wrap">
-                    <div class="ht-slick-wrapper">
-                        <div class="ht-slick-slider slick-row-30"
-                            data-slick='{"slidesToShow": 3, "dots": true, "autoplay": true, "arrows": false, "responsive":[{"breakpoint": 768,"settings":{"slidesToShow": 1}}, {"breakpoint": 992,"settings":{"slidesToShow": 2}}]}'>
-                            <!-- Start Single Testimonial Item -->
-                           
-                            @forelse ($testimonials as  $testm)
-                            <!-- Start Single Testimonial Item -->
-                            <div class="testimonial-item">
-                                <div class="testimonial-item__quote">
-                                    <p>{{substr($testm->content,0,200)}}</p>
-                                </div>
-                                <div class="testimonial-item__client">
-                                    <figure class="testimonial-item__client__thumb">
-                                        <img src="{{asset('images/'.$testm->image)}}" alt="Testimonial"/>
-                                    </figure>
-                                    <div class="testimonial-item__client__info">
-                                        <h4>{{$testm->name}}</h4>
-                                    </div>
-                                </div>
-                            </div>
-
-                            @empty
-
-                            @endforelse
-                           
-                            <!-- End Single Testimonial Item -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-       
-    </div>
-</section>
 <section class="our-client-wrapper mt-90 mt-sm-60">
     <div class="container">
         <div class="row">

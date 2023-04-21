@@ -68,25 +68,14 @@
                     <!-- End Navigation Area -->
                 </div>
 
-                <div class="col-7 col-lg-2">
+                <div class="col-6 col-lg-2">
                     <!-- Start Header Action Area -->
                     <div class="header-action-area">
-                        {{-- <ul class="action-buttons nav justify-content-end">
-                            <li>
-                                <a href="#" class="btn-search">
-                                    <i class="pe-7s-search"></i>
-                                    <i class="pe-7s-close"></i>
-                                </a>
-                                <div class="header-search-box">
-                                    <form action="#">
-                                        <div class="search-box-content">
-                                            <input type="search" placeholder="type here and hit enter"/>
-                                        </div>
-                                    </form>
-                                </div>
+                        <ul class="action-buttons nav justify-content-end">
+                            <li class="d-lg-none">
+                                <button class="btn-canvas-open"><i class="pe-7s-menu"></i></button>
                             </li>
-                            
-                        </ul> --}}
+                        </ul>
                     </div>
                     <!-- End Header Action Area -->
                 </div>
