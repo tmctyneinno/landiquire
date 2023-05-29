@@ -98,15 +98,10 @@ class PagesController extends Controller
 
     public function JobCategory($id){
         $id = explode('-', $id);
-        $jobs = ClientJob::where('industries_id', $id)->get();
-        if(count($jobs)> 0){
         return view('frontend.jobs', [
             'jobs' => ClientJob::where('industries_id', $id)->get(),
             'industries' => Industry::get()
         ]);
-    }else{
-        return back();
-    }
     }
 
     public function ContactEmails(Request $request){

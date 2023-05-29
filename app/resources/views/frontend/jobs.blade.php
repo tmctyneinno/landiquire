@@ -87,6 +87,18 @@
                                         </div>
                                     </div>
                                     @empty
+                                    <div class="col-md-12 p-3 mb-3" style="border: 1px solid #b2b2b260; border-radius:10px">
+                                        <div class="discover-item">
+                                            <div class="discover-item__thumb">
+                                                <img src="{{asset('/assets/img/partner/partner-1.jpg')}}" alt="Discover"/>
+                                            </div>
+                                            <div class="discover-item__info">
+                                                <h6 style="color:#0099ff">No jobs found for this category</h6> 
+        
+                                            </div>
+                                          
+                                        </div>
+                                    </div>
                                     @endforelse
 
                                     
