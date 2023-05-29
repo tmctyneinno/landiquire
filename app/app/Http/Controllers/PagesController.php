@@ -68,6 +68,7 @@ class PagesController extends Controller
             $pages['pages'] = Page::where('menu_id', $menuId->id)->first();
             $pages['breadcrums'] =  $menuId;
             $pages['sidebar'] = Menu::get();
+            $pages['sidebars'] = Menu::get();
             $pages['menus'] = Menu::get();
             return view('frontend.subpages', $pages);
         }
@@ -85,7 +86,7 @@ class PagesController extends Controller
         $pages['breadcrums'] =  $id;
         $pages['sidebar'] = SubMenu::where(['is_active' =>1, 'menu_id' =>$id->menu_id])->get();
         return view('frontend.subpages', $pages);
-    }
+    } 
 
     public function BlogDetails($id){
         $id = decrypt($id);

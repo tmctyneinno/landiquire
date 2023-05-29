@@ -60,13 +60,13 @@
                                 <ul class="sidebar-list">
                                     @foreach ($sidebar as $menu )
 
-                                    @if(!empty($menus))
+                                    @if(!empty($sidebars))
                                     <li><a href="{{route('pages', encrypt($menu->id))}}">{{$menu->name}}</a></li>
                                     @else 
                                     <li><a href="{{route('subpages', encrypt($menu->id))}}">{{$menu->name}}</a></li>
                                     @endif
                                     @endforeach
-                                </ul>
+                                </ul> 
                             </div>
                         </div>
                         <a href="{{asset('/assets/NCIC-HR.pdf')}}" target="_blank" class="btn btn-secondary">Download Company brochure</a>
