@@ -51,7 +51,7 @@
 
                                         <div class="col-lg-3">
                                             <div class="form-input-item">
-                                                <input type="text" name="phone" placeholder="Your Phone*"/>
+                                                <input type="text" name="phone" placeholder="Your Phone*" required/>
                                             </div>
                                         </div>
                                         <input type="hidden" name="key" value="{{$key}}"> 
@@ -65,7 +65,7 @@
                                       
                                             <div class="col-lg-3">
                                                 <div class="form-input-item">
-                                                    <input type="text" name="address" placeholder="Your Address" required/>
+                                                    <input type="text" name="address" placeholder="Your Address" />
                                                 </div>
                                             </div>
 
@@ -89,7 +89,7 @@
                                         <div class="col-lg-3">
                                             <div class="form-input-item">
                                                 
-                                                <input type="date" name="end_date" placeholder="End date of our service"
+                                                <input type="date" name="end_date" placeholder="End date of our service *"
                                                        required/>
                                                        End date of our service
                                             </div>

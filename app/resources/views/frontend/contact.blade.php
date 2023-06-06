@@ -73,7 +73,7 @@
 
                                         <div class="col-lg-4">
                                             <div class="form-input-item">
-                                                <input type="text" name="phone" placeholder="Your Phone*"/>
+                                                <input type="text" name="phone" placeholder="Your Phone*" required/>
                                             </div>
                                         </div>
                                         <input type="hidden" name="key" value="{{$key}}"> 
