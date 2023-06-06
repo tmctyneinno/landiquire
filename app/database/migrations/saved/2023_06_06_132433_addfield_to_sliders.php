@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::table('sliders', function (Blueprint $table) {
             //
             $table->string('color')->nullable();
+            $table->string('border_color')->nullable();
         });
     }
 
