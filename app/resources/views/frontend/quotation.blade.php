@@ -106,7 +106,7 @@
                                         @foreach ($services as $service )
                                            
                                         <div class="col-lg-2">
-                                            <div class="form-input-item">
+                                            <div class="form-input-item" style="text-align:center">
                                               <input type="checkbox"  value="{{$service->name}}" name="services[]" placeholder="" /> {{$service->name}} 
                                             </div>
                                         </div>
