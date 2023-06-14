@@ -132,7 +132,7 @@ class PagesController extends Controller
             'message' => $request->message
         ];
 
-        Mail::to('jesmikky@gmail.com')->send(new ContactUs($data));
+        Mail::to('contact@ncicworld.com')->send(new ContactUs($data));
         return back();
     }
 }

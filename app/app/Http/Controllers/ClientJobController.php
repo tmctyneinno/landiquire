@@ -103,11 +103,17 @@ class ClientJobController extends Controller
             'services' => $request->services
         ];
 
-        Mail::to('mikkynoble@gmail.com')->send(new RequestServiceMail($data));
+    $capt = captcha_check($request->captcha);
+    if(!$capt){
+        Session::flash('message', 'Captcha does not match, try again');
+        Session::flash('alert', 'danger');
+        return back()->withInput($request->all());
+       
+    }
+        Mail::to('Jobs@ncicworld.com')->send(new RequestServiceMail($data));
         Session::flash('message', 'Request Sent successfully');
         Session::flash('alert', 'success');
         return back();
-
     }
 }
 
