@@ -37,7 +37,9 @@
                         <div class="section-title-wrap mb-36 mb-sm-26">
                             <h2>Request a Service</h2>
                         </div>
-
+                        @if(Session::has('message'))
+                        <span class="alert alert-{{Session::get('alert')}}"> {{Session::get('message')}}</span>
+                        @endif
                         <div class="contact-form">
                             <form id="contact-fom" action="{{route('request-service')}}" method="post">
                                 @csrf
@@ -45,27 +47,27 @@
                                     <div class="row mb-20">
                                         <div class="col-lg-3">
                                             <div class="form-input-item">
-                                                <input type="text" name="name" placeholder="Your Name*" required/>
+                                                <input type="text" value="{{old('name')}}" name="name" placeholder="Your Name*" required/>
                                             </div>
                                         </div>
 
                                         <div class="col-lg-3">
                                             <div class="form-input-item">
-                                                <input type="text" name="phone" placeholder="Your Phone*" required/>
+                                                <input type="text" value="{{old('phone')}}" name="phone" placeholder="Your Phone*" required/>
                                             </div>
                                         </div>
                                         <input type="hidden" name="key" value="{{$key}}"> 
 
                                         <div class="col-lg-3">
                                             <div class="form-input-item">
-                                                <input type="email" name="email" placeholder="Your Email*"
+                                                <input type="email" value="{{old('email')}}" name="email" placeholder="Your Email*"
                                                        required/>
                                             </div>
                                         </div>
                                       
                                             <div class="col-lg-3">
                                                 <div class="form-input-item">
-                                                    <input type="text" name="address" placeholder="Your Address" />
+                                                    <input type="text" value="{{old('address')}}" name="address" placeholder="Your Address" />
                                                 </div>
                                             </div>
 
@@ -73,7 +75,7 @@
                                     <div class="row mb-20">
                                     <div class="col-lg-3">
                                             <div class="form-input-item">
-                                                <input type="text" name="city" placeholder="Your City"/>
+                                                <input type="text" value="{{old('city')}}" name="city" placeholder="Your City"/>
                                             </div>
                                         </div>
                                         <input type="hidden" name="key" value="{{$key}}"> 
@@ -81,7 +83,7 @@
                                         <div class="col-lg-3">
                                             <div class="form-input-item">
                                                
-                                                <input type="date" name="start_date" placeholder="Start date of our service*"
+                                                <input type="date" value="{{old('start_date')}}" name="start_date" placeholder="Start date of our service*"
                                                        required/>
                                                        Start date of our service
                                             </div>
@@ -89,7 +91,7 @@
                                         <div class="col-lg-3">
                                             <div class="form-input-item">
                                                 
-                                                <input type="date" name="end_date" placeholder="End date of our service *"
+                                                <input type="date" value="{{old('end_date')}}"name="end_date" placeholder="End date of our service *"
                                                        required/>
                                                        End date of our service
                                             </div>
@@ -118,7 +120,7 @@
 
                                     <div class="form-input-item">
                                         <textarea name="message" cols="30" rows="8"
-                                                  placeholder="Write your Message*" required></textarea>
+                                                  placeholder="Write your Message*" required>{{old('message')}}</textarea>
                                     </div>
 
                                     <p> @php echo captcha_img() @endphp </p>
@@ -131,9 +133,9 @@
                                 </div>
 
                                 <!-- Show Message Notification -->
-                                @if(Session::has('message'))
+                                {{-- @if(Session::has('message'))
                                         <span class="alert alert-{{Session::get('alert')}}"> {{Session::get('message')}}</span>
-                                        @endif
+                                        @endif --}}
                             </form>
                         </div>
                     </div>

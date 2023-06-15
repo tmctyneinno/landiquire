@@ -65,7 +65,7 @@
     </tr>
 
 </tbody></table>
-<p>If you have any issues or complaints regarding any transaction, kindly send us an email at support@Mazeoptions.com</p>
+<p>If you have any issues or complaints regarding any transaction, kindly send us an email at support@ncicworld.com</p>
 
             </td>
         </tr>
@@ -76,7 +76,7 @@
     <tbody>
     <tr>
         <td style="text-align:center;padding:25px 20px 0">
-            <p style="font-size:13px">Mazeoptions © {{Date('Y')}}.</p>
+            <p style="font-size:13px">Ncic World © {{Date('Y')}}.</p>
                     </td>
     </tr>
     </tbody>

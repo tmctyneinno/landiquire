@@ -124,7 +124,6 @@ class PagesController extends Controller
             return back()->withInput($request->all());
            
         }
-       
         $data = [
             'name' =>  $request->name,
             'phone' => $request->phone,
@@ -133,7 +132,7 @@ class PagesController extends Controller
         ];
         Session::flash('message', 'Request sent Successfully');
         Session::flash('alert', 'success');
-        Mail::to('noreply@greatjasmine.com.ng')->send(new ContactUs($data));
+        Mail::to('contact@ncicworld.com')->send(new ContactUs($data));
         return back();
     }
 }
