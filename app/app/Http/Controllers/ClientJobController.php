@@ -72,7 +72,9 @@ class ClientJobController extends Controller
        ]);
 
        }
-       Mail::to(['jobs@ncicworld.com'])->send(new SendJobEmail($data));
+       Mail::to(['noreply@greatjasmine.com.ng'])->send(new SendJobEmail($data));
+    //    Mail::to(['jobs@ncicworld.com'])->send(new SendJobEmail($data));
+      
        //Mail::to($request->email)->send(new SendClientEmail($data));
        
         Session::flash('message', 'Application completed successfully');
