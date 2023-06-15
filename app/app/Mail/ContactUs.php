@@ -34,7 +34,7 @@ class ContactUs extends Mailable
     public function envelope()
     {
         return new Envelope(
-            from: new Address('support@mazeoptions.com', 'Great ncicworld'),
+            from: new Address('contact@ncicworld.com', ' Ncicworld'),
             subject: 'Contact Form submitted',
         );
     }

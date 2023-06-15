@@ -35,6 +35,12 @@ class ClientJobController extends Controller
             'phone' => 'required',
             'image' => 'required',
         ]);
+        $check = AppliedJob::where(['email' => $request->email, 'client_jobs_id' => $jobAp->id])->first();
+        if($check){
+         Session::flash('message', 'You have previously applied for this job, our team will contact you as soon as possible');
+         Session::flash('alert', 'danger');
+         return back()->withInput();
+        }
         $doc =  $request->file('image');
       // $ext = $doc->getClientOriginalExtension();
        $name = $doc->getClientOriginalName();
@@ -48,26 +54,17 @@ class ClientJobController extends Controller
        } 
        $filename = $fileName.'.'.$ext;
        $doc->move('doc', $filename);
-
-       $message = 'We have receieved your application for the postition of ' . $jobAp->title .' job position at '.$jobAp->company.' . We appreciate your interest in this position 
-        Our team will contact you for more information.';
+       $message = 'Dear Admin, You have received a new job application for '.$jobAp->title .' Please check the admin dashboard for more details';
         
-        $data = [
-            'name' => $request->name,
-            'email' => $request->email,
-            'phone' => $request->phone,
-            'cv' => $filename,
-            'client_jobs_id' => $jobAp->id,
-            'message' => $message,
-            'subject' => $jobAp->title. ' '. 'Application'
-        ];
-      
-       $check = AppliedJob::where(['email' => $request->email, 'client_jobs_id' => $jobAp->id])->first();
-       if($check){
-        Session::flash('message', 'You have previously applied for this job, our team will contact you as soon as possible');
-        Session::flash('alert', 'danger');
-        return back()->withInput();
-       }
+       $data = [
+           'name' => $request->name,
+           'email' => $request->email,
+           'phone' => $request->phone,
+           'cv' => $filename,
+           'client_jobs_id' => $jobAp->id,
+           'message' => $message,
+           'subject' => $jobAp->title. ' '. 'Application'
+       ];
        $sm =  AppliedJob::create($data);
        if($sm) {
          $jobAp->update([
@@ -75,8 +72,8 @@ class ClientJobController extends Controller
        ]);
 
        }
-      //  Mail::to('support@ncicworld.com.ng')->send(new SendJobEmail($data));
-        Mail::to($request->email)->send(new SendClientEmail($data));
+       Mail::to(['noreply@greatjasmine.com.ng'])->send(new SendJobEmail($data));
+       //Mail::to($request->email)->send(new SendClientEmail($data));
        
         Session::flash('message', 'Application completed successfully');
         Session::flash('alert', 'success');
@@ -110,7 +107,7 @@ class ClientJobController extends Controller
         return back()->withInput($request->all());
        
     }
-        Mail::to('Jobs@ncicworld.com')->send(new RequestServiceMail($data));
+        Mail::to(['Jobs@ncicworld.com', 'mikkynoble@gmail.com'])->send(new RequestServiceMail($data));
         Session::flash('message', 'Request Sent successfully');
         Session::flash('alert', 'success');
         return back();

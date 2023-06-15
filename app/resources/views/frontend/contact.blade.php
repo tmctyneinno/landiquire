@@ -41,6 +41,9 @@
                 </div>
 
                 <div class="col-md-6 col-lg-6 order-1 order-lg-1">
+                    @if(Session::has('message'))
+                    <span class="alert alert-{{Session::get('alert')}}"> {{Session::get('message')}}</span>
+                    @endif
                     <div class="section-title-wrap mb-24 mtm-8">
                         <h2>Get In Touch</h2>
                     </div>
@@ -61,26 +64,26 @@
                         </div>
 
                         <div class="contact-form">
-                            <form id="contact-form" action="{{route('contact-email')}}" method="post">
+                            <form id="" action="{{route('contact-email')}}" method="post">
                                 @csrf
                                 <div class="contact-form-content">
                                     <div class="row mb-20">
                                         <div class="col-lg-4">
                                             <div class="form-input-item">
-                                                <input type="text" name="name" placeholder="Your Name*" required/>
+                                                <input type="text" value="{{old('name')}}" name="name" placeholder="Your Name*" required/>
                                             </div>
                                         </div>
 
                                         <div class="col-lg-4">
                                             <div class="form-input-item">
-                                                <input type="text" name="phone" placeholder="Your Phone*" required/>
+                                                <input type="text" value="{{old('phone')}}" name="phone" placeholder="Your Phone*" required/>
                                             </div>
                                         </div>
                                         <input type="hidden" name="key" value="{{$key}}"> 
 
                                         <div class="col-lg-4">
                                             <div class="form-input-item">
-                                                <input type="email" name="email" placeholder="Your Email*"
+                                                <input type="email" value="{{old('email')}}" name="email" placeholder="Your Email*"
                                                        required/>
                                             </div>
                                         </div>
@@ -88,7 +91,7 @@
 
                                     <div class="form-input-item">
                                         <textarea name="message" id="con_message" cols="30" rows="8"
-                                                  placeholder="Write your Message*" required></textarea>
+                                                  placeholder="Write your Message*" required>{{old('message')}}</textarea>
                                     </div>
                                     <p> @php echo captcha_img() @endphp </p>
                                     <p><input type="text" placeholder="Enter captcha" name="captcha">

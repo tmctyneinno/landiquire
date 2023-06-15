@@ -131,8 +131,9 @@ class PagesController extends Controller
             'email' =>  $request->email,
             'message' => $request->message
         ];
-
-        Mail::to('contact@ncicworld.com')->send(new ContactUs($data));
+        Session::flash('message', 'Request sent Successfully');
+        Session::flash('alert', 'success');
+        Mail::to('noreply@greatjasmine.com.ng')->send(new ContactUs($data));
         return back();
     }
 }

@@ -1,5 +1,5 @@
 <div width="100%" style="margin:0;padding:0!important;background-color:#f5f6fa">
-    <center style="width:100%;background-color:#f5f6fa">
+    <span style="width:100%;background-color:#f5f6fa">
         <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#f5f6fa">
             <tbody><tr>
                 <td style="padding:30px 0">
@@ -16,14 +16,28 @@
             <tbody>
                     <tr>
                 <td style="padding:10px 30px 10px">
-                    Hello  {{ $data['name'] }},
+                    {{$data['message']}}
                 </td>
-            </tr>
-                    
-            <tr>
-                <td style="padding:0 30px">
-    <p>{{$data['message']}}</td>
-            </tr>
+                <tr>
+                    <td style="padding:0 30px">
+                        <p>User Details</p>
+                        <table width="100%">
+                            <tbody>
+                                <tr>
+                                    <td width="150">Name</td>
+                                    <td width="25">&nbsp;&nbsp;:&nbsp;&nbsp;</td>
+                                    <td>{{ $data['name'] }}</td>
+                                </tr>
+                                <tr>
+                                    <td width="150">Email</td>
+                                    <td width="25">&nbsp;&nbsp;:&nbsp;&nbsp;</td>
+                                    <td> {{ $data['email'] }}</td>
+                                </tr>
+                                <tr>
+                                <td width="150">Phone</td>
+                                <td width="25">&nbsp;&nbsp;:&nbsp;&nbsp;</td>
+                                <td> {{ $data['phone'] }}</td>
+                                 <tr>
     
                     </tbody>
         </table>
@@ -39,5 +53,5 @@
                 </td>
             </tr>
         </tbody></table>
-    </center><div class="yj6qo"></div><div class="adL">
+    </span><div class="yj6qo"></div><div class="adL">
     </div></div>
