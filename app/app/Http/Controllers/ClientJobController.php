@@ -35,6 +35,13 @@ class ClientJobController extends Controller
             'phone' => 'required',
             'image' => 'required',
         ]);
+        $capt = captcha_check($request->captcha);
+        if(!$capt){
+            Session::flash('message', 'Captcha does not match, try again');
+            Session::flash('alert', 'danger');
+            return back()->withInput($request->all());
+           
+        }
         $check = AppliedJob::where(['email' => $request->email, 'client_jobs_id' => $jobAp->id])->first();
         if($check){
          Session::flash('message', 'You have previously applied for this job, our team will contact you as soon as possible');
@@ -98,7 +105,7 @@ class ClientJobController extends Controller
             'address' => $request->address,
             'city' => $request->city,
             'start_date' => $request->start_date,
-            'end_date' => $request->date,
+            'end_date' => $request->end_date,
             'services' => $request->services
         ];
 

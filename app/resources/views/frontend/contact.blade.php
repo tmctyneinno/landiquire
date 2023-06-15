@@ -94,7 +94,7 @@
                                                   placeholder="Write your Message*" required>{{old('message')}}</textarea>
                                     </div>
                                     <p> @php echo captcha_img() @endphp </p>
-                                    <p><input type="text" placeholder="Enter captcha" name="captcha">
+                                    <p><input type="text" placeholder="Enter captcha" name="captcha" required>
                                      </p>
 
 

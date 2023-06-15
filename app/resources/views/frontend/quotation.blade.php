@@ -124,7 +124,7 @@
                                     </div>
 
                                     <p> @php echo captcha_img() @endphp </p>
-                                    <p><input type="text" placeholder="Enter captcha" name="captcha">
+                                    <p><input type="text" placeholder="Enter captcha" name="captcha" required>
                                      </p>
 
                                     <div class="form-input-item">

@@ -123,6 +123,10 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <p> @php echo captcha_img() @endphp </p>
+                                                    <p><input type="text" placeholder="Enter captcha" name="captcha" required>
+                                                     </p>
+                
                                                     <div class="form-input-item">
                                                         <button type="submit" class="btn btn-primary">Apply for this job</button>
                                                     </div>
