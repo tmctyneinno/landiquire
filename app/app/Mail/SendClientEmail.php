@@ -37,7 +37,7 @@ class SendClientEmail extends Mailable
     {
         return new Envelope(
             subject: $this->data['subject'],
-            from: new Address('jobs@greatjasmine.com.ng', 'Ncicworld'),
+            from: new Address('noreply@ncicworld.com', 'Ncicworld'),
         );
     }
 
