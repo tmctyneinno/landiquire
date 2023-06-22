@@ -135,7 +135,7 @@ class PagesController extends Controller
        $email = Mail::to('noreply@ncicworld.com')->send(new ContactUs($data));
         // Mail::to('noreply@greatjasmine.com.ng')->send(new ContactUs($data));
 
-        dd($email);
+       // dd($email);
         return back();
     }
 }
