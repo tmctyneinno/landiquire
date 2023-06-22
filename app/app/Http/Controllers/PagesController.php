@@ -117,13 +117,13 @@ class PagesController extends Controller
             'captcha' => 'required',
             
         ]);
-        // $capt = captcha_check($request->captcha);
-        // if(!$capt){
-        //     Session::flash('message', 'Captcha does not match, try again');
-        //     Session::flash('alert', 'danger');
-        //     return back()->withInput($request->all());
+        $capt = captcha_check($request->captcha);
+        if(!$capt){
+            Session::flash('message', 'Captcha does not match, try again');
+            Session::flash('alert', 'danger');
+            return back()->withInput($request->all());
            
-        // }
+        }
         $data = [
             'name' =>  $request->name,
             'phone' => $request->phone,
@@ -132,7 +132,7 @@ class PagesController extends Controller
         ];
         Session::flash('message', 'Request sent Successfully');
         Session::flash('alert', 'success');
-       $email = Mail::to('noreply@ncicworld.com')->send(new ContactUs($data));
+        Mail::to('noreply@ncicworld.com')->send(new ContactUs($data));
         // Mail::to('noreply@greatjasmine.com.ng')->send(new ContactUs($data));
 
        // dd($email);
