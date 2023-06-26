@@ -120,3 +120,27 @@
 
 
 @endsection
+@section('script')
+<script>
+
+
+
+
+let message = {!! json_encode(Session::get('message')) !!};
+let msg = {!! json_encode(Session::get('alert')) !!};
+//alert(msg);
+toastr.options = {
+        timeOut: 8000,
+        progressBar: true,
+        showMethod: "slideDown",
+        hideMethod: "slideUp",
+        showDuration: 200,
+        hideDuration: 200
+    };
+if(message != null && msg == 'success'){
+toastr.success(message);
+}else if(message != null && msg == 'error'){
+    toastr.error(message);
+}
+</script>
+@endsection
