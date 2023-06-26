@@ -14,6 +14,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ClientLogoController;
 use App\Http\Controllers\FaqContoller;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\MenuController as MenuPage;
 use App\Http\Controllers\NewsController;
@@ -129,9 +130,20 @@ Route::middleware('auth')->group(function(){
         Route::post('/website/faq/update/{id}', 'Update')->name('faqUpdate');
         Route::get('/website/faq/delete/{id}', 'Delete')->name('faqDelete');
     });
+    Route::controller(CategoryController::class)->group(function(){
+        Route::get('/website/category/index', 'Index')->name('category.index');
+        Route::get('/website/category/create', 'Create')->name('categoryCreate');
+        Route::post('/website/category/store', 'Store')->name('categoryStore');
+        Route::get('/website/category/edit/{id}', 'Edit')->name('categoryEdit');
+        Route::post('/website/category/update/{id}', 'Update')->name('categoryUpdate');
+        Route::get('/website/category/delete/{id}', 'Delete')->name('categoryDelete');
+    });
+    
 
 });
 });
+
+
 
 
 Route::get('/', [DashboardController::class, 'Index'])->name('index');
