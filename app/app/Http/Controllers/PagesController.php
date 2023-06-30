@@ -117,13 +117,13 @@ class PagesController extends Controller
             'captcha' => 'required',
             
         ]);
-        // $capt = captcha_check($request->captcha);
-        // if(!$capt){
-        //     Session::flash('message', 'Captcha does not match, try again');
-        //     Session::flash('alert', 'danger');
-        //     return back()->withInput($request->all());
+        $capt = captcha_check($request->captcha);
+        if(!$capt){
+            Session::flash('message', 'Captcha does not match, try again');
+            Session::flash('alert', 'danger');
+            return back()->withInput($request->all());
            
-        // }
+        }
         $data = [
             'name' =>  $request->name,
             'phone' => $request->phone,
