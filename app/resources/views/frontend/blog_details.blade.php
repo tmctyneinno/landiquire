@@ -29,7 +29,7 @@
     <div class="blog-details-page-wrapper">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 order-1 order-lg-0">
+                <div class="col-lg-4 order-1 order-lg-0">
                     <div class="sidebar-area mt-md-58 mt-sm-58">
                         <aside class="sidebar-wrapper">
                            
@@ -66,7 +66,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-9 order-0">
+                <div class="col-lg-8 order-0">
                     <article class="blog-details-content">
                         <figure class="blog-thumb">
                             <img src="{{asset('images/'.$blog->image)}}" alt="Blog"/>
