@@ -95,7 +95,7 @@ class PagesController extends Controller
         $page['breadcrums'] =  $menuId;
         return view('frontend.blog_details', $page, [
             'blogs' => Blog::where('id', $id)->first(),
-            'popular' => Blog::where('views', '>', '2')->take(5)->get(),
+            'popular' => Blog::latest()->take(5)->get(),
             
         ]);
     }
