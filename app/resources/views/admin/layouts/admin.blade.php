@@ -55,7 +55,7 @@
               <div>
                 <ul>
                     <li>
-                        <a href="" data-toggle="tooltip" data-placement="right" title="Settings">
+                        <a href="{{route('admin.settings.index')}}" data-toggle="tooltip" data-placement="right" title="Settings">
                             <i data-feather="settings"></i>
                         </a>
                     </li>

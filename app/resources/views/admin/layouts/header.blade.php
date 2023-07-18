@@ -108,7 +108,7 @@
               <!-- end::header notification dropdown -->
               <!-- begin::user menu -->
               <li class="nav-item dropdown">
-                  <a href="" class="nav-link" title="User menu" >
+                  <a href="{{route('admin.settings.index')}}" class="nav-link" title="User menu" >
                       <i data-feather="settings"></i>
                   </a>
               </li>

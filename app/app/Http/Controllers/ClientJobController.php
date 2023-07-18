@@ -21,7 +21,7 @@ class ClientJobController extends Controller
         $job->update(['views' => $job->views + 1]);
         return view('frontend.jobs_details', [
             'job' => $job,
-            'industries' => Industry::get()
+            'jobs' => ClientJob::take(5)->latest()->get()
         ]);
     }
 

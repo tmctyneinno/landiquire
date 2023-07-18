@@ -38,7 +38,7 @@
                         <div class="sidebar-single" style="background: #fff">
                             <a href="{{asset('/assets/NCIC-HR.pdf')}}" target="_blank" class="btn btn-secondary">Download Company brochure</a>
                             <hr>
-                            <h3 class="sidebar-heading">JOB IDs</h3>
+                            <h3 class="sidebar-heading">Job Ids</h3>
                             <hr>
                             <div class="sidebar-body">
                                 <ul class="service-list">
@@ -83,7 +83,7 @@
                                                  <span class="p-1" style="border-radius: 4px; background:#9ab6c957; color:#5f5a5a"> {{$job->salary_range}}</span> <br>
                                                <span> Job ID: {{$job->industry->name}}</span> <br>
                                                <hr>
-                                               <span> {!! substr($job->job_details,0,400) !!}... <a href="{{route('job-details', $job->id.'-'.$job->title)}}"> readmore</a> <br> <a href="{{route('job-details', $job->id.'-'.$job->title)}}" class=" btn-primary btn-sm rounded"> Apply for this Job</a></span>
+                                               <span> {!! substr($job->job_details,0,400) !!}@if(strlen($job->job_details) > 400)... <a href="{{route('job-details', $job->id.'-'.$job->title)}}"> readmore @endif</a> <br> <a href="{{route('job-details', $job->id.'-'.$job->title)}}" class=" btn-primary btn-sm rounded"> Apply for this Job</a></span>
                                             </div>
                                           
                                         </div>

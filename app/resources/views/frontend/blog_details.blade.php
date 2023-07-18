@@ -36,7 +36,7 @@
 
                             <!-- Start Single Sidebar -->
                             <div class="sidebar-item">
-                                <h3 class="sidebar-title">Recent News</h3>
+                                <h3 class="sidebar-title">Recent Blogs</h3>
                                 <div class="sidebar-body">
                                     @forelse($popular as $post)
                                     <div class="recent-news-item">
