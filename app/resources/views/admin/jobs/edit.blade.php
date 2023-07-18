@@ -100,7 +100,7 @@
                                         
                                                 <div class="col-md-12">
                                                 <div class="form-group">
-                                                <textarea id="summernote" class="@error('contents') is-invalid @enderror" name="contents">{{$job->job_details}}</textarea>
+                                                <textarea id="summernote"  class="@error('contents') is-invalid @enderror" name="contents">{{$job->job_details}}</textarea>
                                                 <small id="emailHelp" class="form-text text-muted">News Contents
                                                         </small>
                                                         @error('contents')

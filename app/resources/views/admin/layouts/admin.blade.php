@@ -18,8 +18,7 @@
     <!-- Vmap -->
     <link rel="stylesheet" href="{{asset('/backend/vendors/vmap/jqvmap.min.css')}}">
     <link rel="stylesheet" href="{{asset('/backend/css/app.min.css')}}" type="text/css">
-    <script src="https://cdn.ckeditor.com/4.20.2/full/ckeditor.js"></script>
-
+    <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
 
 
     {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs4.min.css" integrity="sha512-ngQ4IGzHQ3s/Hh8kMyG4FC74wzitukRMIcTOoKT3EyzFZCILOPF0twiXOQn75eDINUfKBYmzYn2AA8DkAk8veQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> --}}
@@ -153,7 +152,7 @@
 <script src="{{asset('/backend/vendors/vmap/jquery.vmap.min.js')}}"></script>
 <script src="{{asset('/backend/vendors/vmap/maps/jquery.vmap.usa.js')}}"></script>
 <script src="{{asset('/backend/js/examples/vmap.js')}}"></script>
-{{-- <script src="https://cdn.ckeditor.com/4.20.2/standard/ckeditor.js"></script> --}}
+<script src="https://cdn.ckeditor.com/4.20.2/classic/ckeditor.js"></script>
 
 
 <script src="{{asset('/backend/js/examples/dashboard.js')}}"></script>
