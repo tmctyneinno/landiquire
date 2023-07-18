@@ -7,14 +7,14 @@
                 @csrf
               <div class="card">
                         <div class="card-body">
-                            <h6 class="card-title">Post News</h6>
+                            <h6 class="card-title">Post Blog</h6>
                             <div class="row">
 
                                 <div class="col-md-12">
                                         <div class="form-group">
                                             <input type="text" name="title"  value="{{old('title')}}" class="form-control @error('title') is-invalid @enderror" id="exampleInputEmail1"
                                                    aria-describedby="emailHelp" placeholder="News Title">
-                                            <small id="emailHelp" class="form-text text-muted">Enter news title
+                                            <small id="emailHelp" class="form-text text-muted">Enter blog title
                                             </small>
                                             @error('title')
                                             <span class="invalid-feedback"> <small> * </small> </span>
@@ -61,7 +61,7 @@
                           </div>
                           <div class="col-md-4">
                         <div class="p-5">
-                             <button type="submit" class="btn btn-primary p-3">Post News</button>
+                             <button type="submit" class="btn btn-primary p-3">Post Blog</button>
                            </div>
                            </div>
                            </div>

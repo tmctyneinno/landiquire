@@ -36,7 +36,7 @@
                     <div class="service-details-sidebar mtm-40 mtm-sm-2 mtm-md-2">
                         <!-- Start Sidebar Item -->
                         <div class="sidebar-single" style="background: #fff">
-                            <h3 class="sidebar-heading">Industries</h3>
+                            <h3 class="sidebar-heading">JOB IDs</h3>
                             <hr>
                             <div class="sidebar-body">
                                 <ul class="service-list">
@@ -80,7 +80,7 @@
                                                 <h6 style="color:#0099ff">{{$job->title}}</h6> 
                                                 <p style="color:#0099ff">{{$job->company}}</p>
                                                 <span  class="p-1" style="border-radius: 4px; background:#9ab6c957; color:#5f5a5a"> {{$job->location}}</span>   <span class="p-1" style="border-radius: 4px; background:#9ab6c957; color:#5f5a5a"> {{$job->job_type}}</span>   <span class="p-1" style="border-radius: 4px; background:#9ab6c957; color:#5f5a5a"> ₦{{$job->salary_range}}</span> <br>
-                                               <span> Job Function: {{$job->industry->name}}</span> <br>
+                                               <span> Job ID: {{$job->industry->name}}</span> <br>
                                                <hr>
                                                <span> {!!$job->job_details !!} <br><br>  
                                             </div>
