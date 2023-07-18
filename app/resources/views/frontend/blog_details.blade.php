@@ -69,7 +69,7 @@
                 <div class="col-lg-8 order-0">
                     <article class="blog-details-content">
                         <figure class="blog-thumb">
-                            <img src="{{asset('images/'.$blog->image)}}" alt="Blog"/>
+                            <img src="{{asset('images/'.$blogs->image)}}" alt="Blog"/>
                         </figure>
 
                         <div class="blog-info">
