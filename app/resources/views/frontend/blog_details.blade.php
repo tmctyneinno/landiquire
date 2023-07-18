@@ -69,13 +69,13 @@
                 <div class="col-lg-8 order-0">
                     <article class="blog-details-content">
                         <figure class="blog-thumb">
-                            <img src="{{asset('images/'.$blogs->image)}}" alt="Blog"/>
+                            <img src="{{asset('images/'.$blogs->image)}}" alt="Blog" width="200px" height="auto">
                         </figure>
 
                         <div class="blog-info">
                             <h2>{{$blogs->title}}</h2>
                             <div class="blog-meta">
-                                <a href="blog-details.html" class="post-date"><i class="fa fa-clock-o"></i>
+                                {{-- <a href="blog-details.html" class="post-date"><i class="fa fa-clock-o"></i> --}}
                                    {{-- {{$blogs->created_at->format('d/M/Y')}}</a> --}}
                               
                               
