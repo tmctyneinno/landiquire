@@ -180,10 +180,7 @@
     });
 </script> --}}
 <script>
-    
-    CKEDITOR.replace( 'summernote', {
-        skin: 'moonocolor,/myskins/moonocolor/'
-} );
+    CKEDITOR.replace( 'summernote' );
 </script>
 {{-- <script>
     ClassicEditor
