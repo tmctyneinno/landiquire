@@ -4521,6 +4521,7 @@ Team Member Style CSS
 .service-list li {
     border-bottom: 1px solid #ddd;
     padding: 13px 0;
+    list-style:none;
 }
 
 .service-list li:first-child {
@@ -4536,6 +4537,7 @@ Team Member Style CSS
     color: #858585;
     font-weight: 600;
     vertical-align: middle;
+    list-style: none;
 }
 
 .service-list li a img,
