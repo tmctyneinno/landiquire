@@ -77,7 +77,7 @@
                 <div class="col-lg-8 order-0">
                     <div class="about-discover-content mb-md-22 mb-sm-22">
                         <div class="about-discover-head">
-                            <h4>{{$job->title}}</h4>
+                            {{-- <h4>{{$job->title}}</h4> --}}
                           
                         </div>
 
