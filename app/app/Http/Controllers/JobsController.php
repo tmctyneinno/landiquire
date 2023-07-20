@@ -39,14 +39,11 @@ class JobsController extends Controller
         if($request->company){
             $data['company'] = $request->company;
         }
-        if($request->industry_id){
-            $data['industries_id'] = $request->industry_id;
-        }
         if($request->location){
             $data['location'] = $request->location;
         }
-        if($request->daterangepicker){
-            $data['salary_range'] = $request->daterangepicker;
+        if($request->salary_range){
+            $data['salary_range'] = $request->salary_range;
         }
         if($request->job_type){
             $data['job_type'] = $request->job_type;
@@ -139,14 +136,11 @@ class JobsController extends Controller
         if($request->company){
             $data['company'] = $request->company;
         }
-        if($request->industry_id){
-            $data['industries_id'] = $request->industry_id;
-        }
         if($request->location){
             $data['location'] = $request->location;
         }
-        if($request->daterangepicker){
-            $data['salary_range'] = $request->daterangepicker;
+        if($request->salary_range){
+            $data['salary_range'] = $request->salary_range;
         }
         if($request->job_type){
             $data['job_type'] = $request->job_type;

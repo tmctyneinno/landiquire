@@ -1,6 +1,4 @@
-RewriteEngine on
-RewriteCond %{HTTP_HOST} ^ncicworld.com [NC]
-RewriteRule ^(.*)$ https://www.ncicworld.com/$1 [L,R=301,NC]
+
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
