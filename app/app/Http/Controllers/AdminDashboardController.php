@@ -11,6 +11,8 @@ use Illuminate\Http\Request;
 class AdminDashboardController extends Controller
 {
 
+    
+
     public function Index(){
         return view('admin.index', [
             'applicants' => AppliedJob::latest()->take(5)->get(),

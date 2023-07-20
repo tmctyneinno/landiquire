@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use Carbon\Carbon;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -17,8 +18,9 @@ class check2fa
      */
     public function handle(Request $request, Closure $next)
     {
-
-        if(auth::user()->new_login == null){
+        
+        if(auth()->user()->is_verified == null ){
+            
             return redirect()->route('check2fa');
         }
         return $next($request);

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\Check2faMail;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Session;
 
 class Check2faController extends Controller
@@ -17,14 +18,15 @@ class Check2faController extends Controller
         $user = User::where('id', auth()->user()->id)->first();
         $data['otp'] = rand(111111,999999);
         $data['subject'] = 'Login Code';
-        $user->update(['new_login' => $data['otp']]);
+        $user->update(['new_login' => $data['otp'], 'last_login' => Carbon::now()->addMinute(10)]);
         Mail::to('jobs@ncicworld.com')->send(new Check2faMail($data));
         return view('auth.2fa');
     }
 
     public function VerifyCode($code){
         $user = User::where('id', auth()->user()->id)->first();
-        if($user->new_login == $code){
+        if($user->new_login == $code  && $user->last_login < Carbon::now()){
+            $user->update(['is_verified' => 1]);
             return redirect()->route('admin.index');
         }else{
             Session::flash('alert', 'error');
