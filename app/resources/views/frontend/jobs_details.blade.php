@@ -53,7 +53,7 @@
                                                 <span class="p-1" style="border-radius: 4px; background:#9ab6c957; color:#5f5a5a"> {{$jo->salary_range}} </span> <br>
                                                <span> Job Function: {{$jo->industry->name}}</span> <br>
                                                <hr>
-                                               <span> {!! substr($jo->job_details,0,200) !!} <br> <a href="{{route('job-details', $job->id.'-'.str_replace(' ','',$job->title))}}" class=" btn-primary btn-sm"> Apply for this Job</a></span>
+                                               <span> {!! substr($jo->job_details,0,200) !!} <br> <a href="{{route('job-details', $jo->id.'-'.str_replace(' ','',$jo->title))}}" class=" btn-primary btn-sm"> Apply for this Job</a></span>
                                             </div>
 
                                         </div>
