@@ -83,7 +83,7 @@
                                                  <span class="p-1" style="border-radius: 4px; background:#9ab6c957; color:#5f5a5a"> {{$job->salary_range}}</span> <br>
                                                <span> Job ID: {{$job->industry->name}}</span> <br>
                                                <hr>
-                                               <span> {!! substr($job->job_details,0,400) !!}@if(strlen($job->job_details) > 400)... <a href="{{route('job-details', $job->id.'-'.str_replace(' ','',$job->title))}}"> readmore @endif</a> <br> <a href="{{route('job-details', $job->id.'-'.$job->title)}}" class=" btn-primary btn-sm rounded"> Apply for this Job</a></span>
+                                               <span> {!! substr($job->job_details,0,400) !!}@if(strlen($job->job_details) > 400)... <a href="{{route('job-details', $job->id.'-'.str_replace(' ','',$job->title))}}"> readmore @endif</a> <br> <a href="{{route('job-details', $job->id.'-'.str_replace(' ','',$job->title))}}" class=" btn-primary btn-sm rounded"> Apply for this Job</a></span>
                                             </div>
                                           
                                         </div>
