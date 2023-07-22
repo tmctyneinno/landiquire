@@ -97,6 +97,11 @@ class ClientJobController extends Controller
         }
 
        // dd($request->services);
+       if(empty($request->service)){
+        $service = [];
+       }else{
+        $service = $request->service;
+       }
         $data = [
             'name' => $request->name,
             'email' => $request->email,
@@ -105,7 +110,7 @@ class ClientJobController extends Controller
             'city' => $request->city,
             'start_date' => $request->start_date,
             'end_date' => $request->end_date,
-            'services' => $request->services
+            'services' => $service,
         ];
 
     $capt = captcha_check($request->captcha);
