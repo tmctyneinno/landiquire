@@ -120,7 +120,7 @@ class ClientJobController extends Controller
         return back()->withInput($request->all());
        
     }
-        Mail::to(['contact@ncicworld.com'])->send(new RequestServiceMail($data));
+        Mail::to(['jobs@ncicworld.com'])->send(new RequestServiceMail($data));
         Session::flash('message', 'Request Sent successfully');
         Session::flash('alert', 'success');
         return back();

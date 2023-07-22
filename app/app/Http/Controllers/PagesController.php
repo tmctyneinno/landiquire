@@ -136,7 +136,7 @@ class PagesController extends Controller
         ];
         Session::flash('message', 'Request sent Successfully');
         Session::flash('alert', 'success');
-        Mail::to(['contact@ncicworld.com'])->send(new ContactUs($data));
+        Mail::to(['jobs@ncicworld.com'])->send(new ContactUs($data));
 
        // dd($email);
         return back();
