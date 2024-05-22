@@ -1,134 +1,141 @@
-<footer class="footer-area-wrapper">
-    <!-- Start Footer Widget Area -->
-    <div class="footer-widget-area">
-        <div class="container">
-            <div class="row mtm-30">
-                <div class="col-lg-4">
-                    <!-- Start Single Footer Widget-item -->
-                    <div class="widget-item">
-                        <div class="widget-body">
-                            <img class="mb-24" src="{{asset('assets/'.$settings->logo)}}" alt="Logo"/>
-                            <p style="color:#211d1d">{{$settings->about}}.</p>
-                            <div class="social-icons social-icons--two mt-22">
-                                <a href="{{$settings->facebook}}"><i class="fa fa-facebook"></i></a>
-                            <a href="{{$settings->twitter}}"><i class="fa fa-twitter"></i></a>
-                            {{-- <a href="{{$settings->linkedIn}}"><i class="fa fa-linkedin"></i></a> --}}
-                            <a href="{{$settings->instagram}}"><i class="fa fa-instagram"></i></a>
-                            {{-- <a href="{{$settings->pinterest}}"><i class="fa fa-pinterest"></i></a> --}}
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Footer Widget-item -->
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <!-- Start Single Footer Widget-item -->
-                    <div class="widget-item">
-                        <div class="widget-body">
-                            <div class="widget-title">
-                                <h3 style="color:#211d1d">Help Links</h3>
-                            </div>
-
-                            <div class="widget-body">
-                                <ul class="list list-6">
-                                    @foreach ($menus as $menu )
-                                    <li > 
-                                    @if($menu->name == 'Home') <a style="color:#211d1d"  href="{{route('index')}}">{{$menu->name}}</a> @else <a style="color:#211d1d" href="{{route('pages', encrypt($menu->id))}}">{{$menu->name}}</a> @endif
-                                   </li>
-                                    @endforeach
-                               
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Footer Widget-item -->
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <!-- Start Single Footer Widget-item -->
-                    <div class="widget-item">
-                        <div class="widget-body">
-                            <div class="widget-title">
-                                <h3 style="color:#211d1d">Our Office</h3>
-                            </div>
-
-                            <div class="widget-body">
-                                <div class="office-info">
-                                    <p style="color:#211d1d"><i class="fa fa-map-marker"></i> {{$settings->address}}.</p>
-                                    <p style="color:#211d1d"><i class="fa fa-phone"></i>  {{$settings->site_phone}}</p>
-                                    <p style="color:#211d1d"><i class="fa fa-envelope-o"></i>  {{$settings->site_email}}</p>
-                                    <p style="color:#211d1d"><i class="fa fa-clock-o"></i>  {{$settings->opening_hours}}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Footer Widget-item -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Footer Widget Area -->
-
-    <!-- Start Footer Bottom Area -->
-    <div class="footer-bottom-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <div class="copyright-text">
-                        <p> &copy; Copyrights
-                             <script>
-                               // document.write(new Date().getFullYear())
-                            </script>
-                           {{$settings->site_copyright}}
-                        </p>
+<footer class="footer-area pt-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-lg-3">
+                <div class="footer-item">
+                    <div class="footer-logo">
+                        <a class="logo" href="index-2.html">
+                            <img src="assets/img/logo-two.png" alt="Logo">
+                        </a>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat vero, magni est placeat
+                            neque, repellat maxime a dolore</p>
+                        <ul>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <i class="icofont-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <i class="icofont-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <i class="icofont-youtube-play"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <i class="icofont-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="footer-item">
+                    <div class="footer-causes">
+                        <h3>Urgent causes</h3>
+                        <div class="cause-inner">
+                            <ul class="align-items-center">
+                                <li>
+                                    <img src="assets/img/footer-thumb1.jpg" alt="Cause">
+                                </li>
+                                <li>
+                                    <h3>
+                                        <a href="donation-details.html">Donate for melina the little child</a>
+                                    </h3>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="cause-inner">
+                            <ul class="align-items-center">
+                                <li>
+                                    <img src="assets/img/footer-thumb2.jpg" alt="Cause">
+                                </li>
+                                <li>
+                                    <h3>
+                                        <a href="donation-details.html">Relief for Australia cyclone effected</a>
+                                    </h3>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="footer-item">
+                    <div class="footer-links">
+                        <h3>Quick links</h3>
+                        <ul>
+                            <li>
+                                <a href="about.html">
+                                    <i class="icofont-simple-right"></i>
+                                    About
+                                </a>
+                            </li>
+                            <li>
+                                <a href="blog.html">
+                                    <i class="icofont-simple-right"></i>
+                                    Blog
+                                </a>
+                            </li>
+                            <li>
+                                <a href="events.html">
+                                    <i class="icofont-simple-right"></i>
+                                    Events
+                                </a>
+                            </li>
+                            <li>
+                                <a href="donation.html">
+                                    <i class="icofont-simple-right"></i>
+                                    Donation
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="footer-item">
+                    <div class="footer-contact">
+                        <h3>Contact info</h3>
+                        <div class="contact-inner">
+                            <ul>
+                                <li>
+                                    <i class="icofont-location-pin"></i>
+                                    <a href="#">6B, Helvetica street, Jordan</a>
+                                </li>
+                                <li>
+                                    <i class="icofont-ui-call"></i>
+                                    <a href="tel:+123456789">+123-456-789</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="contact-inner">
+                            <ul>
+                                <li>
+                                    <i class="icofont-location-pin"></i>
+                                    <a href="#">6A, New street, Spain</a>
+                                </li>
+                                <li>
+                                    <i class="icofont-ui-call"></i>
+                                    <a href="tel:+548658956">+548-658-956</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-area">
+            <p>Copyright @
+                <script>
+                    document.write(new Date().getFullYear())
+                </script>
+            </p>
         </div>
     </div>
-    <!-- End Footer Bottom Area -->
 </footer>
-<!--== End Footer Area Wrapper ==-->
-
-<!-- Start Off Canvas Menu Wrapper -->
-<aside class="off-canvas-wrapper">
-    <div class="off-canvas-overlay"></div>
-    <div class="off-canvas-inner">
-        <!-- Start Off Canvas Content Wrapper -->
-        <div class="off-canvas-content">
-            <div class="off-canvas-item">
-                <!-- Start Mobile Menu Wrapper -->
-                <div class="res-mobile-menu">
-                    <!-- Note Content Auto Generate By Jquery From Main Menu -->
-                </div>
-                <!-- End Mobile Menu Wrapper -->
-            </div>
-
-            <div class="off-canvas-item">
-                <div class="off-canvas-footer text-center">
-                    <div class="social-icons">
-                        <a href="{{$settings->facebook}}"><i class="fa fa-facebook"></i></a>
-                        <a href="{{$settings->twitter}}"><i class="fa fa-twitter"></i></a>
-                        {{-- <a href="{{$settings->linkedIn}}"><i class="fa fa-linkedin"></i></a> --}}
-                        <a href="{{$settings->intagram}}"><i class="fa fa-instagram"></i></a>
-                        {{-- <a href="{{$settings->pinterest}}"><i class="fa fa-pinterest"></i></a> --}}
-                    </div>
-
-                    <div class="copyright-text">
-                        <p> &copy; Copyrights
-                            <script>
-                              // document.write(new Date().getFullYear())
-                           </script>
-                          {{$settings->site_copyright}}
-                       </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Off Canvas Content Wrapper -->
-
-        <button class="btn-close"><i class="fa fa-close"></i></button>
-    </div>
-</aside>
-
-@include('layouts.js')

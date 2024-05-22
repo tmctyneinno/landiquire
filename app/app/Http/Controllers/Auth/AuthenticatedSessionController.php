@@ -19,7 +19,9 @@ class AuthenticatedSessionController extends Controller
      */
     public function create(): View
     {
+   
         return view('auth.login');
+        
     }
 
     /**
@@ -27,13 +29,16 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
-        $request->authenticate();
+      
 
+    
+        $request->authenticate();
+      
         if(request()->user()->new_login != null){
          request()->user()->update(['new_login' => null, 'is_verified' => null]);
         }
         $request->session()->regenerate();
-
+      
         AdminActivity::create([
             'login_ip' => $request->getClientIp(),
             'user_id' => $request->id

@@ -82,7 +82,7 @@
                                     </div>
                                 </li>
 
-                                <li class="list-group-item">
+                                {{-- <li class="list-group-item">
                                     <div class="flex-grow-1 min-width-0">
                                         <div class="mb-1 d-flex justify-content-between align-items-center">
                                             <div class="text-truncate app-list-title">Select Services</div>
@@ -111,7 +111,7 @@
                                         </div>
                                     </div>
                                                       
-                                </li>
+                                </li> --}}
                                 
                                 <li class="list-group-item">
                                     <div class="flex-grow-1 min-width-0">

@@ -23,8 +23,5 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        $this->call(IndustrySeeder::class);
-        $this->call(JobSeeder::class);
-
     }
 }

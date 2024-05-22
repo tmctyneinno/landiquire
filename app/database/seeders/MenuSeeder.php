@@ -19,9 +19,11 @@ class MenuSeeder extends Seeder
 
         $data = [
             ['name' => 'Home'],
+            ['name' => 'About'],
             ['name' => 'Services'],
-            ['name' => 'Request a Quote'],
-            ['name' => 'Jobs'],
+            ['name' => 'Events'],
+            ['name' => 'Donation'],
+            ['name' => 'Publications'],
             ['name' => 'Contact'] 
         ];
     

@@ -47,17 +47,7 @@
                       <li><a href="{{route('admin.blogs.index')}}">Manage Blog</a></li>
                 </ul>
         </li>  
-        
-        <li>
-            <a  href="" data-toggle="tooltip" data-placement="right" title="Manage Jobs"
-               data-nav-target="#dashboards">
-                <i class="fa fa-tasks"></i>&nbsp; Manage Jobs</a>
-                <ul>
-                      <li><a href="{{route('admin.JobsCreate')}}">Post Jobs</a></li>
-                      <li><a href="{{route('admin.Jobs.index')}}">Manage Jobs</a></li>
-                      <li><a href="{{route('admin.category.index')}}">Manage Job Id </a> </li>
-                </ul>
-        </li> 
+     
         
         
         <li class="navigation-divider">Settings</li>

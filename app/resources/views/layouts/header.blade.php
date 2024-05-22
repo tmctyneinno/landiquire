@@ -1,86 +1,100 @@
-<header class="header-area">
-    <!-- Start Pre Header Area -->
-    <div class="prehedaer-area-wrapper">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-8 col-xl-6 offset-xl-2 d-none d-sm-block">
-                    <div class="pre-header-left d-sm-flex justify-content-center justify-content-lg-start">
-                        <div class="pre-header-item">
-                            <a href="tel:1-775-97-377"><i class="fa fa-phone"></i> {{$settings->site_phone}}</a>
-                        </div>
-
-                        <div class="pre-header-item">
-                            <span><i class="fa fa-clock-o"></i>{{$settings->opening_hours}}</span>
-                        </div>
-
-                        <div class="pre-header-item">
-                            <a href="mailto:your@example.com"><i class="fa fa-envelope-o"></i> {{$settings->site_email}}</a>
-                        </div>
-                    </div>
+<div class="header-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="left">
+                    <ul>
+                        <li>
+                            <i class="icofont-location-pin"></i>
+                            <a href="#">{{$settings->address}}</a>
+                        </li>
+                        <li>
+                            <i class="icofont-ui-call"></i>
+                            <a href="tel:{{$settings->site_phone}}">{{$settings->site_phone}}</a>
+                        </li>
+                    </ul>
                 </div>
-
-                <div class="col-lg-4 d-none d-lg-block">
-                    <div class="pre-header-right text-center text-md-end">
-                        <div class="social-icons">
-                            <a href="{{$settings->facebook}}"><i class="fa fa-facebook"></i></a>
-                            <a href="{{$settings->twitter}}"><i class="fa fa-twitter"></i></a>
-                            {{-- <a href="{{$settings->linkedIn}}"><i class="fa fa-linkedin"></i></a> --}}
-                            <a href="{{$settings->instagram}}"><i class="fa fa-instagram"></i></a>
-                            {{-- <a href="{{$settings->pinterest}}"><i class="fa fa-pinterest"></i></a> --}}
-                        </div>
-                    </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="right">
+                    <ul>
+                        <li>
+                            <span>Follow Us:</span>
+                        </li>
+                        <li>
+                            <a href="{{$settings->facebook}}" target="_blank">
+                                <i class="icofont-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{$settings->twitter}}" target="_blank">
+                                <i class="icofont-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">
+                                <i class="icofont-youtube-play"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{$settings->instagram}}" target="_blank">
+                                <i class="icofont-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+                  
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Pre Header Area -->
+</div>
 
-    <!-- Start Header Bottom Area  -->
-    <div class="header-bottom header-shape sticky-header">
+<div class="navbar-area sticky-top">
+
+    <div class="mobile-nav">
+        <a href="{{route('index')}}" class="logo">
+            <img src="{{asset('assets/'.$settings->logo)}}"  width="100px" height="20px" alt="Logo">
+        </a>
+    </div>
+
+    <div class="main-nav">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-5 col-lg-2">
-                    <!-- Start Logo Area -->
-                    <div class="logo-area">
-                        <a href="{{route('index')}}"><img src="{{asset('/assets/logo.png')}}"  alt="Logo"/></a>
-                    </div>
-                    <!-- End Logo Area -->
-                </div>
-
-                <div class="col-lg-8 d-none d-lg-block">
-                    <!-- Start Navigation Area -->
-                    <nav class="navigation-area">
-                        <ul class="main-menu nav">
-                            @foreach ($menus as $menu )
-                            <li class="@if($menu->has_child) dropdown-navbar @else @endif ">@if($menu->name == 'Home') <a href="{{route('index')}}">{{$menu->name}}</a> @else <a href="{{route('pages', encrypt($menu->id))}}">{{$menu->name}}</a> @endif
-                                @if(count($menu->subMenu) > 0)
-                                <ul class="dropdown-nav">
-                                    @forelse ($menu->subMenu as $sub ) 
-                                    <li><a href="{{route('subpages', encrypt($sub->id))}}">{{$sub->name}}</a></li>   
-                                    @empty
-                                    @endforelse
-                                </ul>
-                            </li>
+            <nav class="navbar navbar-expand-md navbar-light">
+                <a class="navbar-brand" href="{{route('index')}}">
+                    <img src="{{asset('assets/'.$settings->logo)}}" width="120px" class="logo-one" alt="Logo">
+                    <img src="{{asset('assets/'.$settings->logo)}}" class="logo-two" alt="Logo">
+                </a>
+                <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        @foreach ($menus as $menu )
+                        <li class="nav-item">
+                            @if($menu->has_child)
+                            <li class="nav-link dropdown-toggle">
+                             @if(count($menu->subMenu) > 0)
+                            <ul class="dropdown-menu">
+                                @forelse ($menu->subMenu as $sub ) 
+                                <li class="nav-item">
+                                    <a href="index-2.html" class="nav-link">Home Demo One</a>
+                                </li>
+                                @empty
+                                @endforelse
+                            </ul>
                             @endif
-                            @endforeach
-                        </ul>
-                    </nav>
-                    <!-- End Navigation Area -->
-                </div>
-
-                <div class="col-6 col-lg-2">
-                    <!-- Start Header Action Area -->
-                    <div class="header-action-area">
-                        <ul class="action-buttons nav justify-content-end">
-                            <li class="d-lg-none">
-                                <button class="btn-canvas-open"><i class="pe-7s-menu"></i></button>
-                            </li>
-                        </ul>
+                        </li>
+                        @else
+                        @if($menu->name == 'Home') <a  class="nav-link" href="{{route('index')}}">{{$menu->name}}</a> @else <a class="nav-link" href="{{route('pages', encrypt($menu->id))}}">{{$menu->name}}</a> @endif
+                        @endif
+                        @endforeach
+                        
+                    </ul>
+                    <div class="side-nav">
+                        <a class="donate-btn" href="#">
+                            Donate
+                            <i class="icofont-heart-alt"></i>
+                        </a>
                     </div>
-                    <!-- End Header Action Area -->
                 </div>
-            </div>
+            </nav>
         </div>
     </div>
-    <!-- End Header Bottom Area  -->
-</header>
+</div>

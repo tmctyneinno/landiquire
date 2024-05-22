@@ -43,9 +43,9 @@
                             @forelse ($logins as $login)
                             <tr>
                                 <td> 
-                                    @php $details = json_decode(file_get_contents("http://ipinfo.io/$login->login_ip/json"));
+                                    {{-- @php $details = json_decode(file_get_contents("http://ipinfo.io/$login->login_ip/json"));
                                     echo $details->city.", ".$details->country;
-                                    @endphp
+                                    @endphp --}}
                                     </td>
                                 <td class="text-center">{{$login->login_ip}}</td>
                                 <td class="text-center text-success">{{$login->created_at}}</td>
@@ -63,35 +63,10 @@
             </div>
             
         </div>
-        <div class="col-md-5">
-            <div class="card">
-                <div class="card-body">
-                    <h6 class="card-title">Recent Job Applicants</h6>
-                    <ul class="list-group list-group-flush">
-                        @forelse ($applicants as $appl)
-                        <li class="list-group-item d-flex align-items-center p-l-r-0">
-                            
-                            <div>
-                                <h6 class="m-b-0">{{$appl->name}}</h6>
-                                <small class="text-muted">{{$appl->email}}</small> <br>
-                                <small class="text-muted">{{$appl->CientJobs->title}}</small>
-                            </div>
-                            <div class="ml-auto">
-                                <span class="badge  mr-2 d-sm-inline d-none">{{$appl->created_at->diffForHumans()}}</span>
-                                
-                            </div>
-                        </li> 
-                        @empty
-                            
-                        @endforelse
-                    
-                    </ul>
-                </div>
-            </div>
-        </div>
+    
     </div>
 
-    <div class="row">
+    {{-- <div class="row">
 
         <div class="col-md-12">
 
@@ -134,7 +109,7 @@
                                     <div class="d-flex d-sm-block d-lg-flex align-items-end">
                                         <h2 class="mb-0 mr-2 font-weight-bold">{{count($blogs)}}</h2>
                                         <p class="small text-muted mb-0 line-height-20">
-                                            {{-- <span class="text-danger">- 2%</span> than last week --}}
+                                         
                                         </p>
                                     </div>
                                 </div>
@@ -155,6 +130,6 @@
          <div class="mb-5 pb-3"></div>
 
         </div>
-    </div>
+    </div> --}}
 </div>
 @endsection
