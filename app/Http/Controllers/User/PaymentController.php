@@ -1,0 +1,104 @@
+<?php
+
+namespace App\Http\Controllers\User;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Unicodeveloper\Paystack\Facades\Paystack;
+use Illuminate\Support\Facades\{Auth, Hash, Redirect, Session, Validator};
+use App\Models\{Donation, DonationCategory, User, Wallet};
+
+
+class PaymentController extends Controller
+{
+    /**
+     * Redirect the User to Paystack Payment Page
+     * @return Url
+     */
+    
+    public function pay(Request $request)
+    {
+        $required_data = $request->only('amount');
+       $valid =  Validator::make($request->all(), [
+            'amount' => 'required|gte:100',
+            'name' => 'required',
+            'email' => 'required',
+        ]);
+
+        if($valid->fails()){
+            Session::flash('alert', 'danger');
+            Session::flash('message', $valid->errors()->first());
+            return back()->withInput($request->all());
+        }
+
+
+        $user = User::where('email', $request->email)->first();
+        if(!$user){
+            $user = user::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'phone' => $request->phone,
+                'password' => Hash::make($request->fullname)
+            ]);
+            Auth::login($user);
+        }
+    
+        // $tax = (intval($required_data['customAmount']) * 7.5)/100;
+        $trans_reference = str_replace(['\\', '/', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '{', '}', '[', ']'], '', substr(base64_encode(random_bytes(10)), 0,20));
+        $donation = Donation::whereId($request->category_id)->latest()->first();
+
+        Donation::create([
+            'user_id' => auth()->user()->id,
+            'donation_category_id' => $request->category_id,
+            'amount' => intval($required_data['amount']),
+            'is_public' => 1,
+            'ref' => $trans_reference,
+            'prev_balance' => $donation->prev_balance??0,
+            'total_amount' => $donation->prev_balance??0 + intval($required_data['amount']),
+        ]);
+        
+        $request->merge([
+            'amount' => intval($required_data['amount']) * 100,
+            'reference' => $trans_reference,
+            'email' => auth()->user()->email,
+            'currency' => 'NGN',
+            'metadata' => $request->category_id,
+        ]);
+
+        try{
+            return Paystack::getAuthorizationUrl()->redirectNow();
+        }catch(\Exception $e) {
+            return Redirect::back()->withMessage(['msg'=>'The paystack token has expired. Please refresh the page and try again.', 'type'=>'error']);
+        }        
+    }
+
+    /**
+     * Obtain Paystack payment information
+     * @return void
+     */
+
+    public function handleCallback(Request $request)
+    {
+        $response_data = Paystack::getPaymentData();
+        //  dd($response_data);
+
+        if ($response_data['status'] != true){
+            Session::flash('alert', 'success');
+            session()->flash('message', $response_data['message'].',please contact support.');
+            return redirect()->route('user.donation.details',  $response_data['data']['metadata']);
+        }
+       
+        if ($response_data['status'] == true  && $response_data['data']['status'] == 'success'){
+            $user = User::where('email', $response_data['data']['customer']['email'])->first();
+            if($user){
+                $transaction = Donation::where(['ref' => $response_data['data']['reference'], 'user_id' => $user->id])->first();
+                $transaction->update(['status'=> 'success']);
+            }
+            Session::flash('alert', 'success');
+            Session::flash('message', 'Payment completed successfully, thank you for donating');
+            return view('frontend.donation-details')
+            ->with('donation', DonationCategory::where('id',  $response_data['data']['metadata'])->first())
+            ->with('donations', Donation::where('donation_category_id', $response_data['data']['metadata'])->latest()->get());
+        }
+    }
+}
