@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('is_recurrent')->nullable();
             $table->double('prev_balance')->nullable();
             $table->double('total_amount')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }
