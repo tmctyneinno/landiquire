@@ -88,7 +88,7 @@
                         
                     </ul>
                     <div class="side-nav">
-                        <a class="donate-btn" href="#">
+                        <a class="donate-btn" href="{{route('users.donation.index')}}">
                             Donate
                             <i class="icofont-heart-alt"></i>
                         </a>
