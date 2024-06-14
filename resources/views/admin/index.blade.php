@@ -11,8 +11,8 @@
                             <h6 class="card-title mb-3">Welcome back Admin!</h6>
                             <p>Manage your website easily.</p>
                             <ul class="mb-3">
-                                <li>Post Blogs and manage post</li>
-                                <li>Manage jobs and applicants</li>
+                                {{-- <li>Post Blogs and manage post</li>
+                                <li>Manage jobs and applicants</li> --}}
                             </ul>
                             
                         </div>
