@@ -5,28 +5,27 @@
                 <div class="footer-item">
                     <div class="footer-logo">
                         <a class="logo" href="index-2.html">
-                            <img src="assets/img/logo-two.png" alt="Logo">
+                            <img src="{{asset('assets/'.$settings->logo)}}"  width="100px" alt="{{asset('assets/'.$settings->logo)}}">
                         </a>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat vero, magni est placeat
-                            neque, repellat maxime a dolore</p>
+                        <p>{{$settings->about}}</p>
                         <ul>
                             <li>
-                                <a href="#" target="_blank">
+                                <a href="{{$settings->facebook}}" target="_blank">
                                     <i class="icofont-facebook"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" target="_blank">
+                                <a href="{{$settings->twitter}}" target="_blank">
                                     <i class="icofont-twitter"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" target="_blank">
-                                    <i class="icofont-youtube-play"></i>
+                                <a href="{{$settings->linkedIn}}" target="_blank">
+                                    <i class="icofont-linkedin"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" target="_blank">
+                                <a href="{{$settings->instagram}}" target="_blank">
                                     <i class="icofont-instagram"></i>
                                 </a>
                             </li>
@@ -34,7 +33,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-lg-3">
+            {{-- <div class="col-sm-6 col-lg-3">
                 <div class="footer-item">
                     <div class="footer-causes">
                         <h3>Urgent causes</h3>
@@ -64,36 +63,31 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="col-sm-6 col-lg-3">
                 <div class="footer-item">
                     <div class="footer-links">
                         <h3>Quick links</h3>
                         <ul>
-                            <li>
-                                <a href="about.html">
-                                    <i class="icofont-simple-right"></i>
-                                    About
-                                </a>
-                            </li>
-                            <li>
-                                <a href="blog.html">
-                                    <i class="icofont-simple-right"></i>
-                                    Blog
-                                </a>
-                            </li>
-                            <li>
-                                <a href="events.html">
-                                    <i class="icofont-simple-right"></i>
-                                    Events
-                                </a>
-                            </li>
-                            <li>
-                                <a href="donation.html">
-                                    <i class="icofont-simple-right"></i>
-                                    Donation
-                                </a>
-                            </li>
+                            @foreach ($menus->take(4) as $menu )
+                        <li class="nav-item">
+                            @if($menu->has_child)
+                            <li class="nav-link dropdown-toggle">
+                             @if(count($menu->subMenu) > 0)
+                            <ul class="dropdown-menu">
+                                @forelse ($menu->subMenu as $sub ) 
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{route($menu->slug)}}">{{$menu->name}}</a> 
+                                </li>
+                                @empty
+                                @endforelse
+                            </ul>
+                            @endif
+                        </li>
+                        @else
+                       <a class="nav-link" href="{{route($menu->slug)}}">{{$menu->name}}</a> 
+                        @endif
+                        @endforeach
                         </ul>
                     </div>
                 </div>
@@ -106,11 +100,11 @@
                             <ul>
                                 <li>
                                     <i class="icofont-location-pin"></i>
-                                    <a href="#">6B, Helvetica street, Jordan</a>
+                                    <a href="#">Address: {{$settings->address}}</a>
                                 </li>
                                 <li>
                                     <i class="icofont-ui-call"></i>
-                                    <a href="tel:+123456789">+123-456-789</a>
+                                    <a href="tel:+123456789"> Phone: {{$settings->site_phone}}</a>
                                 </li>
                             </ul>
                         </div>
@@ -118,11 +112,7 @@
                             <ul>
                                 <li>
                                     <i class="icofont-location-pin"></i>
-                                    <a href="#">6A, New street, Spain</a>
-                                </li>
-                                <li>
-                                    <i class="icofont-ui-call"></i>
-                                    <a href="tel:+548658956">+548-658-956</a>
+                                    <a href="#">Email: {{$settings->site_email}}</a>
                                 </li>
                             </ul>
                         </div>
@@ -133,8 +123,9 @@
         <div class="copyright-area">
             <p>Copyright @
                 <script>
-                    document.write(new Date().getFullYear())
+                    document.write(new Date().getFullYear()) 
                 </script>
+                {{$settings->site_copyright}}
             </p>
         </div>
     </div>

@@ -4,63 +4,63 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <form action='{{ route('admin.donation.store') }}' method='post' enctype='multipart/form-data'>
+                <form action='{{ route('admin.teams.store') }}' method='post', enctype='multipart/form-data'>
                     @csrf
                     <div class="card">
                         <div class="card-body">
-                            <h6 class="card-title">Donation Categories </h6>
+                            <h6 class="card-title">Company Team Members</h6>
 
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" name="title" placeholder="Enter Title"
-                                            value="{{ old('title') }}"
-                                            class="form-control @error('title') is-invalid @enderror">
+                                        <input type="text" name="name" placeholder="Enter Title"
+                                            value="{{ old('name') }}"
+                                            class="form-control @error('name') is-invalid @enderror">
                                         <small id="emailHelp" class="form-text text-muted">Title
                                         </small>
-                                        @error('title')
+                                        @error('name')
                                             <span class="invalid-feedback"> <small> * </small> </span>
                                         @enderror
                                     </div>
                                 </div>
+
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" name="goal_amount" placeholder="Enter Target Amount"
-                                            value="{{ old('goal_amount') }}"
-                                            class="form-control @error('goal_amount') is-invalid @enderror">
-                                        <small id="emailHelp" class="form-text text-muted">Target Amount
+                                        <input type="text" name="position" placeholder="Enter position"
+                                            value="{{ old('position') }}"
+                                            class="form-control @error('position') is-invalid @enderror">
+                                        <small id="emailHelp" class="form-text text-muted">Enter Position
                                         </small>
-                                        @error('goal_amount')
+                                        @error('position')
                                             <span class="invalid-feedback"> <small> * </small> </span>
                                         @enderror
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <textarea id="summernote" name="content" class="form-control @error('content') is-invalid @enderror">
-                                            {{ old('content') }}
-                                          </textarea>
-                                        <small id="emailHelp" class="form-text text-muted">Enter Content
-                                        </small>
-                                        @error('content')
-                                            <span class="invalid-feedback"> <small> * </small> </span>
-                                        @enderror
-                                    </div>
-                                </div>
-
-
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input type="file" name="image" placeholder="Select Image"
+                                        <input type="file" name="image" 
                                             value="{{ old('image') }}"
                                             class="form-control @error('image') is-invalid @enderror">
-                                        <small id="emailHelp" class="form-text text-muted">Select Cover Image
+                                        <small id="emailHelp" class="form-text text-muted">Select Image
                                         </small>
                                         @error('image')
                                             <span class="invalid-feedback"> <small> * </small> </span>
                                         @enderror
                                     </div>
                                 </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea id="summernote" name="about" class="form-control @error('about') is-invalid @enderror">
+                                    {{ old('about') }}
+                                  </textarea>
+                                        <small id="emailHelp" class="form-text text-muted">Enter Brief Bio
+                                        </small>
+                                        @error('about')
+                                            <span class="invalid-feedback"> <small> * </small> </span>
+                                        @enderror
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -71,8 +71,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="p-5">
-                                        <button type="submit" class=" btn btn-primary w-10 p-3 ">Add Donation
-                                            Category</button>
+                                        <button type="submit" class=" btn btn-primary w-10 p-3 ">Add Team Member</button>
                                     </div>
                                 </div>
                             </div>

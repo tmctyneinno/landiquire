@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\User\DonationController as UserDonation;
+use App\Http\Controllers\User\EventController;
 use App\Http\Controllers\User\PaymentController;
 
 /*
@@ -18,7 +19,6 @@ use App\Http\Controllers\User\PaymentController;
 */
 
 
-
 require __DIR__.'/admin.php';
 
 
@@ -28,6 +28,10 @@ Route::get('/donations', 'Index')->name('users.donation.index');
 Route::get('donations/{donation_id}', 'Details')->name('user.donation.details');
 });
 
+Route::controller(EventController::class)->group(function(){
+Route::get('/event', 'Index')->name('user.events.index');
+Route::get('/events/{event_id}', 'Details')->name('users.events.details');
+});
 
 Route::post('/pay', [PaymentController::class, 'pay'])->name('pay');
 Route::get('/payment/callback', [PaymentController::class,'handleCallback']);

@@ -74,7 +74,7 @@
                             <ul class="dropdown-menu">
                                 @forelse ($menu->subMenu as $sub ) 
                                 <li class="nav-item">
-                                    <a href="index-2.html" class="nav-link">Home Demo One</a>
+                                    <a class="nav-link" href="{{route($menu->slug)}}">{{$menu->name}}</a> 
                                 </li>
                                 @empty
                                 @endforelse
@@ -82,7 +82,7 @@
                             @endif
                         </li>
                         @else
-                        @if($menu->name == 'Home') <a  class="nav-link" href="{{route('index')}}">{{$menu->name}}</a> @else <a class="nav-link" href="{{route('pages', encrypt($menu->id))}}">{{$menu->name}}</a> @endif
+                       <a class="nav-link" href="{{route($menu->slug)}}">{{$menu->name}}</a> 
                         @endif
                         @endforeach
                         

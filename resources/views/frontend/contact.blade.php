@@ -1,117 +1,122 @@
 @extends('layouts.app')
 @section('contents')
-
-@if(isset($breadcrums))
-<div class="page-header-area" style="background: #ddd url('{{asset('/images/'.$breadcrums->image)}}')   center; ">
-   @else 
-   <div class="page-header-area" style="background: #ddd url('{{asset('/images')}}') no-repeat center">
-   @endif
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-6 col-lg-4">
-                <div class="page-header-title text-center text-md-start">
-                    {{-- <h1>Blog Details</h1> --}}
+    <div class="page-title-area title-bg-eight">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="title-item">
+                        <h2>Contact</h2>
+                        <ul>
+                            <li>
+                                <a href="{{route('index')}}">Home</a>
+                            </li>
+                            <li>
+                                <span>Contact</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-
-            <div class="col-md-6 col-lg-8">
-                {{-- <nav class="page-header-breadcrumb text-center text-md-end">
-                    <ul class="breadcrumb">
-                        <li><a href="{{route('index')}}">Home</a></li>
-                        <li class="active"><a href="">Blog Details</a></li>
-                    </ul>
-                </nav> --}}
             </div>
         </div>
     </div>
-</div>
 
-<!-- Start Page Content Wrapper -->
-<div class="page-content-wrap pt-90 pt-sm-60 pb-90 pb-sm-60 mb-xl-30">
-    <div class="contact-page-area-wrapper">
+
+    <div class="contact-info-area pt-100 pb-70">
+        @if(Session::has('message'))
+        <span class="alert alert-{{Session::get('alert')}}"> {{Session::get('message')}}</span>
+        @endif
         <div class="container">
             <div class="row">
-                
-
-                <div class="col-lg-6 order-2 order-lg-2">
-                    <div class="contact-map mt-md-50 mt-sm-30">
-                        <div id="map_content" class="h-100" data-lat="6.5095" data-lng="3.3711"
-                             data-zoom="12"></div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="contact-info">
+                        <i class="icofont-location-pin"></i>
+                        <span>Location:</span>
+                        <a href="#">{{$settings->address}}</a>
                     </div>
                 </div>
-
-                <div class="col-md-6 col-lg-6 order-1 order-lg-1">
-                    @if(Session::has('message'))
-                    <span class="alert alert-{{Session::get('alert')}}"> {{Session::get('message')}}</span>
-                    @endif
-                    <div class="section-title-wrap mb-24 mtm-8">
-                        <h2>Get In Touch</h2>
-                    </div>
-                    <div class="office-info">
-                        <p><i class="fa fa-map-marker"></i> {{$settings->address}}</p>
-                        <p><i class="fa fa-phone"></i> {{$settings->site_phone}}</p>
-                        <p><i class="fa fa-envelope-o"></i> {{$settings->site_email}}</p>
-                        <p><i class="fa fa-clock-o"></i> {{$settings->opening_hours}}</p>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="contact-info">
+                        <i class="icofont-ui-call"></i>
+                        <span>Phone:</span>
+                        <a href="tel:+123456789">{{$settings->site_phone}}</a>
                     </div>
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12">
-                    <div class="contact-page-form-area mt-90 mt-sm-60">
-                        <div class="section-title-wrap mb-36 mb-sm-26">
-                            <h2>Get In Touch</h2>
-                        </div>
-
-                        <div class="contact-form">
-                            <form id="" action="{{route('contact-email')}}" method="post">
-                                @csrf
-                                <div class="contact-form-content">
-                                    <div class="row mb-20">
-                                        <div class="col-lg-4">
-                                            <div class="form-input-item">
-                                                <input type="text" value="{{old('name')}}" name="name" placeholder="Your Name*" required/>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-4">
-                                            <div class="form-input-item">
-                                                <input type="text" value="{{old('phone')}}" name="phone" placeholder="Your Phone*" required/>
-                                            </div>
-                                        </div>
-                                        <input type="hidden" name="key" value="{{$key}}"> 
-
-                                        <div class="col-lg-4">
-                                            <div class="form-input-item">
-                                                <input type="email" value="{{old('email')}}" name="email" placeholder="Your Email*"
-                                                       required/>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-input-item">
-                                        <textarea name="message" id="con_message" cols="30" rows="8"
-                                                  placeholder="Write your Message*" required>{{old('message')}}</textarea>
-                                    </div>
-                                    <p> @php echo captcha_img() @endphp </p>
-                                    <p><input type="text" placeholder="Enter captcha" name="captcha" required>
-                                     </p>
-
-
-                                    <div class="form-input-item">
-                                        <button type="submit" class="btn btn-brand">Send Message</button>
-                                    </div>
-                                </div>
-
-                                <!-- Show Message Notification -->
-                                <div class="form-message mt-1"></div>
-                            </form>
-                        </div>
+                <div class="col-sm-6 offset-sm-3 offset-lg-0 col-lg-4">
+                    <div class="contact-info">
+                        <i class="icofont-ui-email"></i>
+                        <span>Email:</span>
+                        <a href="{{$settings->site_email}}"> </span></a>
+                       
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
+
+    <div class="contact-area pb-70">
+        <div class="container">
+            <form id="contactForm"action="{{route('contact-email')}}" method="post">
+                @csrf
+                <h2>Get in touch with us...!</h2>
+                <p>Please fill the contact form below and submit</p>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>
+                                <i class="icofont-user-alt-3"></i>
+                            </label>
+                            <input type="text" name="name" value="{{old('name')}}" id="name" class="form-control" placeholder="Name"
+                                required data-error="Please enter your name">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>
+                                <i class="icofont-ui-email"></i>
+                            </label>
+                            <input type="email" value="{{old('email')}}" name="email" id="email" class="form-control" placeholder="Email"
+                                required data-error="Please enter your email">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>
+                                <i class="icofont-ui-call"></i>
+                            </label>
+                            <input type="text"  value="{{old('phone')}}" name="phone" id="phone_number" placeholder="Phone" required
+                                data-error="Please enter your number" class="form-control">
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>
+                                <i class="icofont-comment"></i>
+                            </label>
+                            <textarea name="message"  class="form-control" id="message" cols="30" rows="8" placeholder="Write message"
+                                required data-error="Write your message"> {{old('message')}}</textarea>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <button type="submit" class="btn common-btn">
+                            Send Message
+                        </button>
+                        <div id="msgSubmit" class="h3 text-center hidden"></div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="map-area">
+        <iframe id="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59843174.53779285!2d62.17507173408571!3d23.728204508550363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3663f18a24cbe857%3A0xa9416bfcd3a0f459!2sAsia!5e0!3m2!1sen!2sbd!4v1603558902714!5m2!1sen!2sbd"
+            allowfullscreen aria-hidden="false" tabindex="0"></iframe>
+    </div>
 @endsection

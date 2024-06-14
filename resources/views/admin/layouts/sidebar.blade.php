@@ -66,6 +66,25 @@
                       <li><a href="{{route('admin.blogs.index')}}">Manage Blog</a></li>
                 </ul>
         </li>  
+        <li>
+            <a  href="" data-toggle="tooltip" data-placement="right" title="Manage Blogs"
+               data-nav-target="#dashboards">
+                <i class="fa fa-newspaper-o"></i>&nbsp; Manage Galleries</a>
+                <ul>
+                      <li><a href="{{route('admin.galleries.index')}}">Manage Galleries</a></li>
+                      <li><a href="{{route('admin.galleries.create')}}">Create Gallery</a></li>
+                </ul>
+        </li>  
+        <li>
+            <a  href="" data-toggle="tooltip" data-placement="right" title="Manage Blogs"
+               data-nav-target="#dashboards">
+                <i class="fa fa-newspaper-o"></i>&nbsp; Manage Teams</a>
+                <ul>
+                      <li><a href="{{route('admin.teams.index')}}">Manage team</a></li>
+                      <li><a href="{{route('admin.teams.create')}}">Add team</a></li>
+                </ul>
+        </li>  
+     
      
         
         

@@ -99,227 +99,28 @@
         </div>
     </section>
 
-
-    <section class="event-area pt-100 pb-70">
-        <div class="container">
-            <div class="section-title">
-                <span class="sub-title">Our events</span>
-                <h2>Upcoming events near you</h2>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="event-item">
-                        <img src="assets/img/event/event3.jpg" alt="Event">
-                        <div class="inner">
-                            <h4>10 <span>Jan</span></h4>
-                            <h3>
-                                <a href="event-details.html">Relief giving - Providing relief</a>
-                            </h3>
-                            <ul>
-                                <li>
-                                    <i class="icofont-stopwatch"></i>
-                                    <span>3.00pm - 4.00pm</span>
-                                </li>
-                                <li>
-                                    <i class="icofont-location-pin"></i>
-                                    <span>USA</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="event-item-right">
-                        <h4>06 <span>Jan</span></h4>
-                        <h3>
-                            <a href="event-details.html">Challenge is right for you</a>
-                        </h3>
-                        <ul>
-                            <li>
-                                <i class="icofont-stopwatch"></i>
-                                <span>10.00am - 11.00am</span>
-                            </li>
-                            <li>
-                                <i class="icofont-location-pin"></i>
-                                <span>UK</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="event-item-right">
-                        <h4>07 <span>Jan</span></h4>
-                        <h3>
-                            <a href="event-details.html">Fundraising is going</a>
-                        </h3>
-                        <ul>
-                            <li>
-                                <i class="icofont-stopwatch"></i>
-                                <span>11.00am - 12.00pm</span>
-                            </li>
-                            <li>
-                                <i class="icofont-location-pin"></i>
-                                <span>France</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="event-item-right">
-                        <h4>08 <span>Jan</span></h4>
-                        <h3>
-                            <a href="event-details.html">Bowling for a cause</a>
-                        </h3>
-                        <ul>
-                            <li>
-                                <i class="icofont-stopwatch"></i>
-                                <span>1.00pm - 1.30pm</span>
-                            </li>
-                            <li>
-                                <i class="icofont-location-pin"></i>
-                                <span>Spain</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <div class="counter-area pt-100 pb-70">
-        <div class="container">
-            <div class="row">
-                <div class="col-6 col-sm-6 col-lg-3">
-                    <div class="counter-item">
-                        <i class="flaticon-index"></i>
-                        <h3>
-                            <span class="odometer" data-count="30">00</span>
-                            <span class="target">M</span>
-                        </h3>
-                        <p>Total fund raised</p>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-6 col-lg-3">
-                    <div class="counter-item">
-                        <i class="flaticon-event"></i>
-                        <h3>
-                            <span class="odometer" data-count="250">00</span>
-                            <span class="target">+</span>
-                        </h3>
-                        <p>Successful events</p>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-6 col-lg-3">
-                    <div class="counter-item">
-                        <i class="flaticon-charity"></i>
-                        <h3>
-                            <span class="odometer" data-count="550">00</span>
-                            <span class="target">+</span>
-                        </h3>
-                        <p>Worldwide volunteers</p>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-6 col-lg-3">
-                    <div class="counter-item">
-                        <i class="flaticon-helping-hand"></i>
-                        <h3>
-                            <span class="odometer" data-count="500">00</span>
-                            <span class="target">+</span>
-                        </h3>
-                        <p>Our donner</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <section class="work-area pt-100 pb-70">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="work-content">
-                        <div class="section-title">
-                            <span class="sub-title">How we work</span>
-                            <h2>We exist for non-profits, social enterprises, community groups</h2>
-                        </div>
-                        <ul>
-                            <li>
-                                <h3><span>01</span>Raise money from different sources</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, pariatur esse animi
-                                    temporibus iusto at dolorum</p>
-                            </li>
-                            <li>
-                                <h3><span>02</span>Giving relief in rural area all over the world</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, pariatur esse animi
-                                    temporibus iusto at dolorum</p>
-                            </li>
-                            <li>
-                                <h3><span>03</span>Gather all the money and giving relief in need</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, pariatur esse animi
-                                    temporibus iusto at dolorum</p>
-                            </li>
-                            <li>
-                                <h3><span>04</span>Go to the country that really needs help</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, pariatur esse animi
-                                    temporibus iusto at dolorum</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="work-img">
-                        <img src="assets/img/work/work1.jpg" alt="Work">
-                        <img src="assets/img/work/work2.jpg" alt="Work">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
     <section class="gallery-area two pt-100 pb-70">
         <div class="container-fluid">
             <div class="section-title">
                 <span class="sub-title">Our gallery</span>
                 <h2>Discover the best things we do</h2>
-                <p>We exist for non-profits, social enterprises, community groups, activists,lorem politicians and
-                    individual citizens that are making.</p>
             </div>
             <div class="gallery-slider owl-theme owl-carousel">
+                @forelse($galleries as $gallery)
                 <div class="gallery-item">
-                    <a href="assets/img/gallery/gallery1.jpg" data-lightbox="roadtrip">
-                        <img src="assets/img/gallery/gallery1.jpg" alt="Gallery">
-                        <i class="icofont-eye"></i>
+                    @php 
+                    $gallery_image = json_decode($gallery->images);;
+                    @endphp
+                    <a href="" >
+                        <img src="{{asset('images/'.$gallery_image[0])}}" alt="Gallery">
+                        <i class="" style="font-size: 10px"> View Gallery</i>
                     </a>
+                    <p style="font-weight:bolder; font-family:Verdana, Geneva, Tahoma, sans-serif" class="p-2">{{$gallery->title}} </p>
+                   
                 </div>
-                <div class="gallery-item">
-                    <a href="assets/img/gallery/gallery2.jpg" data-lightbox="roadtrip">
-                        <img src="assets/img/gallery/gallery2.jpg" alt="Gallery">
-                        <i class="icofont-eye"></i>
-                    </a>
-                </div>
-                <div class="gallery-item">
-                    <a href="assets/img/gallery/gallery3.jpg" data-lightbox="roadtrip">
-                        <img src="assets/img/gallery/gallery3.jpg" alt="Gallery">
-                        <i class="icofont-eye"></i>
-                    </a>
-                </div>
-                <div class="gallery-item">
-                    <a href="assets/img/gallery/gallery4.jpg" data-lightbox="roadtrip">
-                        <img src="assets/img/gallery/gallery4.jpg" alt="Gallery">
-                        <i class="icofont-eye"></i>
-                    </a>
-                </div>
-                <div class="gallery-item">
-                    <a href="assets/img/gallery/gallery5.jpg" data-lightbox="roadtrip">
-                        <img src="assets/img/gallery/gallery5.jpg" alt="Gallery">
-                        <i class="icofont-eye"></i>
-                    </a>
-                </div>
-                <div class="gallery-item">
-                    <a href="assets/img/gallery/gallery6.jpg" data-lightbox="roadtrip">
-                        <img src="assets/img/gallery/gallery6.jpg" alt="Gallery">
-                        <i class="icofont-eye"></i>
-                    </a>
-                </div>
+                @empty 
+                @endforelse
+               
             </div>
         </div>
     </section>
@@ -328,17 +129,17 @@
     <section class="team-area pb-70">
         <div class="container">
             <div class="section-title">
-                <span class="sub-title">Volunteer</span>
-                <h2>Meet our excellent volunteers</h2>
-                <p>We exist for non-profits, social enterprises, community groups, activists,lorem politicians and
-                    individual citizens that are making.</p>
+                <span class="sub-title">Our Team</span>
+                <h2>Meet our excellent Team Members</h2>
+              
             </div>
             <div class="row">
+                @forelse($teams as $team)
                 <div class="col-sm-6 col-lg-4">
                     <div class="team-item">
                         <div class="top">
-                            <img src="assets/img/team/team1.jpg" alt="Team">
-                            <ul>
+                            <img src="{{asset('images/'.$team->image)}}" alt="{{ucfirst($team->name)}}">
+                            {{-- <ul>
                                 <li>
                                     <a href="#" target="_blank">
                                         <i class="icofont-facebook"></i>
@@ -359,85 +160,23 @@
                                         <i class="icofont-instagram"></i>
                                     </a>
                                 </li>
-                            </ul>
+                            </ul> --}}
                         </div>
                         <div class="bottom">
-                            <h3>Jenas handar</h3>
-                            <span>CEO & Founder</span>
+                            <h3>{{ucfirst($team->name)}}</h3>
+                            <span>{{ucfirst($team->position)}}</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="team-item">
-                        <div class="top">
-                            <img src="assets/img/team/team2.jpg" alt="Team">
-                            <ul>
-                                <li>
-                                    <a href="#" target="_blank">
-                                        <i class="icofont-facebook"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" target="_blank">
-                                        <i class="icofont-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" target="_blank">
-                                        <i class="icofont-youtube-play"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" target="_blank">
-                                        <i class="icofont-instagram"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="bottom">
-                            <h3>Smithy alisha</h3>
-                            <span>Manager</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 offset-sm-3 offset-lg-0 col-lg-4">
-                    <div class="team-item">
-                        <div class="top">
-                            <img src="assets/img/team/team3.jpg" alt="Team">
-                            <ul>
-                                <li>
-                                    <a href="#" target="_blank">
-                                        <i class="icofont-facebook"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" target="_blank">
-                                        <i class="icofont-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" target="_blank">
-                                        <i class="icofont-youtube-play"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" target="_blank">
-                                        <i class="icofont-instagram"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="bottom">
-                            <h3>Johan mendal</h3>
-                            <span>Volunteer</span>
-                        </div>
-                    </div>
-                </div>
+                @empty 
+
+                @endforelse
+              
             </div>
         </div>
     </section>
 
-
+{{-- 
     <section class="testimonial-area ptb-100">
         <div class="container">
             <div class="section-title">
@@ -546,30 +285,29 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
 
     <section class="blog-area three pt-100 pb-70">
         <div class="container">
             <div class="section-title">
                 <span class="sub-title">Latest news & blog</span>
-                <h2>Latest charity blog</h2>
-                <p>We exist for non-profits, social enterprises, community groups, activists,lorem politicians and
-                    individual citizens that are making.</p>
+                <h2>Latest  Blog</h2>
             </div>
             <div class="row">
+                @forelse($blogs as $blog)
                 <div class="col-sm-6 col-lg-4">
                     <div class="blog-item">
                         <div class="top">
                             <a href="blog-details.html">
-                                <img src="assets/img/blog/blog1.jpg" alt="Blog">
+                                <img src="{{asset('images/'.$blog->image)}}" alt="Blog">
                             </a>
                         </div>
                         <div class="bottom">
                             <ul>
                                 <li>
                                     <i class="icofont-calendar"></i>
-                                    <span>21 Jan, 2020</span>
+                                    <span>{{$blog->created_at->format('d m Y')}}</span>
                                 </li>
                                 <li>
                                     <i class="icofont-user-alt-3"></i>
@@ -578,70 +316,15 @@
                                 </li>
                             </ul>
                             <h3>
-                                <a href="blog-details.html">Donate for nutration less poor people</a>
+                                <a href="blog-details.html">{{$blog->title}}</a>
                             </h3>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet cupiditate sit ducimus dolor
-                                laudantium distinction</p>
+                            <p>{!!  substr($blog->contents, 0,200)!!}</p>
                             <a class="blog-btn" href="blog-details.html">Read More</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="blog-item">
-                        <div class="top">
-                            <a href="blog-details.html">
-                                <img src="assets/img/blog/blog2.jpg" alt="Blog">
-                            </a>
-                        </div>
-                        <div class="bottom">
-                            <ul>
-                                <li>
-                                    <i class="icofont-calendar"></i>
-                                    <span>22 Jan, 2020</span>
-                                </li>
-                                <li>
-                                    <i class="icofont-user-alt-3"></i>
-                                    <span>By:</span>
-                                    <a href="#">Admin</a>
-                                </li>
-                            </ul>
-                            <h3>
-                                <a href="blog-details.html">Charity meetup in Berline next year</a>
-                            </h3>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet cupiditate sit ducimus dolor
-                                laudantium distinction</p>
-                            <a class="blog-btn" href="blog-details.html">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 offset-sm-3 offset-lg-0 col-lg-4">
-                    <div class="blog-item">
-                        <div class="top">
-                            <a href="blog-details.html">
-                                <img src="assets/img/blog/blog3.jpg" alt="Blog">
-                            </a>
-                        </div>
-                        <div class="bottom">
-                            <ul>
-                                <li>
-                                    <i class="icofont-calendar"></i>
-                                    <span>23 Jan, 2020</span>
-                                </li>
-                                <li>
-                                    <i class="icofont-user-alt-3"></i>
-                                    <span>By:</span>
-                                    <a href="#">Admin</a>
-                                </li>
-                            </ul>
-                            <h3>
-                                <a href="blog-details.html">Donate for the poor people to help them</a>
-                            </h3>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet cupiditate sit ducimus dolor
-                                laudantium distinction</p>
-                            <a class="blog-btn" href="blog-details.html">Read More</a>
-                        </div>
-                    </div>
-                </div>
+                @empty 
+                @endif
             </div>
         </div>
     </section>
