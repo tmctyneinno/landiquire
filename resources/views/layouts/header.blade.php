@@ -72,7 +72,7 @@
                             <li class="nav-link dropdown-toggle">
                              @if(count($menu->subMenu) > 0)
                             <ul class="dropdown-menu">
-                                @forelse ($menu->subMenu as $sub ) 
+                                @forelse ($menu->subMenu as $sub) 
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{route($menu->slug)}}">{{$menu->name}}</a> 
                                 </li>

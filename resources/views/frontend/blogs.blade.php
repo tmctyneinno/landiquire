@@ -1,128 +1,81 @@
 @extends('layouts.app')
 @section('contents')
-@if(isset($breadcrums))
-<div class="page-header-area" style="background: #ddd url('{{asset('/images/'.$breadcrums->image)}}')  center">
-   @else 
-   <div class="page-header-area" style="background: #ddd url('{{asset('/images')}}') no-repeat center">
-   @endif
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-6 col-lg-4">
-                <div class="page-header-title text-center text-md-start">
-                    {{-- <h1>Blog Details</h1> --}}
+    <div class="page-title-area title-bg-three" style="height:300px">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="title-item">
+                        <h2>Blog</h2>
+                        <ul>
+                            <li>
+                                <a href="{{route('index')}}">Home</a>
+                            </li>
+                            <li>
+                                <span>Blog</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-
-            <div class="col-md-6 col-lg-8">
-                {{-- <nav class="page-header-breadcrumb text-center text-md-end">
-                    <ul class="breadcrumb">
-                        <li><a href="{{route('index')}}">Home</a></li>
-                        <li class="active"><a href="">Blog Details</a></li>
-                    </ul>
-                </nav> --}}
             </div>
         </div>
     </div>
-</div>
-<!-- Start Page Content Wrapper -->
-<div class="page-content-wrap pt-90 pt-sm-60 pb-90 pb-sm-52 mb-xl-30">
-    <div class="blog-page-area-wrapper">
+
+
+    <section class="blog-area three ptb-100">
         <div class="container">
             <div class="row">
-                <div class="col-lg-9">
-                    <div class="blog-page-content-inner">
-                        <div class="row news-grid">
-
-                            @forelse ($blogs as  $blog)
-                            <div class="col-sm-12 col-lg-4">
-                                <!-- Start Single News Item -->
-                                <div class="news-item">
-                                    <figure class="news-item__thumb">
-                                        <a href="{{route('blog.details', encrypt($blog->id))}}"><img src="{{asset('images/'.$blog->image)}}" alt="Post"/></a>
-                                    </figure>
-
-                                    <div class="news-item__info" style="text-align:justify">
-                                        <h2><a href="{{route('blog.details', encrypt($blog->id))}}">{{$blog->title}}</a></h2>
-                                        <div class="post-meta">
-                                            {{-- <a href="#" class="post-date"><i class="fa fa-clock-o"></i>{{$blog->created_at->format('d/m/y')}}</a> --}}
-                                        </div>
-                                        <p style="color:#fff; ">{!! substr($blog->contents, 0, 400) !!}
-                                            </p>
-                                        <a href="{{route('blog.details', encrypt($blog->id))}}" class="btn btn-brand">Read More</a>
-                                    </div>
-                                </div>
-                                <!-- End Single News Item -->
-                            </div>
-
-                            @empty
-                                
-                            @endforelse 
-
-                          
-
+                @forelse($blogs as $blog)
+                <div class="col-sm-6 col-lg-4">
+                    <div class="blog-item">
+                        <div class="top">
+                            <a href="{{route('blog.details', encrypt($blog->id))}}">
+                                <img src="{{asset('images/'.$blog->image)}}" alt="Blog">
+                            </a>
                         </div>
-
-                        {{-- <div class="row">
-                            <div class="col-12">
-                                <!-- Start Pagination Wrap -->
-                                <div class="pagination-wrap mt-60 mt-md-40 mt-sm-40">
-                                    <ul class="pagination justify-content-center">
-                                        <li><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
-                                        <li><a href="#" class="current">1</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
-                                    </ul>
-                                </div>
-                                <!-- End Pagination Wrap -->
-                            </div>
-                        </div> --}}
+                        <div class="bottom">
+                            <ul>
+                                <li>
+                                    <i class="icofont-calendar"></i>
+                                    <span>{{$blog->created_at->format('d m Y')}}</span>
+                                </li>
+                                <li>
+                                    <i class="icofont-user-alt-3"></i>
+                                    <span>By:</span>
+                                    <a href="{{route('blog.details', encrypt($blog->id))}}">Admin</a>
+                                </li>
+                            </ul>
+                            <h3>
+                                <a href="{{route('blog.details', encrypt($blog->id))}}">{{$blog->title}}</a>
+                            </h3>
+                            <p>{!! substr($blog->contents,0,200)!!}</p>
+                            <a class="blog-btn" href="{{route('blog.details', encrypt($blog->id))}}">Read More</a>
+                        </div>
                     </div>
                 </div>
+                @empty 
 
-                {{-- <div class="col-lg-3">
-                    <div class="sidebar-area mt-md-52 mt-sm-52">
-                        <aside class="sidebar-wrapper">
-                          
-                            <!-- End Single Sidebar -->
-
-                            <!-- Start Single Sidebar -->
-                            <div class="sidebar-item">
-                                <h3 class="sidebar-title">Popular Post</h3>
-                                <div class="sidebar-body">
-                                    <div class="recent-news">
-                                        @forelse($popular as $post)
-                                        <div class="recent-news-item">
-                                            <figure class="recent-news-item__thumb">
-                                                <a href="{{route('blog.details', encrypt($post->id))}}"><img src="{{asset('assets/img/news/post-01.jpg')}}"
-                                                                                 alt="Recent News"/></a>
-                                            </figure>
-
-                                            <div class="recent-news-item__info">
-                                                <h3><a href="{{route('blog.details', encrypt($post->id))}}">{{$post->title}}</a></h3>
-                                                <div class="news-meta">
-                                                    <span class="post-date"><i
-                                                            class="fa fa-clock-o"></i>{{$post->created_at->format('d/m/y')}}</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        @empty 
-
-                                        @endforelse
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Single Sidebar -->
-
-                            <!-- Start Single Sidebar -->
-            
-                            <!-- End Single Sidebar -->
-                        </aside>
-                    </div>
-                </div> --}}
+                @endforelse
+             
             </div>
+            {{-- <div class="pagination-area">
+                <ul>
+                    <li>
+                        <a href="#">Prev</a>
+                    </li>
+                    <li>
+                        <a class="active" href="#">1</a>
+                    </li>
+                    <li>
+                        <a href="#">2</a>
+                    </li>
+                    <li>
+                        <a href="#">3</a>
+                    </li>
+                    <li>
+                        <a href="#">Next</a>
+                    </li>
+                </ul>
+            </div> --}}
         </div>
-    </div>
-</div>
-
+    </section>
 @endsection

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
 use App\Models\About;
 use App\Models\Blog;
@@ -11,6 +11,8 @@ use App\Models\Slider;
 use App\Models\SubMenu;
 use App\Models\TeamMember;
 use App\Models\Testimonial;
+
+use App\Http\Controllers\Controller;
 
 
 class DashboardController extends Controller

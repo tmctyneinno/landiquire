@@ -8,7 +8,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="about-img">
-                        <img src="assets/img/about/about-main1.jpg" alt="About">
+                        <img src="{{asset('images/'.$about->image)}}" alt="About">
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -81,8 +81,8 @@
                                     </div>
                                 </div>
                                 <ul>
-                                    <li> Amount Raised {{moneyFormat($donation->amount_raised)}}</li>
-                                    <li> Donation Goal {{moneyFormat($donation->goal_amount)}}</li>
+                                    <li> Raised {{moneyFormat($donation->amount_raised)}}</li>
+                                    <li> Goal {{moneyFormat($donation->goal_amount)}}</li>
                                 </ul>
                                 @if($donation->amount_raised > 0)
                                 <h4>Donated by <span>{{$donation->total_donors}}people</span></h4>

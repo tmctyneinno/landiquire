@@ -12,8 +12,8 @@ class DonationController extends Controller
     //
 
     public function Index(){
-        return view('fronted.donations')
-        ->with('donations', Donation::latest()->get());
+        return view('frontend.donations')
+        ->with('donations', DonationCategory::latest()->get());
     }
 
     public function Details($donation_id){

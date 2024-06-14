@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\User\AboutController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\PagesController;
+use App\Http\Controllers\User\DashboardController;
+use App\Http\Controllers\User\PagesController;
+use App\Http\Controllers\User\BlogController;
+use App\Http\Controllers\User\ContactController;
 use App\Http\Controllers\User\DonationController as UserDonation;
 use App\Http\Controllers\User\EventController;
 use App\Http\Controllers\User\PaymentController;
@@ -39,11 +42,23 @@ Route::get('/payment/callback', [PaymentController::class,'handleCallback']);
 Route::controller(PagesController::class)->group(function(){
 Route::get('/page/{slug}', 'Pages')->name('pages');
 Route::get('/pages/{slug}',  "SubPages")->name('subpages');
-Route::get('/blog/details/{id}',  'BlogDetails')->name('blog.details');
-Route::get('/jobs/industries/{id}',  'JobCategory')->name('industries-category');
-Route::post('/contactus/request', 'ContactEmails')->name('contact-email');
+
 });
 
+Route::controller(BlogController::class)->group(function(){
+    Route::get('/blogs',  'Index')->name('users.blogs.index');
+    Route::get('/blog/details/{id}',  'Details')->name('blog.details');
+});
+
+Route::controller(ContactController::class)->group(function(){
+    Route::get('/contact', 'Index')->name('users.contact.index');
+    Route::post('/contactus/request', 'ContactEmails')->name('contact-email');
+});
+
+Route::controller(AboutController::class)->group(function() {
+    Route::get('/about', '__Invoke')->name('users.about.index');
+
+});
 
 
 

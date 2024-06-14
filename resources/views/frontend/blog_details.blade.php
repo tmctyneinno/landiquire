@@ -1,105 +1,192 @@
 @extends('layouts.app')
 @section('contents')
-@if(!isset($breadcrums))
-<div class="page-header-area" style="background: #ddd url('{{asset('/images', $breadcrums->image)}}') no-repeat center">
-   @else 
-   <div class="page-header-area" style="background: #ddd url('{{asset('/images')}}') no-repeat center">
-   @endif
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-6 col-lg-4">
-                <div class="page-header-title text-center text-md-start">
-                    {{-- <h1>Blog Details</h1> --}}
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-8">
-                {{-- <nav class="page-header-breadcrumb text-center text-md-end">
-                    <ul class="breadcrumb">
-                        <li><a href="{{route('index')}}">Home</a></li>
-                        <li class="active"><a href="">Blog Details</a></li>
-                    </ul>
-                </nav> --}}
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Start Page Content Wrapper -->
-<div class="page-content-wrap pt-90 pt-sm-60 pb-90 pb-sm-60 mb-xl-30">
-    <div class="blog-details-page-wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 order-1 order-lg-0">
-                    <div class="sidebar-area mt-md-58 mt-sm-58">
-                        <aside class="sidebar-wrapper">
-                           
-
-                            <!-- Start Single Sidebar -->
-                            <div class="sidebar-item">
-                                <h3 class="sidebar-title">Recent Blogs</h3>
-                                <div class="sidebar-body">
-                                    @forelse($popular as $post)
-                                    <div class="recent-news-item">
-                                        <figure class="recent-news-item__thumb">
-                                            <a href="{{route('blog.details', encrypt($post->id))}}"><img src="{{asset('images/'.$post->image)}}"
-                                                                             alt="Recent News"/></a>
-                                        </figure>
-
-                                        <div class="recent-news-item__info">
-                                            <h3><a href="{{route('blog.details', encrypt($post->id))}}">{{$post->title}}</a></h3>
-                                            <div class="news-meta">
-                                                {{-- <span class="post-date"><i class="fa fa-clock-o"></i>{{$post->created_at->format('d/m/y')}}</span> --}}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    @empty 
-
-                                    @endforelse
-                                </div>
-                            </div>
-                            <!-- End Single Sidebar -->
-
-                            <!-- Start Single Sidebar -->
-                         
-                            <!-- End Single Sidebar -->
-                        </aside>
+    <div class="page-title-area title-bg-seven">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="container">
+                    <div class="title-item">
+                        <h2>Blog Details</h2>
+                        <ul>
+                            <li>
+                                <a href="{{ route('index') }}">Home</a>
+                            </li>
+                            <li>
+                                <span>Blog Details</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
 
-                <div class="col-lg-8 order-0">
-                    <article class="blog-details-content">
-                        <figure class="blog-thumb">
-                            <img src="{{asset('images/'.$blogs->image)}}" alt="Blog" width="200px" height="auto">
-                        </figure>
 
-                        <div class="blog-info">
-                            <h2>{{$blogs->title}}</h2>
-                            <div class="blog-meta">
-                                {{-- <a href="blog-details.html" class="post-date"><i class="fa fa-clock-o"></i> --}}
-                                   {{-- {{$blogs->created_at->format('d/M/Y')}}</a> --}}
-                              
-                              
+    <div class="blog-details-area ptb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="details-item">
+                        <div class="details-img">
+                            <img src="{{ asset('images/' . $blog->image) }}" alt="{{ asset('images/' . $blog->image) }}">
+                            <ul>
+                                <li>
+                                    <i class="icofont-calendar"></i>
+                                    <span>{{ $blog->created_at->format('d-m-Y') }}</span>
+                                </li>
+                                <li>
+                                    <i class="icofont-user-alt-3"></i>
+                                    By - <a href="#">Admin</a>
+                                </li>
+                            </ul>
+                            <h2>{{ $blog->title }}</h2>
+                            <p> {!! $blog->contents !!}</p>
+
+                        </div>
+                        <div class="details-share">
+                            <div class="row">
+                                <div class="col-sm-6 col-lg-6">
+                                    <div class="left">
+                                        <ul>
+                                            <li>
+                                                <span>Share:</span>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <i class="icofont-facebook"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <i class="icofont-twitter"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <i class="icofont-youtube-play"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_blank">
+                                                    <i class="icofont-instagram"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-6">
+                                    <div class="right">
+                                        <ul>
+                                            <li>
+                                                <span>Tags:</span>
+                                            </li>
+                                            <li>
+                                                <a href="#">#Donation</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">#Food</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">#Help</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="widget-area">
+                        <div class="search widget-item">
+                            <form>
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <button type="submit" class="btn">
+                                    <i class="icofont-search-1"></i>
+                                </button>
+                            </form>
+                        </div>
+                       
+                        <div class="post widget-item">
+                            <h3>Popular Post</h3>
+
+                            @forelse ($popular as $item)
+                            <div class="post-inner">
+
+                                <ul class="align-items-center">
+                                    <li>
+                                        <img src="{{asset('images/'.$item->image)}}" alt="Details">
+                                    </li>
+                                    <li>
+                                        <h4>
+                                            <a href="#">{{$item->title}}</a>
+                                        </h4>
+                                        <p>By - <a href="{{route('blog.details', encrypt($item->id))}}">Admin</a></p>
+                                        <p> <a href="{{route('blog.details', encrypt($item->id))}}" style="color:blue">View Details</a></p>
+                                    </li>
+                                </ul>
                             </div>
 
-                            <p>{!! $blogs->contents !!}</p>
+                                
+                            @empty
+                                
+                            @endforelse
                         </div>
-
-                        <div class="blog-share">
-                            {{-- <h4><i class="fa fa-share-alt"></i> Share:</h4>
-                            <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-                            <a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-                            <a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-                            <a target="_blank" href="#"><i class="fa fa-reddit"></i></a>
-                            <a target="_blank" href="#"><i class="fa fa-digg"></i></a> --}}
-                        </div>
-                    </article>
-
-                    <!-- Start Comment Area Wrapper -->
-                   
+                        {{-- <div class="instagram widget-item">
+                            <h3>Instagram post</h3>
+                            <div class="row m-0">
+                                <div class="col-4 col-sm-3 col-lg-4 p-0">
+                                    <div class="instagram-item">
+                                        <img src="assets/img/blog/instagram1.jpg" alt="Instagram">
+                                        <a href="#">
+                                            <i class="icofont-instagram"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-4 col-sm-3 col-lg-4 p-0">
+                                    <div class="instagram-item">
+                                        <img src="assets/img/blog/instagram2.jpg" alt="Instagram">
+                                        <a href="#">
+                                            <i class="icofont-instagram"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-4 col-sm-3 col-lg-4 p-0">
+                                    <div class="instagram-item">
+                                        <img src="assets/img/blog/instagram3.jpg" alt="Instagram">
+                                        <a href="#">
+                                            <i class="icofont-instagram"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-4 col-sm-3 col-lg-4 p-0">
+                                    <div class="instagram-item">
+                                        <img src="assets/img/blog/instagram4.jpg" alt="Instagram">
+                                        <a href="#">
+                                            <i class="icofont-instagram"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-4 col-sm-3 col-lg-4 p-0">
+                                    <div class="instagram-item">
+                                        <img src="assets/img/blog/instagram5.jpg" alt="Instagram">
+                                        <a href="#">
+                                            <i class="icofont-instagram"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-4 col-sm-3 col-lg-4 p-0">
+                                    <div class="instagram-item">
+                                        <img src="assets/img/blog/instagram6.jpg" alt="Instagram">
+                                        <a href="#">
+                                            <i class="icofont-instagram"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> --}}
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
 @endsection

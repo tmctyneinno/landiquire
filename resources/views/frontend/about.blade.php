@@ -21,7 +21,7 @@
     </div>
 
 
-    <div class="about-area pt-100 pb-70">
+    <div class="about-area pt-100 pb-80">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
@@ -52,8 +52,8 @@
                 <h2>Let's make a change</h2>
             </div>
             <div class="row">
-                @forelse($goals $goal)
-                <div class="col-sm-6 col-lg-4">
+                @forelse($goals as $goal)
+                <div class="col-sm-6 col-lg-3">
                     <div class="dream-item">
                         <h3>
                             <a href="donations.html">{{$goal->title}}</a>
@@ -70,25 +70,6 @@
     </section>
 
 
-    <div class="benefit-area two pt-100 pb-70">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="benefit-img">
-                        <img src="assets/img/benefit-main1.jpg" alt="Benefit">
-                        <img src="assets/img/benefit-shape1.png" alt="Benefit">
-                        <div class="video-wrap">
-                            <button class="js-modal-btn" data-video-id="uemObN8_dcw">
-                                <i class="icofont-ui-play"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            
-            </div>
-        </div>
-    </div>
-
 
     <section class="team-area four pt-100 pb-70">
         <div class="container">
@@ -97,11 +78,12 @@
                 <h2>Meet our excellent</h2>
             </div>
             <div class="row">
+                @forelse($teams as $team)
                 <div class="col-sm-6 col-lg-4">
                     <div class="team-item">
                         <div class="top">
-                            <img src="assets/img/team/team1.jpg" alt="Team">
-                            <ul>
+                            <img src="{{asset('images/'.$team->image)}}" alt="{{ucfirst($team->name)}}">
+                            {{-- <ul>
                                 <li>
                                     <a href="#" target="_blank">
                                         <i class="icofont-facebook"></i>
@@ -122,80 +104,18 @@
                                         <i class="icofont-instagram"></i>
                                     </a>
                                 </li>
-                            </ul>
+                            </ul> --}}
                         </div>
                         <div class="bottom">
-                            <h3>Jenas handar</h3>
-                            <span>CEO & Founder</span>
+                            <h3>{{ucfirst($team->name)}}</h3>
+                            <span>{{ucfirst($team->position)}}</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="team-item">
-                        <div class="top">
-                            <img src="assets/img/team/team2.jpg" alt="Team">
-                            <ul>
-                                <li>
-                                    <a href="#" target="_blank">
-                                        <i class="icofont-facebook"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" target="_blank">
-                                        <i class="icofont-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" target="_blank">
-                                        <i class="icofont-youtube-play"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" target="_blank">
-                                        <i class="icofont-instagram"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="bottom">
-                            <h3>Smithy alisha</h3>
-                            <span>Manager</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 offset-sm-3 offset-lg-0 col-lg-4">
-                    <div class="team-item">
-                        <div class="top">
-                            <img src="assets/img/team/team3.jpg" alt="Team">
-                            <ul>
-                                <li>
-                                    <a href="#" target="_blank">
-                                        <i class="icofont-facebook"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" target="_blank">
-                                        <i class="icofont-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" target="_blank">
-                                        <i class="icofont-youtube-play"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" target="_blank">
-                                        <i class="icofont-instagram"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="bottom">
-                            <h3>Johan mendal</h3>
-                            <span>Volunteer</span>
-                        </div>
-                    </div>
-                </div>
+                @empty 
+
+                @endforelse
+              
             </div>
         </div>
     </section>

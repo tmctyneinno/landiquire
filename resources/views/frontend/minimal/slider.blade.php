@@ -1,7 +1,7 @@
 <div class="banner-area-two three">
     <div class="banner-slider owl-theme owl-carousel">
         @forelse ($sliders as  $slider)
-        <div class="banner-slider-item banner-img-four" style="background-image:url({{asset('images/'.$slider->image)}})">
+        <div class="banner-slider-item" style="background-image:url({{asset('images/'.$slider->image)}}); height:600px">
             <div class="d-table">
                 <div class="d-table-cell">
                     <div class="container">
@@ -9,8 +9,8 @@
                             <h1>{{$slider->title}}</h1>
                             <p>{{$slider->content}}</p>
                             <div class="banner-btn-area">
-                                <a class="common-btn banner-btn" href="#">Become a volunteer</a>
-                                <a class="common-btn" href="#">Donate Now</a>
+                                {{-- <a class="common-btn banner-btn" href="#">Become a volunteer</a>
+                                <a class="common-btn" href="#">Donate Now</a> --}}
                             </div>
                         </div>
                     </div>

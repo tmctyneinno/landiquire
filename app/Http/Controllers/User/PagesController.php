@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
 use App\Models\Blog;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Menu;
 use App\Models\SubMenu;
@@ -20,13 +21,7 @@ class PagesController extends Controller
         $id = decrypt($id);
         $menuId = Menu::where('id', $id)->first();
         //dd( $menuId);
-        if($menuId->slug == 'Blog'){
-
-            return view('frontend.blogs', 
-            ['blogs' => Blog::latest()->get(), 'popular' => Blog::where('views', '>', 0)->get(),
-            'breadcrums' => $menuId,
-        ]);
-           }
+       
 
         if($menuId->slug == "FAQ"){
             return view('frontend.faq', [

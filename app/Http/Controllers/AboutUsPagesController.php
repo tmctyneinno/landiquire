@@ -44,7 +44,7 @@ class AboutUsPagesController extends Controller
             $image = $request->file('image');
             $ext = $image->getClientOriginalExtension();
             $fileName = time().'.'.$ext;
-            $image->move('images',$fileName);
+            $image->move('images/',$fileName);
             $data['image'] = $fileName;
         }
         About::where('id', decrypt($id))
