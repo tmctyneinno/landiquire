@@ -66,12 +66,12 @@
     
     </div>
 
-    {{-- <div class="row">
+    <div class="row">
 
         <div class="col-md-12">
 
             <div class="row">
-                <div class="col-md-6">
+                {{-- <div class="col-md-6">
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex align-items-center justify-content-between">
@@ -99,24 +99,52 @@
                     </div>
                     
                     
-                </div>
+                </div> --}}
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex align-items-center justify-content-between">
                                 <div>
-                                    <h6 class="card-title mb-3">Blogs Posted</h6>
+                                    <h6 class="card-title mb-3">Donation Paid</h6>
                                     <div class="d-flex d-sm-block d-lg-flex align-items-end">
-                                        <h2 class="mb-0 mr-2 font-weight-bold">{{count($blogs)}}</h2>
-                                        <p class="small text-muted mb-0 line-height-20">
-                                         
-                                        </p>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="avatar avatar-lg">
-                                        <div class="avatar-title bg-warning-bright text-warning rounded-circle">
-                                            <i class="fa fa-phone"></i>
+                                        <h2 class="mb-0 mr-2 font-weight-bold"></h2>
+                                        <div class="table-responsive mt-5">
+                                            <div class="table-responsive">
+                                                <table id="myTable" class="table table-striped table-bordered">
+                                                   <thead>
+                                                    <tr>
+                                                        <th>Name of Donor</th>
+                                                        <th>Email of Donor</th>
+                                                        <th>Amount Paid</th>
+                                                         <th>Date Paid</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                          
+                                                @forelse ($donations as  $sp)
+                                                    <tr>
+                                                    
+                                                        <td>
+                                                            <a href="#">{{$sp?->user?->name}}</a>
+                                                        </td>    
+                                                        <td>
+                                                            <a href="#">{{$sp?->user?->email}}</a>
+                                                        </td>
+                                                        <td>
+                                                            <a href="#">{{number_format($sp->amount,2)}}</a>
+                                                        </td>  
+                                                          <td>
+                                                            <a href="#">{{$sp->created_at}}</a>
+                                                        </td>
+                                                    </tr>
+                                                      @empty
+                                                      <tr>
+                                                        <td> No data available </td>
+                                                        </tr>
+                                                      @else 
+                                                      @endforelse
+                                                    </tbody>
+                                                </table>
                                         </div>
                                     </div>
                                 </div>
@@ -130,6 +158,6 @@
          <div class="mb-5 pb-3"></div>
 
         </div>
-    </div> --}}
+    </div>
 </div>
 @endsection

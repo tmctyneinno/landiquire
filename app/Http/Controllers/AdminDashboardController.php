@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AdminActivity;
 use App\Models\Blog;
-
+use App\Models\Donation;
 
 class AdminDashboardController extends Controller
 {
@@ -13,7 +13,8 @@ class AdminDashboardController extends Controller
         return view('admin.index', [
     
             'blogs' =>  Blog::get(),
-            'logins' => AdminActivity::take(5)->latest()->get()
+            'logins' => AdminActivity::take(5)->latest()->get(),
+            'donations' => Donation::latest()->get()
         ])
         ->with('bheading', 'Index')
         ->with('breadcrumb', 'Index');
