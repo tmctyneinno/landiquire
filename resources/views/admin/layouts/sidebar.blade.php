@@ -25,7 +25,7 @@
                 <i class="fa fa-users"></i> &nbsp; About-Us Pages
                 </a>
                 <ul>
-                    <li><a href="{{route('admin.PagesEdit', encrypt($AboutPage->id))}}">About-Us Pages</a></li>
+                    <li><a href="{{route('admin.PagesEdit', encrypt(1))}}">About-Us Pages</a></li>
               </ul>
         </li>
         <li>
