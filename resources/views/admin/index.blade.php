@@ -63,14 +63,6 @@
             </div>
             
         </div>
-    
-    </div>
-
-    <div class="row">
-
-        <div class="col-md-12">
-
-            <div class="row">
                 {{-- <div class="col-md-6">
                     <div class="card">
                         <div class="card-body">
@@ -154,10 +146,6 @@
                 </div>
              
             </div>
-
-         <div class="mb-5 pb-3"></div>
-
-        </div>
     </div>
 </div>
 @endsection
