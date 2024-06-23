@@ -14,14 +14,17 @@ use App\Http\Controllers\EventsController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\GoalsController;
 use App\Http\Controllers\TeamsController;
+use App\Http\Controllers\Auth\AdminAuthController;
 use App\Http\Controllers\TestimonialController;
-
-Route::get('/2fa', [Check2faController::class, 'Index'])->name('check2fa');
-Route::post('/2fa/verify/', [Check2faController::class, 'VerifyCode'])->name('VerifyCodes');
-
-
+Route::controller(AdminAuthController::class)->group(function () {
+    Route::post('/login', 'store')->name('login.submit');
+    Route::get('/login', 'showLogin')->name('login');
+    Route::post('/logout', 'logout')->name('logout');
+});
+Route::get('/admin/2fa', [Check2faController::class, 'Index'])->name('check2fa');
+Route::post('/admin/2fa/verify/', [Check2faController::class, 'VerifyCode'])->name('admin.VerifyCodes');
 Route::group(['prefix' => 'manage', 'as' => 'admin.'], function () {
-    Route::middleware(['auth'])->group(function () {
+    Route::middleware(['auth:admin'])->group(function () {
         Route::middleware(['check2fa'])->group(function () {
             Route::get('/', [AdminDashboardController::class, 'Index'])->name('index');
             Route::get('/index', [AdminDashboardController::class, 'Index'])->name('index');

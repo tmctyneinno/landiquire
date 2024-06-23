@@ -19,7 +19,7 @@ class DonationController extends Controller
     public function Details($donation_id){
         return view('frontend.donation-details')
         ->with('donation', DonationCategory::where('id', decrypt($donation_id))->first())
-        ->with('donations', Donation::where('donation_category_id', decrypt($donation_id))->latest()->get());
+        ->with('donations', Donation::where(['donation_category_id' => decrypt($donation_id), 'status' => 'success'])->latest()->get());
     }
 
 

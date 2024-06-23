@@ -24,15 +24,9 @@
                             <div class="progress-bar bg-primary"></div>
                         </div>
                         <div class="avatar-group"  >
-                            @php 
-                            $images = json_decode($gallery->images);
-                            @endphp
-                            @if(is_array($images))
                             @forelse($images as $item)
                             <div class="p-5" >
-                                
-                                <img src="{{asset('images/'.$item)}}"  width="80px">
-                   
+                                <img src="{{asset('images/'.$item->images))}}"  width="80px">
                         </div>
                             @empty 
                             @endforelse

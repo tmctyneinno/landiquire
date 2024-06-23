@@ -17,7 +17,7 @@
                             <span class="sub-title">About us</span>
                             <h2>{{$about->title}}</h2>
                         </div>
-                        <span class="about-span">{!!substr($about->contents,0,200)!!}</span>
+                        <span class="about-span">{!!substr($about->contents,0,300)!!}</span>
                         
                         <div class="about-btn-area">
                             <a class="common-btn" href="#">Read More about us </a>
@@ -103,19 +103,16 @@
         <div class="container-fluid">
             <div class="section-title">
                 <span class="sub-title">Our gallery</span>
-                <h2>Discover the best things we do</h2>
+                <h2>Have a view of our beuatiful moments</h2>
             </div>
             <div class="gallery-slider owl-theme owl-carousel">
                 @forelse($galleries as $gallery)
                 <div class="gallery-item">
-                    @php 
-                    $gallery_image = json_decode($gallery->images);;
-                    @endphp
-                    <a href="" >
-                        <img src="{{asset('images/'.$gallery_image[0])}}" alt="Gallery">
-                        <i class="" style="font-size: 10px"> View Gallery</i>
-                    </a>
-                    <p style="font-weight:bolder; font-family:Verdana, Geneva, Tahoma, sans-serif" class="p-2">{{$gallery->title}} </p>
+                    <a href="{{asset('images/'.$gallery->images)}}" data-lightbox="roadtrip" >
+                        <img src="{{asset('images/'.$gallery->images)}}" alt="Gallery">
+                        <i class="icofont-eye"></i>
+                    </a> 
+                    {{-- <p style="font-weight:bolder; font-family:Verdana, Geneva, Tahoma, sans-serif" class="p-2">{{$gallery->title}} </p> --}}
                    
                 </div>
                 @empty 
@@ -165,6 +162,7 @@
                         <div class="bottom">
                             <h3>{{ucfirst($team->name)}}</h3>
                             <span>{{ucfirst($team->position)}}</span>
+                            <span>{{ucfirst($team->about)}}</span>
                         </div>
                     </div>
                 </div>
@@ -288,6 +286,7 @@
     </section> --}}
 
 
+@if(count($blogs)> 0)
     <section class="blog-area three pt-100 pb-70">
         <div class="container">
             <div class="section-title">
@@ -328,6 +327,7 @@
             </div>
         </div>
     </section>
+    @endif
 
 
    

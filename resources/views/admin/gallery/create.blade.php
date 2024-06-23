@@ -25,7 +25,7 @@
 
                                           <div class="col-md-6 pt-4">
                                               <div class="custom-file">
-                                            <input type="file" name="images[]" class="custom-file-input  @error('images') is-invalid @enderror" multiple>
+                                            <input type="file" name="images" class="custom-file-input  @error('images') is-invalid @enderror">
                                                 <label class="custom-file-label" for="customFile">Select Images</label>
                                             </div>
                                             <small id="emailHelp" class="form-text text-muted"> Hold down the CTR key on ur keyboard to select multiple images

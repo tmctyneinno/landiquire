@@ -24,13 +24,10 @@ class GalleryController extends Controller
     }
 
     public function Store(Request $request){
-        $data = [];
-        foreach($request->images as $image){
-            $images =  StoreImages($image);
-            $data[] = $images;
-        }
+      
+            $images =  StoreImages($request->images);
         $data = Gallery::create([
-            'images' => json_encode($data),
+            'images' => $images,
             'title' => $request->title
         ]);
         Session::flash('alert', 'success');

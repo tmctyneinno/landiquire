@@ -18,8 +18,8 @@ class check2fa
      */
     public function handle(Request $request, Closure $next)
     {
-        
-        if(auth()->user()->is_verified == null ){
+
+        if(auth('admin')->user() && auth('admin')->user()->is_verified == null){
             
             return redirect()->route('check2fa');
         }

@@ -14,7 +14,7 @@ class AdminAuthController extends Controller
     //
      
     public function showLogin(){ 
-        return view('auth.admin-login');
+        return view('auth.login');
     }
 
     protected function guard(){
@@ -25,9 +25,10 @@ class AdminAuthController extends Controller
 
     public function store(LoginRequest $request)
     {
-       
+    
         $credentials = $request->only('email', 'password');
         if(Auth('admin')->attempt($credentials)){
+
             $request->session()->regenerate();
             $user = Admin::whereId(auth('admin')->user()->id)->first();
             $user ->update(['otp' => null, 'is_verified'=> null]); 

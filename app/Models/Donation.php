@@ -10,7 +10,7 @@ class Donation extends Model
     use HasFactory;
 
     protected $fillable = [
-        'ref', 'amount', 'is_public', 'prev_balance', 'total_amount', 'user_id', 'donation_category', 'donation_category_id'
+        'ref', 'amount', 'is_public', 'prev_balance', 'total_amount', 'user_id', 'donation_category', 'donation_category_id', 'status'
     ];
 
     public function user(){

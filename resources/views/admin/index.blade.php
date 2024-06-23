@@ -3,7 +3,7 @@
 <div class="container-fluid">
 
     <div class="row">
-        <div class="col-md-7">
+        <div class="col-md-5">
             <div class="card bg-secondary-gradient">
                 <div class="card-body">
                     <div class="row align-items-center">
@@ -17,7 +17,7 @@
                             
                         </div>
                         <div class="col-md-5">
-                            <img src="{{asset('assets/images/files.svg')}}" alt="..." class="img-fluid">
+                            <img src="{{asset('assets/'.$settings->logo)}}" width="50px" alt="..." class="img-fluid">
                         </div>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
                             <tr>
                                 <td> 
                                     @php $details = json_decode(file_get_contents("http://ipinfo.io/$login->login_ip/json"));
-                                    echo $details->city.", ".$details->country;
+                                    // echo $details->city.", ".$details->country;
                                     @endphp
                                     </td>
                                 <td class="text-center">{{$login->login_ip}}</td>
@@ -92,7 +92,7 @@
                     
                     
                 </div> --}}
-                <div class="col-md-5">
+                <div class="col-md-7">
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex align-items-center justify-content-between">
@@ -108,6 +108,7 @@
                                                         <th>Name of Donor</th>
                                                         <th>Email of Donor</th>
                                                         <th>Amount Paid</th>
+                                                         <th>Status</th>
                                                          <th>Date Paid</th>
                                                     </tr>
                                                     </thead>
@@ -124,6 +125,9 @@
                                                         </td>
                                                         <td>
                                                             <a href="#">{{number_format($sp->amount,2)}}</a>
+                                                        </td>  
+                                                        <td>
+                                                            <a href="#">@if($sp->status == 'success')  <span class="badge bg-success"> completed</span> @else <span class="badge bg-danger"> Failed</span> @endif </a>
                                                         </td>  
                                                           <td>
                                                             <a href="#">{{$sp->created_at}}</a>
