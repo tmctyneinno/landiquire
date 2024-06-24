@@ -20,4 +20,10 @@ class AboutController extends Controller
         ->with('goals', CompanyGoal::latest()->get())
         ->with('teams', TeamMember::latest()->get());
     }
+
+    public function getTeamMember($team_id){
+;
+        return view('frontend.team-details')
+        ->with('team', decrypt($team_id)->first());
+    }
 }

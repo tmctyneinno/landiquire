@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Mail\ContactUs;
 use App\Models\Contact;
+use App\Models\Setting;
 use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
@@ -42,9 +43,10 @@ class ContactController extends Controller
             'email' =>  $request->email,
             'message' => $request->message
         ];
+        $settings = Setting::latest()->first();
         Session::flash('message', 'Request sent Successfully');
         Session::flash('alert', 'success');
-        Mail::to(['jobs@ncicworld.com'])->send(new ContactUs($data));
+        Mail::to($settings->site_email)->send(new ContactUs($data));
 
        // dd($email);
         return back();

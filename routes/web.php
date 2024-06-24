@@ -57,7 +57,7 @@ Route::controller(ContactController::class)->group(function(){
 
 Route::controller(AboutController::class)->group(function() {
     Route::get('/about', '__Invoke')->name('users.about.index');
-
+    Route::get('/about/team/{team_id}', 'getTeamMember')->name('team.member');
 });
 
 

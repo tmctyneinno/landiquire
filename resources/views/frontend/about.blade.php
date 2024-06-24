@@ -24,12 +24,12 @@
     <div class="about-area pt-100 pb-80">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6">
+                <div class="col-lg-3">
                     <div class="about-img">
                         <img src="{{asset('images/'.$about->image)}}" alt="About">
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-9">
                     <div class="about-content">
                         <div class="section-title">
                             <span class="sub-title">About us</span>

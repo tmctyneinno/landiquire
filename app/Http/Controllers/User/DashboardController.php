@@ -32,4 +32,6 @@ class DashboardController extends Controller
             'galleries' => Gallery::latest()->get()
         ]);
     }
+
+   
 }
