@@ -24,18 +24,16 @@
     <div class="about-area pt-100 pb-80">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-3">
-                    <div class="about-img">
-                        <img src="{{asset('images/'.$about->image)}}" alt="About">
-                    </div>
-                </div>
-                <div class="col-lg-9">
+                <div class="col-lg-12">
                     <div class="about-content">
+                        <div style="float:left; width:30%" class="p-5">
+                            <img src="{{asset('images/'.$about->image)}}" alt="About">
+                        </div>
                         <div class="section-title">
-                            <span class="sub-title">About us</span>
-                            <h2>{{$about->title}}</h2>
+                            <h2>{{ucfirst($about->title)}}</h2>
                         </div>
                         <p>
+                            
                             {!! $about->contents !!}
                         </p>
                     </div>
