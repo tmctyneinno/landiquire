@@ -182,7 +182,7 @@
                         <div class="bottom">
                             <h3>{{ucfirst($team->name)}}</h3>
                             <span>{{ucfirst($team->position)}}</span>
-                            <span>{{ucfirst($team->about)}}</span>
+                            <span>{!! substr($team->about,0,100) !!}  <a href="{{route('team.member', encrypt($team))}}"> read more</a></span>
                         </div>
                     </a>
                     </div>
