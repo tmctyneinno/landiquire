@@ -13,7 +13,7 @@
                                 <div class="col-md-12">
                                         <div class="form-group">
                                             <input type="text" name="title"  value="{{old('title')}}" class="form-control @error('title') is-invalid @enderror" id="exampleInputEmail1"
-                                                   aria-describedby="emailHelp" placeholder="News Title" required>
+                                                   aria-describedby="emailHelp" placeholder="News Title" >
                                             <small id="emailHelp" class="form-text text-muted">Enter Gallery title
                                             </small>
                                             @error('title')
