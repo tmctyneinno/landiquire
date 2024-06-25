@@ -24,13 +24,9 @@
                             <div class="progress-bar bg-primary"></div>
                         </div>
                         <div class="avatar-group"  >
-                            @forelse($images as $item)
                             <div class="p-5" >
                                 <img src="{{asset('images/'.$item->images)}}"  width="80px">
                         </div>
-                            @empty 
-                            @endforelse
-                        @endif
                            
                         </div>
                       
