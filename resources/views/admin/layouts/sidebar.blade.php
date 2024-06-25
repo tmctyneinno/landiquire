@@ -22,7 +22,7 @@
                <li>
                <a  href="" data-toggle="tooltip" data-placement="right" title="Manage Pages"
                data-nav-target="#dashboards">
-                <i class="fa fa-users"></i> &nbsp; About-Us Pages
+                <i class="fa fa-user"></i> &nbsp; About-Us Pages
                 </a>
                 <ul>
                     <li><a href="{{route('admin.PagesEdit', encrypt(1))}}">About-Us Pages</a></li>
@@ -31,7 +31,7 @@
         <li>
             <a  href="" data-toggle="tooltip" data-placement="right" title="Manage Pages"
             data-nav-target="#dashboards">
-             <i class="fa fa-users"></i> &nbsp;Company Goals
+             <i class="fa fa-soccer-ball-o"></i> &nbsp;Company Goals
              </a>
              <ul>
                  <li><a href="{{route('admin.goals.index')}}">Company Goals</a></li>
@@ -40,7 +40,7 @@
      <li>
         <a  href="" data-toggle="tooltip" data-placement="right" title="Manage Pages"
         data-nav-target="#dashboards">
-         <i class="fa fa-users"></i> &nbsp; ELB Events
+         <i class="fa fa-calendar"></i> &nbsp; ELB Events
          </a>
          <ul>
              <li><a href="{{route('admin.events.index')}}">ELB Events</a></li>
@@ -49,7 +49,7 @@
      <li>
         <a  href="" data-toggle="tooltip" data-placement="right" title="Manage Pages"
         data-nav-target="#dashboards">
-         <i class="fa fa-users"></i> &nbsp;Donation Category
+         <i class="fa fa-heart"></i> &nbsp;Donation Category
          </a>
          <ul>
             <li><a href="{{route('admin.donation.index')}}">Donation Category</a></li>
@@ -69,7 +69,7 @@
         <li>
             <a  href="" data-toggle="tooltip" data-placement="right" title="Manage Blogs"
                data-nav-target="#dashboards">
-                <i class="fa fa-newspaper-o"></i>&nbsp; Manage Galleries</a>
+                <i class="fa fa-picture-o"></i>&nbsp; Manage Galleries</a>
                 <ul>
                       <li><a href="{{route('admin.galleries.index')}}">Manage Galleries</a></li>
                       <li><a href="{{route('admin.galleries.create')}}">Create Gallery</a></li>
@@ -78,7 +78,7 @@
         <li>
             <a  href="" data-toggle="tooltip" data-placement="right" title="Manage Blogs"
                data-nav-target="#dashboards">
-                <i class="fa fa-newspaper-o"></i>&nbsp; Manage Teams</a>
+                <i class="fa fa-users"></i>&nbsp; Manage Teams</a>
                 <ul>
                       <li><a href="{{route('admin.teams.index')}}">Manage team</a></li>
                       <li><a href="{{route('admin.teams.create')}}">Add team</a></li>
