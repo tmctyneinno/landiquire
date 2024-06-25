@@ -28,7 +28,7 @@ class DashboardController extends Controller
             'about' => About::latest()->first(),
             'goals' => CompanyGoal::get(),
             'donations' => DonationCategory::latest()->get(),
-            'teams' => TeamMember::take(4)->get(),
+            'teams' => TeamMember::take(5)->get(),
             'galleries' => Gallery::latest()->get()
         ]);
     }
