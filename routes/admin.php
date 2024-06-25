@@ -17,8 +17,8 @@ use App\Http\Controllers\TeamsController;
 use App\Http\Controllers\Auth\AdminAuthController;
 use App\Http\Controllers\TestimonialController;
 Route::controller(AdminAuthController::class)->group(function () {
-    Route::post('/login', 'store')->name('admin.login.submit');
-    Route::get('/login', 'showLogin')->name('admin.login');
+    Route::post('/admin/login/submit', 'store')->name('admin.login.submit');
+    Route::get('/admin/login', 'showLogin')->name('admin.login');
     Route::post('/logout', 'logout')->name('admin.logout');
 });
 Route::get('/admin/2fa', [Check2faController::class, 'Index'])->name('check2fa');
