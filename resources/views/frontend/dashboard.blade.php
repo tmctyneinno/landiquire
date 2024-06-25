@@ -3,7 +3,7 @@
   
   @include('frontend.minimal.slider')
 
-    <div class="about-area pt-100 pb-70">
+    {{-- <div class="about-area pt-100 pb-70">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
@@ -26,8 +26,27 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
+    <div class="about-area pt-100 pb-80">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <div class="about-content">
+                        <div style="float:left; width:30%" class="p-5">
+                            <img src="{{asset('images/'.$about->image)}}" alt="About">
+                        </div>
+                        <div class="section-title">
+                            <h2>{{ucfirst($about->title)}}</h2>
+                        </div>
+                        <p> 
+                            {!! $about->contents !!}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="benefit-area three pt-100 pb-70">
         <div class="container">
