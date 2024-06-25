@@ -57,7 +57,7 @@ class AdminAuthController extends Controller
 
     public function logout(Request $request)
     { $xl = Admin::where('id', auth('admin')->user()->id)->first();
-        $xl->update(['otp' => null]);
+        $xl->update(['new_login' => null]);
         Auth::guard('admin')->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
