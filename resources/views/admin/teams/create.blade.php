@@ -13,10 +13,10 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" name="name" placeholder="Enter Title"
+                                        <input type="text" name="name" placeholder="Enter Name"
                                             value="{{ old('name') }}"
                                             class="form-control @error('name') is-invalid @enderror">
-                                        <small id="emailHelp" class="form-text text-muted">Title
+                                        <small id="emailHelp" class="form-text text-muted">Name
                                         </small>
                                         @error('name')
                                             <span class="invalid-feedback"> <small> * </small> </span>
