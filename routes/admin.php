@@ -111,7 +111,7 @@ Route::group(['prefix' => 'manage', 'as' => 'admin.'], function () {
                 Route::post('/teams/store', 'Store')->name('teams.store');
                 Route::get('teams/edit/{teams_id}', 'Edit')->name('teams.edit');
                 Route::post('teams/update/{teams_id}', 'Update')->name('teams.update');
-                Route::get('/teams/delete/{gallery_id}', 'Delete')->name('teams.delete');
+                Route::get('/teams/delete/{gallery_id}', 'destroy')->name('teams.delete');
             });
         });
     });
