@@ -40,7 +40,7 @@
                             <h2>{{ucfirst($about->title)}}</h2>
                         </div>
                         <p> 
-                            {!! substr($about->contents,0,1100) !!} <a href="{{route('users.about.index')}}">read more</a>
+                            {!! substr($about->contents,0,1050) !!} <a href="{{route('users.about.index')}}">read more</a>
                         </p>
                     </div>
                 </div>
