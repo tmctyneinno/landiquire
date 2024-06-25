@@ -151,7 +151,7 @@
             </div>
             <div class="row">
                 @forelse($teams as $team)
-                <div class="col-sm-6 col-lg-4">
+                <div class="col-sm-4 col-lg-3">
                     <div class="team-item">
                         <a href="{{route('team.member', encrypt($team))}}">
                         <div class="top">
