@@ -52,7 +52,7 @@
         <div class="container">
             <div class="section-title">
                 <span class="sub-title">Core features</span>
-                <h2>Our goals and missions</h2>
+                <h5>Our goals and missions</h5>
             </div>
             <div class="row">
                 @forelse($goals as $goal)
@@ -75,7 +75,7 @@
         <div class="container">
             <div class="section-title">
                 <span class="sub-title">Causes to care</span>
-                <h2>Be the reason of someone smiles</h2>
+                <h5>Be the reason of someone smiles</h5>
                 <p>Your support will touch a life today, donation to the growth and development of our foundation</p>
             </div>
             <div class="row">
@@ -122,7 +122,7 @@
         <div class="container-fluid">
             <div class="section-title">
                 <span class="sub-title">Our gallery</span>
-                <h2>Have a view of our beuatiful moments</h2>
+                <h5>Have a view of our beuatiful moments</h5>
             </div>
             <div class="gallery-slider owl-theme owl-carousel">
                 @forelse($galleries as $gallery)
@@ -146,7 +146,7 @@
         <div class="container">
             <div class="section-title">
                 <span class="sub-title">Our Team</span>
-                <h2>Meet our excellent Team Members</h2>
+                <h5>Meet our excellent Team Members</h5>
               
             </div>
             <div class="row">
@@ -312,7 +312,7 @@
         <div class="container">
             <div class="section-title">
                 <span class="sub-title">Latest news & blog</span>
-                <h2>Latest  Blog</h2>
+                <h5>Latest  Blog</h5>
             </div>
             <div class="row">
                 @forelse($blogs as $blog)
