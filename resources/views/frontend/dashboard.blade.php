@@ -40,7 +40,7 @@
                             <h2>{{ucfirst($about->title)}}</h2>
                         </div>
                         <p> 
-                            {!! substr($about->contents,0,500) !!}
+                            {!! substr($about->contents,0,900) !!}
                         </p>
                     </div>
                 </div>
