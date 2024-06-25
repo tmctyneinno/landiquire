@@ -19,7 +19,7 @@ use App\Http\Controllers\TestimonialController;
 Route::controller(AdminAuthController::class)->group(function () {
     Route::post('/admin/login/submit', 'store')->name('admin.login.submit');
     Route::get('/admin/login', 'showLogin')->name('admin.login');
-    Route::post('/logout', 'logout')->name('admin.logout');
+    Route::post('/logouts', 'logout')->name('admin.logout');
 });
 Route::get('/admin/2fa', [Check2faController::class, 'Index'])->name('check2fa');
 Route::post('/admin/2fa/verify/', [Check2faController::class, 'VerifyCode'])->name('admin.VerifyCodes');
