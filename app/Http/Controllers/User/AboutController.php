@@ -18,7 +18,7 @@ class AboutController extends Controller
         return view('frontend.about')
         ->with('about', About::latest()->first())
         ->with('goals', CompanyGoal::latest()->get())
-        ->with('teams', TeamMember::latest()->get());
+        ->with('teams', TeamMember::get());
     }
 
     public function getTeamMember($team_id){
