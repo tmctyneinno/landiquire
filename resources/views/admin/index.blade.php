@@ -107,7 +107,7 @@
                                                     <tr>
                                                         <th>Name of Donor</th>
                                                         <th>Email of Donor</th>
-                                                        <th>Amount Paid</th>
+                                                        <th>Amount</th>
                                                          <th>Status</th>
                                                          <th>Date Paid</th>
                                                     </tr>
