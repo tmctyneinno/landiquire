@@ -25,7 +25,7 @@
                         </div>
                         <div class="avatar-group"  >
                             <div class="p-5" >
-                                <img src="{{asset('images/'.$item->images)}}"  width="80px">
+                                <img src="{{asset('images/'.$gallery->images)}}"  width="80px">
                         </div>
                            
                         </div>
