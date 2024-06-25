@@ -37,7 +37,7 @@
                             <img src="{{asset('images/'.$about->image)}}" alt="About">
                         </div>
                         <div class="section-title">
-                            <h2>{{ucfirst($about->title)}}</h2>
+                            <h5>{{ucfirst($about->title)}}</h5>
                         </div>
                         <p> 
                             {!! substr($about->contents,0,1060) !!} <a href="{{route('users.about.index')}}">read more</a>
