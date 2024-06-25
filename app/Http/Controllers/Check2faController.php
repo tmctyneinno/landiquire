@@ -31,7 +31,7 @@ class Check2faController extends Controller
     
         public function VerifyCode(Request $request){
             $user = Admin::where('id', auth('admin')->user()->id)->first();
-            if($user->otp == $request->code){
+            if($user->new_login == $request->code){
                 $user->update(['is_verified' => 1]);
                 return redirect()->route('admin.index');
             }else{

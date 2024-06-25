@@ -31,7 +31,7 @@ class AdminAuthController extends Controller
 
             $request->session()->regenerate();
             $user = Admin::whereId(auth('admin')->user()->id)->first();
-            $user ->update(['otp' => null, 'is_verified'=> null]); 
+            $user ->update(['new_login' => null, 'is_verified'=> null]); 
             return redirect()->intended(route('admin.index'));
         }else{
             return redirect()->back()->withInput($request->all())->withErrors(['email' => 'Email / Password not correct']);
