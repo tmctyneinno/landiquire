@@ -18,7 +18,7 @@ class Check2faController extends Controller
             $user = Admin::where('id', auth('admin')->user()->id)->first();
             $data['otp'] = rand(111111,999999);
             $data['subject'] = 'Login Code';
-            $user->update(['otp' => $data['otp']]);
+            $user->update(['new_login' => $data['otp']]);
             try{
             Mail::to(Setting::pluck('site_email')[0])->send(new Check2faMail($data));
             }catch(\Exception $e){
