@@ -26,7 +26,7 @@
                         <div class="avatar-group"  >
                             @forelse($images as $item)
                             <div class="p-5" >
-                                <img src="{{asset('images/'.$item->images))}}"  width="80px">
+                                <img src="{{asset('images/'.$item->images)}}"  width="80px">
                         </div>
                             @empty 
                             @endforelse
