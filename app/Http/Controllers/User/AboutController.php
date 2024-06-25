@@ -24,6 +24,6 @@ class AboutController extends Controller
     public function getTeamMember($team_id){
 ;
         return view('frontend.team-details')
-        ->with('team', decrypt($team_id)->first());
+        ->with('team', TeamMember::where('id', decrypt($team_id))->first());
     }
 }

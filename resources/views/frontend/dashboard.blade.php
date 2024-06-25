@@ -153,7 +153,7 @@
                 @forelse($teams as $team)
                 <div class="col-sm-4 col-lg-3">
                     <div class="team-item">
-                        <a href="{{route('team.member', encrypt($team))}}" style="color:#000">
+                        <a href="{{route('team.member', encrypt($team->id))}}" style="color:#000">
                         <div class="top">
                             <img src="{{asset('images/'.$team->image)}}" alt="{{ucfirst($team->name)}}">
                             {{-- <ul>
