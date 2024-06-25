@@ -22,7 +22,7 @@
     <div class="donation-details-area ptb-100">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-lg-2">
                 </div>
                 <div class="col-lg-8">
                     <div class="details-item">
