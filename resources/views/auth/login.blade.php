@@ -35,7 +35,7 @@
     <h5>Sign in</h5>
 
     <!-- form -->
-  <form class="login100-form validate-form" action="{{route('admin.login')}}" method="POST">
+  <form class="login100-form validate-form" action="{{route('admin.login.submit')}}" method="POST">
                                          @csrf
         <div class="form-group">
             <input type="text"value="{{old('email')}}" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="email" required autofocus>
