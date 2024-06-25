@@ -1,7 +1,7 @@
 <footer class="footer-area pt-100">
     <div class="container">
         <div class="row">
-            <div class="col-sm-6 col-lg-3">
+            <div class="col-sm-6 col-lg-4">
                 <div class="footer-item">
                     <div class="footer-logo">
                         <a class="logo" href="index-2.html">
@@ -64,7 +64,7 @@
                     </div>
                 </div>
             </div> --}}
-            <div class="col-sm-6 col-lg-3">
+            <div class="col-sm-6 col-lg-4">
                 <div class="footer-item">
                     <div class="footer-links">
                         <h3>Quick links</h3>
@@ -92,7 +92,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-lg-3">
+            <div class="col-sm-6 col-lg-4">
                 <div class="footer-item">
                     <div class="footer-contact">
                         <h3>Contact info</h3>
