@@ -27,6 +27,11 @@ class CreateSettingsTable extends Migration
             $table->string('linkedIn')->nullable();
             $table->string('instagram')->nullable();
             $table->string('address')->nullable();
+            $table->string('fav')->default('favicon.png');
+            $table->string('city')->nullable();
+            $table->string('state')->nullable();
+            $table->string('country')->nullable();
+            $table->string('title')->nullable();
             $table->timestamps();
         });
     }
