@@ -1,5 +1,5 @@
 <header class="ps-header ps-header--2 ps-header--8">
-    <div class="ps-noti" style="background: #125925">
+    <div class="ps-noti" style="background: rgb(15, 15, 74)">
         <div class="container">
             <p class="m-0">  <marquee> {!! $announcment->content??null !!}</marquee> </p>
         </div><a class="ps-noti__close"><i class="icon-cross"></i></a>

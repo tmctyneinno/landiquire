@@ -14,7 +14,7 @@
             </div>
         </div>
     </div>
-        <div class="ps-search__content ps-search--mobile" style="padding: 15px">
+        {{-- <div class="ps-search__content ps-search--mobile" style="padding: 15px">
             <form action="{{route('products.search')}}" method="get">
                 <div class="ps-search-table" style="border-radius: 5px">
                     <div class="input-group">
@@ -26,6 +26,6 @@
                 </div>
             </form>
   
-    </div>
+    </div> --}}
     
 </header>
