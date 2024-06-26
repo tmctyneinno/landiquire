@@ -32,7 +32,7 @@
                                         </div>
                                          <div class="ps-banner__thumnail ps-banner__fluid">
                                              <a style="position:inherit" href="{{route('products.search')}}">
-                                           <img class="ps-banner__image" src="{{$slider->image_path }}" alt="{{$slider->image_path }}" />
+                                           <img class="ps-banner__image" src="{{asset('images/'.$slider->image_path) }}" alt="{{$slider->image_path }}" />
                                              </a>
                                         </div>
                                   
