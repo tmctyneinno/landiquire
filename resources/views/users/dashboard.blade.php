@@ -21,14 +21,14 @@
                                 <div class="container-no-round">
                                     <div class="ps-banner__block">
                                         <div class="ps-banner__content">
-                                            {{-- <h2 class="ps-banner__title text-white">{{ $slider->title }}</h2>
+                                            <p class="ps-banner__title text-white">{{ $slider->title }}</p>
                                             <div class="ps-banner__desc text-white">{{ $slider->content }}</div>
                                             <div class="ps-banner__btn-group">
-                                            </div> --}}
+                                            </div>
                                             
-                                    {{-- <div class="ps-banner__persen bg-warning ps-left">
+                                    <div class="ps-banner__persen bg-warning ps-left">
                                        
-                                    </div> --}}
+                                    </div>
                                         </div>
                                          <div class="ps-banner__thumnail ps-banner__fluid">
                                              <a style="position:inherit" href="{{route('products.search')}}">
