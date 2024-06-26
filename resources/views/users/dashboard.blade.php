@@ -27,7 +27,7 @@
                                             </div>
                                             
                                     <div class="ps-banner__persen bg-warning ps-left">
-                                       
+                                       COMING SOON
                                     </div>
                                         </div>
                                          <div class="ps-banner__thumnail ps-banner__fluid">
