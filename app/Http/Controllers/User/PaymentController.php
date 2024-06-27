@@ -40,12 +40,13 @@ class PaymentController extends Controller
                 'phone' => $request->phone,
                 'password' => Hash::make($request->fullname)
             ]);
-            Auth::login($user);
         }
+        Auth::login($user);
     
         // $tax = (intval($required_data['customAmount']) * 7.5)/100;
         $trans_reference = str_replace(['\\', '/', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '{', '}', '[', ']'], '', substr(base64_encode(random_bytes(10)), 0,20));
         $donation = Donation::whereId($request->category_id)->latest()->first();
+
 
         Donation::create([
             'user_id' => auth()->user()->id,
