@@ -1,132 +1,169 @@
-<footer class="footer-area pt-100">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6 col-lg-4">
-                <div class="footer-item">
-                    <div class="footer-logo">
-                        <a class="logo" href="index-2.html">
-                            <img src="{{asset('assets/'.$settings->logo)}}"  width="100px" alt="{{asset('assets/'.$settings->logo)}}">
-                        </a>
-                        <p>{{$settings->about}}</p>
-                        <ul>
-                            <li>
-                                <a href="{{$settings->facebook}}" target="_blank">
-                                    <i class="icofont-facebook"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{$settings->twitter}}" target="_blank">
-                                    <i class="icofont-twitter"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{$settings->linkedIn}}" target="_blank">
-                                    <i class="icofont-linkedin"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{$settings->instagram}}" target="_blank">
-                                    <i class="icofont-instagram"></i>
-                                </a>
-                            </li>
-                        </ul>
+<footer class="footer">
+    <!-- Footer Newsletter Start -->
+    <div class="footer-newsletter">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Newsletter Box Start -->
+                    <div class="newsletter-box">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <!-- Section Title Start -->
+                                <div class="newsletter-title">
+                                    <h2>Subscribe Our Newsletter</h2>
+                                    <p>Duis pulvinar metus elit, ut aliquam est sollicitudin finibus.</p>
+                                </div>
+                                <!-- Section Title End -->
+                            </div>
+
+                            <div class="col-lg-6">
+                                <!-- Newsletter Form Start -->
+                                <div class="newsletter-form">
+                                    <form action="#">
+                                        <div class="row g-0 align-items-center">
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" placeholder="Enter email address here">
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <button type="submit" class="btn-default">Subscribe</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- Newsletter Form End -->
+                            </div>
+                        </div>
                     </div>
+                    <!-- Newsletter Box End -->
                 </div>
             </div>
-            {{-- <div class="col-sm-6 col-lg-3">
-                <div class="footer-item">
-                    <div class="footer-causes">
-                        <h3>Urgent causes</h3>
-                        <div class="cause-inner">
-                            <ul class="align-items-center">
-                                <li>
-                                    <img src="assets/img/footer-thumb1.jpg" alt="Cause">
-                                </li>
-                                <li>
-                                    <h3>
-                                        <a href="donation-details.html">Donate for melina the little child</a>
-                                    </h3>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="cause-inner">
-                            <ul class="align-items-center">
-                                <li>
-                                    <img src="assets/img/footer-thumb2.jpg" alt="Cause">
-                                </li>
-                                <li>
-                                    <h3>
-                                        <a href="donation-details.html">Relief for Australia cyclone effected</a>
-                                    </h3>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
-            <div class="col-sm-6 col-lg-4">
-                <div class="footer-item">
-                    <div class="footer-links">
-                        <h3>Quick links</h3>
-                        <ul>
-                            @foreach ($menus->take(4) as $menu )
-                        <li class="nav-item">
-                            @if($menu->has_child)
-                            <li class="nav-link dropdown-toggle">
-                             @if(count($menu->subMenu) > 0)
-                            <ul class="dropdown-menu">
-                                @forelse ($menu->subMenu as $sub ) 
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{route($menu->slug)}}">{{$menu->name}}</a> 
-                                </li>
-                                @empty
-                                @endforelse
-                            </ul>
-                            @endif
-                        </li>
-                        @else
-                       <a class="nav-link" href="{{route($menu->slug)}}">{{$menu->name}}</a> 
-                        @endif
-                        @endforeach
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4">
-                <div class="footer-item">
-                    <div class="footer-contact">
-                        <h3>Contact info</h3>
-                        <div class="contact-inner">
-                            <ul>
-                                <li>
-                                    <i class="icofont-location-pin"></i>
-                                    <a href="#">Address: {{$settings->address}}</a>
-                                </li>
-                                <li>
-                                    <i class="icofont-ui-call"></i>
-                                    <a href="tel:+123456789"> Phone: {{$settings->site_phone}}</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="contact-inner">
-                            <ul>
-                                <li>
-                                    <i class="icofont-location-pin"></i>
-                                    <a href="#">Email: {{$settings->site_email}}</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="copyright-area">
-            <p>Copyright @
-                <script>
-                    document.write(new Date().getFullYear()) 
-                </script>
-                {{$settings->site_copyright}}
-            </p>
         </div>
     </div>
+    <!-- Footer Newsletter End -->
+
+    <!-- Mega Footer Start -->
+    <div class="mega-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <!-- Footer About Start -->
+                    <div class="footer-about">
+                        <!-- Footer Logo Start -->
+                        <div class="footer-logo">
+                            <img src="images/footer-logo.svg" alt="">
+                        </div>
+                        <!-- Footer Logo End -->
+                        
+                        <!-- Footer About Content Start -->
+                        <div class="footer-about-content">
+                            <p>Duis pulvinar metus elit, ut aliquam est sollicitudin finibus. Integer lobortis est interdum.</p>
+                        </div>
+                        <!-- Footer About Content End -->
+
+                        <!-- Footer Social Link Start -->
+                        <div class="footer-social-links">
+                            <ul>
+                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                            </ul>
+                        </div>							
+                        <!-- Footer Social Link End -->
+                    </div>
+                    <!-- Footer About End -->
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <!-- Footer Contact Info Start -->
+                    <div class="footer-contact-info">
+                        <h3>Contact Info</h3>
+
+                        <!-- Footer Contact Info Box Start -->
+                        <div class="footer-contact-box">
+                            <div class="footer-info-box">
+                                <div class="icon-box">
+                                    <img src="images/icon-location.svg" alt="">
+                                </div>
+
+                                <p>123, Lorem Ipsum, Street no, Cityname, Country 123456</p>
+                            </div>
+
+                            <div class="footer-info-box">
+                                <div class="icon-box">
+                                    <img src="images/icon-phone.svg" alt="">
+                                </div>
+
+                                <p>+0 12345 67890</p>
+                            </div>
+
+                            <div class="footer-info-box">
+                                <div class="icon-box">
+                                    <img src="images/icon-email.svg" alt="">
+                                </div>
+
+                                <p>info@domainname.com</p>
+                            </div>
+                        </div>
+                        <!-- Footer Contact Info Box End -->
+                    </div>
+                    <!-- Footer Contact Info End -->
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <!-- Footer Quick Link Starts -->
+                    <div class="footer-quick-links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Listing</a></li>
+                            <li><a href="#">Property</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <!-- Footer Quick Link End -->
+                </div>
+
+                <div class="col-lg-3">
+                    <!-- Footer Quick Link Starts -->
+                    <div class="footer-appointment">
+                        <h3>Appointment</h3>
+                        
+                        <div class="footer-appointment-content">
+                            <p>Duis pulvinar metus elit, ut aliquam est sollicitudin finibus. Integer lobortis est interdum.</p>
+                            <a href="#" class="btn-default">Book Appointment</a>
+                        </div>
+                    </div>
+                    <!-- Footer Quick Link End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Mega Footer End -->
 </footer>
+
+<div class="footer-copyright-links">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <!-- Footer Copyright Content Start -->
+                <div class="footer-copyright">
+                    <p>Copyright © 2024 Jivux. All rights reserved.</p>
+                </div>
+                <!-- Footer Copyright Content End -->
+            </div>
+
+            <div class="col-md-6">
+                <!-- Footer Policy Links Start -->
+                <div class="footer-policy-links">
+                    <ul>
+                        <li><a href="#">Privacy & Policy</a></li>
+                        <li><a href="#">Terms & Condition</a></li>
+                    </ul>
+                </div>
+                <!-- Footer Policy Links End -->
+            </div>
+        </div>
+    </div>
+</div>
