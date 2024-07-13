@@ -14,7 +14,6 @@ class AdminDashboardController extends Controller
     
             'blogs' =>  Blog::get(),
             'logins' => AdminActivity::take(5)->latest()->get(),
-            'donations' => Donation::latest()->take(6)->get()
         ])
         ->with('bheading', 'Index')
         ->with('breadcrumb', 'Index');

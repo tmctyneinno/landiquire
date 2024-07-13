@@ -31,6 +31,7 @@ class SliderController extends Controller
             'image' => 'required',
             'content' => 'nullable',
             'title' => 'nullable',
+            'tag' => 'nullable'
         ]);
        //dd(request()->file('images'));
 
@@ -46,6 +47,7 @@ class SliderController extends Controller
             'content' => $request->content??null,
             'title' =>  $request->title??null,
             'status' => 1,
+            'tag' => $request->tag
             // 'links' => $link
         ];
 
@@ -81,6 +83,7 @@ class SliderController extends Controller
             'image' =>  $fileName,
             'content' => $request->content,
             'title' =>  $request->title,
+            'tag' => $request->tag
             // 'links' => $link
         ];
          $sl->fill($data)->save();

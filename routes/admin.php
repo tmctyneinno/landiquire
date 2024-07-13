@@ -9,13 +9,14 @@ use App\Http\Controllers\SliderController;
 use App\Http\Controllers\MenuController as MenuPage;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\Check2faController;
-use App\Http\Controllers\DonationController;
-use App\Http\Controllers\EventsController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\GoalsController;
 use App\Http\Controllers\TeamsController;
 use App\Http\Controllers\Auth\AdminAuthController;
+use App\Http\Controllers\CompetitiveController;
+use App\Http\Controllers\CoreValueController;
 use App\Http\Controllers\TestimonialController;
+
 Route::controller(AdminAuthController::class)->group(function () {
     Route::post('/admin/login/submit', 'store')->name('admin.login.submit');
     Route::get('/admin/login', 'showLogin')->name('admin.login');
@@ -94,9 +95,6 @@ Route::group(['prefix' => 'manage', 'as' => 'admin.'], function () {
 
             Route::resource('/goals', GoalsController::class);
             Route::get('/goals/delete/{id}', [GoalsController::class, 'delete'])->name('goals.delete');
-            Route::resource('/donation', DonationController::class);
-            Route::get('donations/donors/{donationCategoryId}', [DonationController::class, 'Donors'])->name('donation.donors');
-            Route::resource('/events', EventsController::class);
 
             Route::controller(GalleryController::class)->group(function () {
                 Route::get('/galleries/index', 'Index')->name('galleries.index');
@@ -113,6 +111,22 @@ Route::group(['prefix' => 'manage', 'as' => 'admin.'], function () {
                 Route::post('teams/update/{teams_id}', 'Update')->name('teams.update');
                 Route::get('/teams/delete/{gallery_id}', 'destroy')->name('teams.delete');
             });
+
+
+            Route::controller(CompetitiveController::class)->group(function (){
+                Route::get('/comptitive/advantage', 'Index')->name('comptitive.advantage');
+                Route::get('/comptitive/advantage/create', 'Create')->name('comptitive.advantage.create');
+                Route::post('/comptitive/advantage/store', 'Store')->name('comptitive.advantage.Store');
+                Route::get('/comptitive/advantage/delete/{id}', 'Delete')->name('comptitive.advantage.Delete');
+            });  
+
+            Route::controller(CoreValueController::class)->group(function (){
+                Route::get('/core/objectives', 'Index')->name('core.objectives');
+                Route::get('/core/objectives/create', 'Create')->name('core.objectives.create');
+                Route::post('/core/objectives/store', 'Store')->name('core.objectives.Store');
+                Route::get('/core/objectives/delete/{id}', 'Delete')->name('core.objectives.Delete');
+            });
+         
         });
     });
 });

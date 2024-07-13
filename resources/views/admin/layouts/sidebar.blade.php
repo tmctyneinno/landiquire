@@ -28,33 +28,9 @@
                     <li><a href="{{route('admin.PagesEdit', encrypt(1))}}">About-Us Pages</a></li>
               </ul>
         </li>
-        <li>
-            <a  href="" data-toggle="tooltip" data-placement="right" title="Manage Pages"
-            data-nav-target="#dashboards">
-             <i class="fa fa-soccer-ball-o"></i> &nbsp;Company Goals
-             </a>
-             <ul>
-                 <li><a href="{{route('admin.goals.index')}}">Company Goals</a></li>
-           </ul>
-     </li>
-     <li>
-        <a  href="" data-toggle="tooltip" data-placement="right" title="Manage Pages"
-        data-nav-target="#dashboards">
-         <i class="fa fa-calendar"></i> &nbsp; ELB Events
-         </a>
-         <ul>
-             <li><a href="{{route('admin.events.index')}}">ELB Events</a></li>
-       </ul>
- </li>
-     <li>
-        <a  href="" data-toggle="tooltip" data-placement="right" title="Manage Pages"
-        data-nav-target="#dashboards">
-         <i class="fa fa-heart"></i> &nbsp;Donation Category
-         </a>
-         <ul>
-            <li><a href="{{route('admin.donation.index')}}">Donation Category</a></li>
-       </ul>
- </li>
+     
+
+
        
       
          <li>

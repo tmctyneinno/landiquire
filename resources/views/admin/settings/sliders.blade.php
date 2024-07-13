@@ -42,6 +42,9 @@
                                 
                             </div>
                             <div data-label="Slider Title Text" class="demo-code-preview">
+                                {{$ss->tag}}
+                            </div>
+                            <div data-label="Slider Title Text" class="demo-code-preview">
                                 {{$ss->title}}
                             </div>
                             <div data-label="Slider Content Text" class="demo-code-preview">

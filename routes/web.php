@@ -1,14 +1,14 @@
 <?php
 
+use App\Http\Controllers\User\ProjectPlusController;
 use App\Http\Controllers\User\AboutController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\DashboardController;
 use App\Http\Controllers\User\PagesController;
 use App\Http\Controllers\User\BlogController;
 use App\Http\Controllers\User\ContactController;
-use App\Http\Controllers\User\DonationController as UserDonation;
-use App\Http\Controllers\User\EventController;
-use App\Http\Controllers\User\PaymentController;
+use App\Http\Controllers\User\DeveloperController;
+use App\Http\Controllers\User\PartnerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,19 +25,9 @@ use App\Http\Controllers\User\PaymentController;
 require __DIR__.'/admin.php';
 
 
-Route::get('/', [DashboardController::class, 'Index'])->name('index');
-Route::controller(UserDonation::class)->group(function() {
-Route::get('/donations', 'Index')->name('users.donation.index');
-Route::get('donations/{donation_id}', 'Details')->name('user.donation.details');
-});
+Route::get('/index', [DashboardController::class, 'Index'])->name('index');
+Route::get('/', [DashboardController::class, 'Index'])->name('home');
 
-Route::controller(EventController::class)->group(function(){
-Route::get('/event', 'Index')->name('user.events.index');
-Route::get('/events/{event_id}', 'Details')->name('users.events.details');
-});
-
-Route::post('/pay', [PaymentController::class, 'pay'])->name('pay');
-Route::get('/payment/callback', [PaymentController::class,'handleCallback']);
 
 Route::controller(PagesController::class)->group(function(){
 Route::get('/page/{slug}', 'Pages')->name('pages');
@@ -52,7 +42,7 @@ Route::controller(BlogController::class)->group(function(){
 
 Route::controller(ContactController::class)->group(function(){
     Route::get('/contact', 'Index')->name('users.contact.index');
-    Route::post('/contactus/request', 'ContactEmails')->name('contact-email');
+    Route::post('/contactus/request', 'Store')->name('contact-email');
 });
 
 Route::controller(AboutController::class)->group(function() {
@@ -60,6 +50,22 @@ Route::controller(AboutController::class)->group(function() {
     Route::get('/about/team/{team_id}', 'getTeamMember')->name('team.member');
 });
 
+
+Route::controller(ProjectPlusController::class)->group(function () {
+
+    Route::get('/projectplus', 'Index')->name('users.projectplus.index');
+
+});
+
+Route::controller(DeveloperController::class)->group(function() {
+
+    Route::get('/developers', 'Index')->name('users.developers.index');
+});
+
+Route::controller(PartnerController::class)->group(function() {
+
+    Route::get('partners', 'Index')->name('users.partners.index');
+});
 
 
 require __DIR__.'/auth.php';

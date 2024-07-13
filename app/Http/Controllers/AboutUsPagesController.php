@@ -25,6 +25,7 @@ class AboutUsPagesController extends Controller
 
     public function AboutUsPagesUpdate(Request $request, $id){
       
+  $id = decrypt($id);
         if($request->title){
             $data['title'] = $request->title;
         }
@@ -47,8 +48,9 @@ class AboutUsPagesController extends Controller
             $image->move('images/',$fileName);
             $data['image'] = $fileName;
         }
-        About::where('id', decrypt($id))
-        ->update($data);
+       About::updateOrCreate([
+        'id' => $id
+        ], $data);
         Session::flash('alert', 'success');
         Session::flash('message','Page updated successfully');
         return back();

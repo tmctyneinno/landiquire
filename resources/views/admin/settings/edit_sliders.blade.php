@@ -54,6 +54,33 @@
                                             </div>
                                         </div>
                                     </li>
+                                    <li class="list-group-item">
+                                        <div class="flex-grow-1 min-width-0">
+                                            <div class="mb-1 d-flex justify-content-between align-items-center">
+                                                <div class="text-truncate app-list-title"> Headline</div>
+                                                <div class="pl-3 d-flex">
+                                                    <span class="text-nowrap text-muted"></span>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="text-muted d-flex justify-content-between">
+                                                <div class="text-truncate small"></div>
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <input type="text" name="tag"  value="{{$slider->tag}}" class="form-control @error('tag') is-invalid @enderror" id="exampleInputEmail1"
+                                                               aria-describedby="emailHelp" placeholder="Slider Headline">
+                                                        <small id="emailHelp" class="form-text text-muted">Slider Headline
+                                                        </small>
+                                                        @error('tag')
+                                                        <span class="invalid-feedback"> <small> * </small> </span>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+                                                    
+                                                
+                                            </div>
+                                        </div>
+                                    </li>
                                 <li class="list-group-item">
                                     <div class="flex-grow-1 min-width-0">
                                         <div class="mb-1 d-flex justify-content-between align-items-center">

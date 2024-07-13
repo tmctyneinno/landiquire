@@ -36,7 +36,7 @@
                                             </thead>
                                             <tbody>
                                   
-                                        @if(count($goals) > 0)
+                                        @if(isset($objectives) && count($goals) > 0)
                                         @foreach ($goals as  $sp)
                                             <tr>
                                             

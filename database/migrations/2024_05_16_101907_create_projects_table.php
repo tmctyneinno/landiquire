@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('title')->nullable();
             $table->string('content')->nullable();
-            $table->string('images')->nullable();
-            $table->double('amount_needed')->nullable();
-            $table->double('amount_raised')->nullable();
-            $table->string('total_donors')->nullable();
+            $table->string('image')->nullable();
+            $table->text('gallery')->nullable();
+            $table->text('features')->nullable();
+            $table->string('location')->nullable();
             $table->timestamps();
         });
     }

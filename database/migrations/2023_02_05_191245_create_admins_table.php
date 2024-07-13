@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->string('login_ip')->nullable();
+            $table->string('is_verified')->nullable();
             $table->string('last_login')->nullable();
             $table->string('new_login')->nullable();
             $table->timestamps();

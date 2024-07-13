@@ -47,8 +47,6 @@ class ContactController extends Controller
         Session::flash('message', 'Request sent Successfully');
         Session::flash('alert', 'success');
         Mail::to($settings->site_email)->send(new ContactUs($data));
-
-       // dd($email);
         return back();
     }
 }
