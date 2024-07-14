@@ -120,10 +120,7 @@
 							</figure>
 						</div>
 
-						<div class="exclusive-agents">
-							<h5>10k+ Exclusive Agetns</h5>
-							<img src="images/exclusive-agents.png" alt="">
-						</div>
+					
 					</div>
 					<!-- Why Choose us Images End -->
 				</div>

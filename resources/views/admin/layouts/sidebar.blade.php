@@ -31,7 +31,24 @@
      
 
 
-       
+        <li>
+            <a  href="" data-toggle="tooltip" data-placement="right" title="Manage Blogs"
+               data-nav-target="#dashboards">
+                <i class="fa fa-newspaper-o"></i>&nbsp;  Partners Page</a>
+                <ul>
+                      <li><a href="{{route('admin.partners.index')}}"> View Partners</a></li>
+                      <li><a href="{{route('admin.partners.index')}}">Manage Content</a></li>
+                </ul>
+        </li>  
+        <li>
+            <a  href="" data-toggle="tooltip" data-placement="right" title="Manage Blogs"
+               data-nav-target="#dashboards">
+                <i class="fa fa-newspaper-o"></i>&nbsp;  Developer Page</a>
+                <ul>
+                      <li><a href="{{route('admin.developer.index')}}"> View Developers</a></li>
+                      <li><a href="{{route('admin.developer.index')}}">Manage Content</a></li>
+                </ul>
+        </li> 
       
          <li>
             <a  href="" data-toggle="tooltip" data-placement="right" title="Manage Blogs"

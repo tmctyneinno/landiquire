@@ -9,7 +9,7 @@
             <div class="col-md-12">
                 <!-- Subpage Header Box Start -->
                 <div class="page-header-box">
-                    <h1 class="text-anime">About Us</h1>
+                   <h2 class="text-anime" style="color:#fff">About {{$settings->site_name}}</h2>
                     <nav class="wow fadeInUp" data-wow-delay="0.25s">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{route('index')}}">Home</a></li>

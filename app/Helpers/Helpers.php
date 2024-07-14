@@ -13,6 +13,15 @@ if(!function_exists('StoreImage')){
     }
 }
 
+if(!function_exists('StoreFile')){
+    function StoreFile($file){
+     $ext = $file->getClientOriginalExtension();
+     $fileName =  time().'.'.$ext;
+     $file->move('images',$fileName);
+     return $fileName;
+     }
+ }
+
 if(!function_exists('StoreImages')){
     function StoreImages($image){
      $ext = $image->getClientOriginalExtension();

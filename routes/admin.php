@@ -15,6 +15,8 @@ use App\Http\Controllers\TeamsController;
 use App\Http\Controllers\Auth\AdminAuthController;
 use App\Http\Controllers\CompetitiveController;
 use App\Http\Controllers\CoreValueController;
+use App\Http\Controllers\DeveloperController;
+use App\Http\Controllers\PartnersController;
 use App\Http\Controllers\TestimonialController;
 
 Route::controller(AdminAuthController::class)->group(function () {
@@ -60,8 +62,6 @@ Route::group(['prefix' => 'manage', 'as' => 'admin.'], function () {
                 Route::get('/website/blog/activate/{id}', 'BlogsActivate')->name('BlogsActivate');
                 Route::get('/webiste/blog/diabled/{id}', 'BlogsDisable')->name('BlogsDisable');
             });
-
-
 
             Route::controller(SettingsController::class)->group(function () {
                 Route::get('/website/settings/index', 'Index')->name('settings.index');
@@ -112,7 +112,6 @@ Route::group(['prefix' => 'manage', 'as' => 'admin.'], function () {
                 Route::get('/teams/delete/{gallery_id}', 'destroy')->name('teams.delete');
             });
 
-
             Route::controller(CompetitiveController::class)->group(function (){
                 Route::get('/comptitive/advantage', 'Index')->name('comptitive.advantage');
                 Route::get('/comptitive/advantage/create', 'Create')->name('comptitive.advantage.create');
@@ -126,7 +125,21 @@ Route::group(['prefix' => 'manage', 'as' => 'admin.'], function () {
                 Route::post('/core/objectives/store', 'Store')->name('core.objectives.Store');
                 Route::get('/core/objectives/delete/{id}', 'Delete')->name('core.objectives.Delete');
             });
-         
+
+        Route::controller(PartnersController::class)->group(function () {
+            Route::get('/partners/index', 'Index')->name('partners.index');
+            Route::get('/partners/create', 'Create')->name('partners.create');
+            Route::post('/partners/store', 'Store')->name('partners.Store');
+            Route::get('/partners/delete', 'Delete')->name('partners.delete');
         });
+
+        Route::controller(DeveloperController::class)->group(function () {
+            Route::get('/developer/index', 'Index')->name('developer.index');
+            Route::get('/developer/create', 'Create')->name('developer.create');
+            Route::post('/developer/store', 'Store')->name('developer.Store');
+            Route::get('/developer/delete', 'Delete')->name('developer.delete');
+        });
+    
     });
+});
 });

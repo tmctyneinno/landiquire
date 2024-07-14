@@ -19,9 +19,6 @@ class ContactController extends Controller
     }
 
     public function Store(Request $request){
-        if(!$request->key){
-            return back();
-        }
        $request->validate([
             'name' => 'required',
             'phone' => 'required',

@@ -60,11 +60,13 @@ Route::controller(ProjectPlusController::class)->group(function () {
 Route::controller(DeveloperController::class)->group(function() {
 
     Route::get('/developers', 'Index')->name('users.developers.index');
+    Route::post('developers/store', 'Store')->name('users.developers.store');
 });
 
 Route::controller(PartnerController::class)->group(function() {
 
     Route::get('partners', 'Index')->name('users.partners.index');
+    Route::post('partners/store', 'Store')->name('users.partners.store');
 });
 
 

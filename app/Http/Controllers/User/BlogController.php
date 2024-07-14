@@ -20,7 +20,7 @@ class BlogController extends Controller
     public function Details($blog_id){
         return view('frontend.blog_details', [
             'blog' => Blog::where('id',decrypt($blog_id))->first(),
-            'popular' => Blog::latest()->take(5)->get(),
+            'blogs' => Blog::latest()->take(5)->get(),
         ]);
     }
 }

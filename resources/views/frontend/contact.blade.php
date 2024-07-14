@@ -6,12 +6,12 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="page-header-box">
-                    <h2 class="text-anime" style="color:#fff">Reach Out to Us</h2>
+                    <h2 class="text-anime" style="color:#fff">Reach out to Us</h2>
                     <nav class="wow fadeInUp" data-wow-delay="0.25s">
                         <ol class="breadcrumb">
                             {{-- <li class="breadcrumb-item"><a href="#">Home</a></li> --}}
                             <li class="breadcrumb-item active" aria-current="page">
-                                Get in touch with us toda</li>
+                                Get in touch with us todaay</li>
                         </ol>
                     </nav>
                 </div>
@@ -94,9 +94,9 @@
 
         <div class="row">
             
-            <div class="col-lg-8 offset-lg-2">
+            <div class="col-lg-8 offset-lg-2" data-wow-delay="0.75s">
                 @if(Session::has('message'))
-            <span class="alert alert-{{Session::get('alert')}}"> {{Session::get('message')}}</span>
+            <span class="btn btn-{{Session::get('alert')}}"> {{Session::get('message')}}</span>
             @endif
                 <!-- Contact Form start -->
                 <div class="contact-form wow fadeInUp" data-wow-delay="0.75s">
