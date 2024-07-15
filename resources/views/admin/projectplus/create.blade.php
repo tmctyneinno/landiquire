@@ -4,11 +4,11 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <form action='{{ route('admin.developer.Store') }}' method='post', enctype='multipart/form-data'>
+                <form action='{{ route('admin.projectplus.store') }}' method='post', enctype='multipart/form-data'>
                     @csrf
                     <div class="card">
                         <div class="card-body">
-                            <h6 class="card-title">Company developer Content</h6>
+                            <h6 class="card-title">About Project Plus</h6>
 
                             <div class="row">
                                 <div class="col-md-12">
@@ -46,6 +46,7 @@
                                         @enderror
                                     </div>
                                 </div>
+
                                 <div class="col-md-12">
                                     <div class="form-group">
                                     <select name="floats"  class="form-control @error('title') is-invalid @enderror">
@@ -70,7 +71,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="p-5">
-                                        <button type="submit" class=" btn btn-primary w-10 p-3 ">Add Developer Content</button>
+                                        <button type="submit" class=" btn btn-primary w-10 p-3 ">Add  Content</button>
                                     </div>
                                 </div>
                             </div>

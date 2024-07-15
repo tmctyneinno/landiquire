@@ -182,6 +182,9 @@
 <script>
     CKEDITOR.replace( 'summernote' );
 </script>
+<script>
+    CKEDITOR.replace( 'features' );
+</script>
 {{-- <script>
     ClassicEditor
         .create( document.querySelector( '#summernote' ), {

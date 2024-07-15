@@ -8,8 +8,8 @@
                             <div class="d-flex justify-content-between">
                                 <h6 class="card-title">Website</h6>
                                 <div>
-                                    <a href="{{route('admin.partners.create')}}" class="mr-3 btn btn-primary" style="color:aliceblue">
-                                        <i class="fa fa-bars"> Create partner content</i>
+                                    <a href="{{route('admin.addMenu')}}" class="mr-3 btn btn-primary" style="color:aliceblue">
+                                        <i class="fa fa-bars"> Create New Menu</i>
                                     </a>
                                     <div class="dropdown">
                                         <a href="#" data-toggle="dropdown" aria-haspopup="true"
@@ -28,27 +28,28 @@
                                            <thead>
                                             <tr>
                                                 <th>Name</th>
-                                                <th>Content</th>
-                                                 <th>Icon</th>
+                                                <th>Sub Menu</th>
                                                  <th>Created At</th>
                                                 <th></th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                   
-                                        @if(isset($partner) && count($partner) > 0)
-                                        @foreach ($partner as  $sp)
+                                        @if(count($Pagemenus) > 0)
+                                        @foreach ($Pagemenus as  $sp)
                                             <tr>
                                             
                                                 <td>
-                                                    <a href="#">{{$sp->title}}</a>
+                                                    <a href="#">{{$sp->name}}</a>
                                                 </td>    
                                                 <td> 
-                                                {!! substr($sp->content,0,200)!!}   
-                                                </td>   
-                                                <td> 
-                                                    <img src="{{asset('images/'.$sp->image)}}" width="50px">   
-                                                    </td>  
+                                                    @forelse ($sp->subMenu as $sub )
+                                                       - {{$sub->name}} &nbsp;  <a  onclick="return confirm('Are you sure')" href="{{route('admin.subMenu.delete',encrypt($sub->id))}}" style="color:red"> <i class="fa fa-times"> </i></a>    &nbsp; 
+                                                       <a href="{{route('admin.subMenu.edit', encrypt($sub->id))}}" style="color:green"> <i class="fa fa-edit"></i> </a> <br>
+                                                    @empty
+                                                        
+                                                    @endforelse    
+                                                </td>    
                                                   <td>
                                                     <a href="#">{{$sp->created_at}}</a>
                                                 </td>
@@ -59,8 +60,14 @@
                                                             <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                                         </a>
                                                         <div class="dropdown-menu dropdown-menu-right">
-                                                            <a href="{{route('admin.core.objectives.Delete', encrypt($sp->id))}}" class="dropdown-item">Delete</a>
-                                                      </div>
+                                                            <a href="{{route('admin.menu.edit', encrypt($sp->id))}}" class="dropdown-item">Edit Menu</a>
+                                                            @if($sp->status == 0)
+                                                            <a href="{{route('admin.MenuEnable',  encrypt($sp->id))}}" class="dropdown-item " style="color:green">Enable</a>
+                                                            @else 
+                                                            <a href="{{route('admin.MenuDisable',  encrypt($sp->id))}}" class="dropdown-item" style="color:red">Disable</a>
+                                                            @endif
+                                                            <a href="{{route('admin.subMenu.Create', encrypt($sp->id))}}" class="dropdown-item">Add Sub Menu</a>
+                                                             </div>
                                                     </div>
                                                 </td>
                                             </tr>

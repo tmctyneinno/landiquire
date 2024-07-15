@@ -9,5 +9,5 @@ class Partner extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'phone', 'email', 'address', 'company_profile', 'intent_document', 'property_document'];
+    protected $fillable = ['name', 'phone', 'status', 'email', 'address', 'company_profile', 'intent_document', 'property_document'];
 }

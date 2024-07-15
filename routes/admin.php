@@ -17,7 +17,10 @@ use App\Http\Controllers\CompetitiveController;
 use App\Http\Controllers\CoreValueController;
 use App\Http\Controllers\DeveloperController;
 use App\Http\Controllers\PartnersController;
+use App\Http\Controllers\ProjectPlusController;
+use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\TestimonialController;
+use App\Models\ProjectPlusContent;
 
 Route::controller(AdminAuthController::class)->group(function () {
     Route::post('/admin/login/submit', 'store')->name('admin.login.submit');
@@ -131,6 +134,8 @@ Route::group(['prefix' => 'manage', 'as' => 'admin.'], function () {
             Route::get('/partners/create', 'Create')->name('partners.create');
             Route::post('/partners/store', 'Store')->name('partners.Store');
             Route::get('/partners/delete', 'Delete')->name('partners.delete');
+            Route::get('/partners/users', 'User')->name('partners.users');
+            Route::get('/partners/status/{status}/{user_id}', 'UpdateStatus')->name('partners.users.status');
         });
 
         Route::controller(DeveloperController::class)->group(function () {
@@ -139,7 +144,14 @@ Route::group(['prefix' => 'manage', 'as' => 'admin.'], function () {
             Route::post('/developer/store', 'Store')->name('developer.Store');
             Route::get('/developer/delete', 'Delete')->name('developer.delete');
         });
-    
+
+    Route::resource('/projectplus', ProjectPlusController::class);
+
+    Route::controller(ProjectPlusController::class)->group(function() {
+        Route::get('/projectplus/delete/{id}', 'delete')->name('projectplus.delete');
+    });
+    Route::resource('/projects', ProjectsController::class);
+    Route::get('/projects/delete/{id}', [ProjectsController::class, 'delete'])->name('projects.delete');
     });
 });
 });

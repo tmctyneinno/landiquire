@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class DeveloperContent extends Model
 {
     use HasFactory;
-    protected $fillable = ['image', 'title', 'content'];
+    protected $fillable = ['image', 'title', 'content', 'floats'];
 }

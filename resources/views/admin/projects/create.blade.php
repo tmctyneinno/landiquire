@@ -1,22 +1,21 @@
 @extends('admin.layouts.admin')
 @section('content')
-    <!-- begin::page-header -->
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <form action='{{ route('admin.developer.Store') }}' method='post', enctype='multipart/form-data'>
+                <form action='{{ route('admin.projects.store') }}' method='post', enctype='multipart/form-data'>
                     @csrf
                     <div class="card">
                         <div class="card-body">
-                            <h6 class="card-title">Company developer Content</h6>
-
+                            <h6 class="card-title">Post Project</h6>
                             <div class="row">
+
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" name="title" placeholder="Enter Title"
-                                            value="{{ old('title') }}"
-                                            class="form-control @error('title') is-invalid @enderror">
-                                        <small id="emailHelp" class="form-text text-muted">Title
+                                        <input type="text" name="title" value="{{ old('title') }}"
+                                            class="form-control @error('title') is-invalid @enderror"
+                                            id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="News Title">
+                                        <small id="emailHelp" class="form-text text-muted">Enter Project title
                                         </small>
                                         @error('title')
                                             <span class="invalid-feedback"> <small> * </small> </span>
@@ -27,7 +26,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <textarea id="summernote" class="@error('content') is-invalid @enderror" name="content">{{ old('content') }}</textarea>
-                                        <small id="emailHelp" class="form-text text-muted">Content
+                                        <small id="emailHelp" class="form-text text-muted"> Project Description
                                         </small>
                                         @error('content')
                                             <span class="invalid-feedback"> <small> *</small> </span>
@@ -36,33 +35,45 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="file" name="image" placeholder="Type Icon"
-                                            value="{{ old('image') }}"
-                                            class="form-control @error('image') is-invalid @enderror">
-                                        <small id="emailHelp" class="form-text text-muted">Select Image
+                                        <textarea id="features" class="@error('features') is-invalid @enderror" name="features">{{ old('features') }}</textarea>
+                                        <small id="emailHelp" class="form-text text-muted">Packages available
                                         </small>
-                                        @error('icon')
-                                            <span class="invalid-feedback"> <small> * </small> </span>
+                                        @error('features')
+                                            <span class="invalid-feedback"> <small> *</small> </span>
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                    <select name="floats"  class="form-control @error('title') is-invalid @enderror">
-                                        <option value="left"> Float Contents left </option>
-                                        <option value="right"> Float Contents Right </option>
-                                        </select>
-                                        <small id="emailHelp" class="form-text text-muted">Title
-                                        </small>
-                                        @error('title')
-                                            <span class="invalid-feedback"> <small> * </small> </span>
-                                        @enderror
+                                <div class="col-md-6 pt-4">
+                                    <div class="custom-file">
+                                        <input type="file" name="image"
+                                            class="custom-file-input  @error('image') is-invalid @enderror">
+                                        <label class="custom-file-label" for="customFile">Choose Page Cover Image</label>
                                     </div>
+                                    <small id="emailHelp" class="form-text text-muted"> Choose a cover image
+                                    </small>
+                                    @error('image')
+                                        <span class="invalid-feedback"> <small> *</small> </span>
+                                    @enderror
                                 </div>
+                                <div class="col-md-6 pt-4">
+                                    <div class="custom-file">
+                                        <input type="file" name="images[]" multiple
+                                            class="custom-file-input  @error('images') is-invalid @enderror">
+                                        <label class="custom-file-label" for="customFile">Choose Image</label>
+                                    </div>
+                                    <small id="emailHelp" class="form-text text-muted"> Choose images
+                                    </small>
+                                    @error('image')
+                                        <span class="invalid-feedback"> <small> *</small> </span>
+                                    @enderror
+                                </div>
+
 
                             </div>
                         </div>
+
                     </div>
+
                     <div class="card">
                         <div class="card-body">
                             <div class="row">
@@ -70,7 +81,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="p-5">
-                                        <button type="submit" class=" btn btn-primary w-10 p-3 ">Add Developer Content</button>
+                                        <button type="submit" class="btn btn-primary p-3">Post Blog</button>
                                     </div>
                                 </div>
                             </div>
@@ -88,7 +99,7 @@
             autoclose: true
         });
 
-        $('input[name="audition_date"]').daterangepicker({
+        $('input[name="date"]').daterangepicker({
             singleDatePicker: true,
             showDropdowns: true
         });
@@ -97,7 +108,7 @@
         let msg = {!! json_encode(Session::get('alert')) !!};
         //alert(msg);
         toastr.options = {
-            timeOut: 3000,
+            timeOut: 8000,
             progressBar: true,
             showMethod: "slideDown",
             hideMethod: "slideUp",

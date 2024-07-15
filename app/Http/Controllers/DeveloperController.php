@@ -33,6 +33,7 @@ class DeveloperController extends Controller
         $developer = new DeveloperContent();
         $developer->title = $request->title;
         $developer->content = $request->content;
+        $developer->floats = $request->floats;
         $developer->image  = StoreImage($request);
         $developer->save();
         Session::flash('alert', 'success');

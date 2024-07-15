@@ -23,12 +23,16 @@ if(!function_exists('StoreFile')){
  }
 
 if(!function_exists('StoreImages')){
-    function StoreImages($image){
+    function StoreImages($images){
+foreach($images as $image){
      $ext = $image->getClientOriginalExtension();
      $fileName =  time().'.'.$ext;
-   Image::make($image)->resize(500,450)->save('images/'. $fileName);
-     return $fileName;
+     Image::make($image)->resize(500,450)->save('images/'. $fileName);
+     $file[] = $fileName;
+  }
+     return $file;
      }
+
  }
 
 if(!function_exists('authUser')){

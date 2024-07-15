@@ -29,14 +29,22 @@
               </ul>
         </li>
      
-
+        <li>
+            <a  href="" data-toggle="tooltip" data-placement="right" title="Manage Blogs"
+               data-nav-target="#dashboards">
+                <i class="fa fa-newspaper-o"></i>&nbsp;  Project Plus</a>
+                <ul>
+                      <li><a href="{{route('admin.projects.index')}}"> Project Plus</a></li>
+                      <li><a href="{{route('admin.projectplus.index')}}">Manage Content</a></li>
+                </ul>
+        </li>  
 
         <li>
             <a  href="" data-toggle="tooltip" data-placement="right" title="Manage Blogs"
                data-nav-target="#dashboards">
                 <i class="fa fa-newspaper-o"></i>&nbsp;  Partners Page</a>
                 <ul>
-                      <li><a href="{{route('admin.partners.index')}}"> View Partners</a></li>
+                      <li><a href="{{route('admin.partners.users')}}"> View Partners</a></li>
                       <li><a href="{{route('admin.partners.index')}}">Manage Content</a></li>
                 </ul>
         </li>  

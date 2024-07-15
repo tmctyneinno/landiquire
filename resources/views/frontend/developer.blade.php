@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('contents')
    
-<div class="page-header parallaxie" style="background-image:url({{asset('images/'.$developer[0]?->image)}})">
+<div class="page-header parallaxie" style="background-image:url({{asset('images/'.$developer->first()?->image)}})">
     <div class="container">
         <div class="row">
             <div class="col-md-12">

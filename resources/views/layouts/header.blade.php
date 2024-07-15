@@ -14,11 +14,11 @@
 						<ul class="navbar-nav mr-auto" id="menu">
 							@forelse ($menus as $menu )
 								@if($menu->has_child) 
-								<li class="nav-item submenu"> <a class="nav-link" href="index-2.html">Home</a>
+								<li class="nav-item submenu"> <a class="nav-link" href="#">{{$menu->name}}</a>
 									@if(count($menu->subMenu) > 0)
 								<ul>
 									@forelse ($menu->subMenu as $sub) 
-									<li class="nav-item"><a class="nav-link" href="{{route($menu->slug)}}">{{$menu->name}}</a> 
+									<li class="nav-item"><a class="nav-link" href="{{route($sub->slug)}}">{{$sub->name}}</a> 
 									</li>
 										@empty
 									@endforelse

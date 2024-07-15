@@ -8,8 +8,8 @@
                             <div class="d-flex justify-content-between">
                                 <h6 class="card-title">Website</h6>
                                 <div>
-                                    <a href="{{route('admin.partners.create')}}" class="mr-3 btn btn-primary" style="color:aliceblue">
-                                        <i class="fa fa-bars"> Create partner content</i>
+                                    <a href="{{route('admin.projectplus.create')}}" class="mr-3 btn btn-primary" style="color:aliceblue">
+                                        <i class="fa fa-bars"> Create Project Plus Content</i>
                                     </a>
                                     <div class="dropdown">
                                         <a href="#" data-toggle="dropdown" aria-haspopup="true"
@@ -36,18 +36,18 @@
                                             </thead>
                                             <tbody>
                                   
-                                        @if(isset($partner) && count($partner) > 0)
-                                        @foreach ($partner as  $sp)
+                                        @if(isset($projectplus) && count($projectplus) > 0)
+                                        @foreach ($projectplus as  $sp)
                                             <tr>
                                             
                                                 <td>
                                                     <a href="#">{{$sp->title}}</a>
                                                 </td>    
                                                 <td> 
-                                                {!! substr($sp->content,0,200)!!}   
+                                                {!! substr($sp->content,0,100) !!}   
                                                 </td>   
                                                 <td> 
-                                                    <img src="{{asset('images/'.$sp->image)}}" width="50px">   
+                                                    <img src="{{asset('images/'.$sp->image)}}" width="100px">    
                                                     </td>  
                                                   <td>
                                                     <a href="#">{{$sp->created_at}}</a>
@@ -59,7 +59,8 @@
                                                             <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                                         </a>
                                                         <div class="dropdown-menu dropdown-menu-right">
-                                                            <a href="{{route('admin.core.objectives.Delete', encrypt($sp->id))}}" class="dropdown-item">Delete</a>
+                                                            <a href="{{route('admin.projectplus.edit', encrypt($sp->id))}}" class="dropdown-item">Edit</a>
+                                                            <a onclick="return confirm('Proceed and delete Project plus content')" href="{{route('admin.projectplus.delete', encrypt($sp->id))}}" class="dropdown-item">Delete</a>
                                                       </div>
                                                     </div>
                                                 </td>

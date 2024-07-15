@@ -1,6 +1,5 @@
 @extends('admin.layouts.admin')
 @section('content')
-    <!-- begin::page-header -->
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -49,6 +48,19 @@
                                       @enderror
                                   </div>
                               </div>
+                              <div class="col-md-12">
+                                <div class="form-group">
+                                <select name="floats"  class="form-control @error('title') is-invalid @enderror">
+                                    <option value="left"> Float Contents left </option>
+                                    <option value="right"> Float Contents Right </option>
+                                    </select>
+                                    <small id="emailHelp" class="form-text text-muted">Title
+                                    </small>
+                                    @error('title')
+                                        <span class="invalid-feedback"> <small> * </small> </span>
+                                    @enderror
+                                </div>
+                            </div>
 
                             </div>
                         </div>

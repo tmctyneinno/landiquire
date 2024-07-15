@@ -12,8 +12,6 @@ use Illuminate\Support\Facades\Validator;
 
 class PartnerController extends Controller
 {
-    //
-
     public function Index() {
         return view('frontend.partner')
         ->with('parners', PartnerContent::latest()->get());
@@ -59,8 +57,6 @@ class PartnerController extends Controller
             Session::flash('alert', 'danger');
             Session::flash('message', $e->getMessage());
             return back()->withErrors($valid)->withInput($request->all());
-        }
-        
+        } 
     }
-
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Partner;
 use App\Models\PartnerContent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -32,6 +33,7 @@ class PartnersController extends Controller
         $partner = new PartnerContent;
         $partner->title = $request->title;
         $partner->content = $request->content;
+        $partner->floats = $request->floats;
         $fileName  = StoreImage($request);
         $partner->image = $fileName;
         // dd($partner);
@@ -61,5 +63,27 @@ public function Delete($id)
 
 }
 
-    
+public function User()
+{
+    return view('admin.partners.users')
+    ->with('partners', Partner::latest()->get())
+    ->with('bheading', 'Partners Registration')
+    ->with('breadcrumb', 'Partners Registration');
+}
+
+public function UpdateStatus($user, $status)
+{
+
+    $partner = Partner::where('id', decrypt($user))->first();
+    if($partner)
+    {
+        $partner->update([
+            'status' => $status
+        ]);
+    }
+    // dd($partner);
+    Session::flash('alert', 'error');
+    Session::flash('message', 'An error occured');
+    return back();
+} 
 }

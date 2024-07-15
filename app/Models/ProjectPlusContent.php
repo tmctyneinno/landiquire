@@ -5,9 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class PartnerContent extends Model
+class ProjectPlusContent extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['image', 'title', 'content', 'floats'];
+    protected $fillable = [
+        'title', 'content', 'image', 'floats'
+    ];
+
 }
