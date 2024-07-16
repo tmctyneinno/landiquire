@@ -30,7 +30,7 @@
                 <div class="about-images ">
                     <div class="about-video">
                         <figure class="reveal image-anime">
-                            <img src="{{asset('images/'.$developer->image)}}" alt="">
+                            <img src="{{asset('assets/'.$settings->logo)}}" alt="" style="width: 150px">
                         </figure>
 
                    
@@ -88,7 +88,8 @@
                 <div class="about-images ">
                     <div class="about-video">
                         <figure class="reveal image-anime">
-                            <img src="{{asset('images/'.$developer->image)}}" alt="">
+                            {{-- <img src="{{asset('images/'.$developer->image)}}" alt=""> --}}
+                            <img src="{{asset('assets/'.$settings->logo)}}" alt="" style="width: 150px">
                         </figure>
 
                    

@@ -14,7 +14,8 @@ class PartnerController extends Controller
 {
     public function Index() {
         return view('frontend.partner')
-        ->with('parners', PartnerContent::latest()->get());
+        ->with('parners', PartnerContent::get())
+        ->with('title', 'For Partners');
     }
 
     public function Store(Request $request)

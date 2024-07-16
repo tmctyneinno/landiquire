@@ -53,8 +53,9 @@ Route::controller(AboutController::class)->group(function() {
 
 Route::controller(ProjectPlusController::class)->group(function () {
 
-    Route::get('/projectplus', 'Index')->name('users.projectplus.index');
-
+    Route::get('/projectplus/about', 'Index')->name('users.projectplus.index');
+    Route::get('/projectplus', 'Projects')->name('users.projectplus.projects');
+    Route::get('/projectplus/details/{id}', 'ProjectsDetails')->name('users.projectplus.details');
 });
 
 Route::controller(DeveloperController::class)->group(function() {

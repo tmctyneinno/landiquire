@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Models\Admin;
+use App\Models\AdminActivity;
 
 class AdminAuthController extends Controller
 {
@@ -32,6 +33,10 @@ class AdminAuthController extends Controller
             $request->session()->regenerate();
             $user = Admin::whereId(auth('admin')->user()->id)->first();
             $user ->update(['new_login' => null, 'is_verified'=> null]); 
+            AdminActivity::create([
+                'login_ip' => $request->getClientIp(),
+                'user_id' => $request->id
+            ]);
             return redirect()->intended(route('admin.index'));
         }else{
             return redirect()->back()->withInput($request->all())->withErrors(['email' => 'Email / Password not correct']);

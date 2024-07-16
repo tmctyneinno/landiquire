@@ -51,7 +51,8 @@ class SettingsController extends Controller
             'site_email' => $request->site_email,
             'address' => $request->address,
             'opening_hours' => $request->opening_hours,
-            'about' => $request->about_us
+            'about' => $request->about_us,
+            'announcement' => $request->announcement
         ];
 
         if($request->file('image')){

@@ -106,7 +106,7 @@
                     </div>
 
                     <h3>{{$values->title}}</h3>
-                    <p>{{$values->content}}</p>
+                    <p style="text-align: justify">{!! $values->content !!}<p>
                 </div>
                 <!-- How it Work Item End -->
             </div>
@@ -140,7 +140,7 @@
                             @forelse ($advantage as $item)
                             <div class="swiper-slide">
                                 <div class="testimonial-slide">
-                                    <div class="testimonial-rating">
+                                    <div class="testimonial-rating" style="font-size: 20px; font-weight:600">
                                       {{$item->title}}
                                     </div>
 
@@ -156,7 +156,7 @@
                             <!-- Testimonial Slide End -->
                         </div>
 
-                        <div class="swiper-pagination"></div>
+                        {{-- <div class="swiper-pagination"></div> --}}
                     </div>
                 </div>
                 <!-- Testimonial Carousel End -->
@@ -314,6 +314,51 @@
 </div> --}}
 <!-- Gallery Section End -->
 
+@if(isset($teams) && count($teams)> 0)
+<div class="our-agents">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Section Title Start -->
+                <div class="section-title">
+                    <h3 class="wow fadeInUp">Our Team Members</h3>
+                    <h6 class="text-anime">Meet {{$settings->site_name}}  Team Members</h6>
+                </div>
+                <!-- Section Title End -->
+            </div>
+        </div>
+
+        <div class="row">
+
+            @foreach ($teams as  $team)
+            <div class="col-lg-3 col-md-6">
+                <!-- Agent Item Start -->
+                <div class="agent-item wow fadeInUp" data-wow-delay="0.25s">
+                    <div class="agent-header">
+                        <!-- Agent Image Start -->
+                        <div class="agent-image">
+                            <figure class="image-anime">
+                                <img src="{{asset('images/'.$team->image)}}" alt="">
+                            </figure>
+                        </div>
+                    </div>
+
+                    <!-- Agent Info Start -->
+                    <div class="agent-body">
+                        <h3>{{$team->name}}</h3>
+                        <p>{{$team->position}}</p>
+                    </div>
+                    <!-- Agent Info End -->
+                </div>
+                <!-- Agent Item End -->
+            </div>   
+            @endforeach
+
+          
+        </div>
+    </div>
+</div>
+@endif
 
 <!-- Testimonial Section Start -->
 @if(count($testimonial) > 0)

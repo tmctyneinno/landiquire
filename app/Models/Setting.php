@@ -9,5 +9,5 @@ class Setting extends Model
 {
     use HasFactory;
 
-    protected $fillable = [ 'logo', 'site_name', 'site_phone', 'site_email', 'site_copyright', 'footer_menu', 'opening_hours', 'facebook', 'twitter', 'linkedIn', 'instagram', 'address', 'about', 'instagram'];
+    protected $fillable = [ 'logo', 'site_name', 'announcement','site_phone', 'site_email', 'site_copyright', 'footer_menu', 'opening_hours', 'facebook', 'twitter', 'linkedIn', 'instagram', 'address', 'about', 'instagram'];
 }

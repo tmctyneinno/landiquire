@@ -12,7 +12,7 @@ class DeveloperController extends Controller
     public function Index() {
         $developer = DeveloperContent::latest()->get();
         return view('admin.developer.index')
-        ->with('developer', $developer)
+        ->with('developers', $developer)
         ->with('bheading', 'Company developer')
         ->with('breadcrumb', 'Company developer');
     } 

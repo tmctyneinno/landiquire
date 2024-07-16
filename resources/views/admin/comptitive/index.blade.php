@@ -9,7 +9,7 @@
                                 <h6 class="card-title">Website</h6>
                                 <div>
                                     <a href="{{route('admin.comptitive.advantage.create')}}" class="mr-3 btn btn-primary" style="color:aliceblue">
-                                        <i class="fa fa-bars"> Create New</i>
+                                        <i class="fa fa-bars"> </i> Create New
                                     </a>
                                     <div class="dropdown">
                                         <a href="#" data-toggle="dropdown" aria-haspopup="true"

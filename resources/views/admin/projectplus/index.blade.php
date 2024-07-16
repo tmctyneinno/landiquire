@@ -9,7 +9,7 @@
                                 <h6 class="card-title">Website</h6>
                                 <div>
                                     <a href="{{route('admin.projectplus.create')}}" class="mr-3 btn btn-primary" style="color:aliceblue">
-                                        <i class="fa fa-bars"> Create Project Plus Content</i>
+                                        <i class="fa fa-bars"> </i>Create Project Plus Content
                                     </a>
                                     <div class="dropdown">
                                         <a href="#" data-toggle="dropdown" aria-haspopup="true"

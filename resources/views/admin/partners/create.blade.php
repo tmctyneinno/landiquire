@@ -26,10 +26,10 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
 
-                                        <textarea id="summernote" class="@error('contents') is-invalid @enderror" name="contents">{{ old('contents') }}</textarea>
+                                        <textarea id="summernote" class="@error('content') is-invalid @enderror" name="content">{{ old('content') }}</textarea>
                                         <small id="emailHelp" class="form-text text-muted">Content
                                         </small>
-                                        @error('contents')
+                                        @error('content')
                                             <span class="invalid-feedback"> <small> *</small> </span>
                                         @enderror
                                     </div>

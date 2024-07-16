@@ -24,7 +24,8 @@ class AboutController extends Controller
         ->with('teams', TeamMember::get())
         ->with('objectives', CoreObjective::get())
         ->with('testimonial', Testimonial::latest()->get())
-        ->with('advantage', ComptitiveAdvantage::get());
+        ->with('advantage', ComptitiveAdvantage::get())
+        ->with('title', 'About');
     }
 
     public function getTeamMember($team_id){

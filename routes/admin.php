@@ -133,7 +133,7 @@ Route::group(['prefix' => 'manage', 'as' => 'admin.'], function () {
             Route::get('/partners/index', 'Index')->name('partners.index');
             Route::get('/partners/create', 'Create')->name('partners.create');
             Route::post('/partners/store', 'Store')->name('partners.Store');
-            Route::get('/partners/delete', 'Delete')->name('partners.delete');
+            Route::get('/partners/delete/{id}', 'Delete')->name('partners.delete');
             Route::get('/partners/users', 'User')->name('partners.users');
             Route::get('/partners/status/{status}/{user_id}', 'UpdateStatus')->name('partners.users.status');
         });
@@ -142,7 +142,7 @@ Route::group(['prefix' => 'manage', 'as' => 'admin.'], function () {
             Route::get('/developer/index', 'Index')->name('developer.index');
             Route::get('/developer/create', 'Create')->name('developer.create');
             Route::post('/developer/store', 'Store')->name('developer.Store');
-            Route::get('/developer/delete', 'Delete')->name('developer.delete');
+            Route::get('/developer/delete/{id}', 'Delete')->name('developer.delete');
         });
 
     Route::resource('/projectplus', ProjectPlusController::class);

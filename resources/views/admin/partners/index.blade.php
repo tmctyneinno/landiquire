@@ -9,7 +9,7 @@
                                 <h6 class="card-title">Website</h6>
                                 <div>
                                     <a href="{{route('admin.partners.create')}}" class="mr-3 btn btn-primary" style="color:aliceblue">
-                                        <i class="fa fa-bars"> Create partner content</i>
+                                        <i class="fa fa-bars"> </i>Create partner content
                                     </a>
                                     <div class="dropdown">
                                         <a href="#" data-toggle="dropdown" aria-haspopup="true"
@@ -59,7 +59,7 @@
                                                             <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                                                         </a>
                                                         <div class="dropdown-menu dropdown-menu-right">
-                                                            <a href="{{route('admin.core.objectives.Delete', encrypt($sp->id))}}" class="dropdown-item">Delete</a>
+                                                            <a href="{{route('admin.partners.delete', encrypt($sp->id))}}" class="dropdown-item">Delete</a>
                                                       </div>
                                                     </div>
                                                 </td>

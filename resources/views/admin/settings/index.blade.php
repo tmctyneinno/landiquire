@@ -169,7 +169,7 @@
                                 <li class="list-group-item">
                                     <div class="flex-grow-1 min-width-0">
                                         <div class="mb-1 d-flex justify-content-between align-items-center">
-                                            <div class="text-truncate app-list-title">Change Opening Hours</div>
+                                            <div class="text-truncate app-list-title"> Update Announcement</div>
                                             <div class="pl-3 d-flex">
                                                 <span class="text-nowrap text-muted"></span>
                                                 
@@ -179,11 +179,11 @@
                                             <div class="text-truncate small"></div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <input type="text" name="opening_hours"  value="{{$settings->opening_hours}}" class="form-control @error('opening_hours') is-invalid @enderror" id="exampleInputEmail1"
-                                                           aria-describedby="emailHelp" placeholder="Change Opening Hours">
-                                                    <small id="emailHelp" class="form-text text-muted">Change Opening Hours
+                                                    <input type="text" name="announcement"  value="{{$settings->announcement}}" class="form-control @error('announcement') is-invalid @enderror" id="exampleInputEmail1"
+                                                           aria-describedby="emailHelp" placeholder="Change announcement ">
+                                                    <small id="emailHelp" class="form-text text-muted">Change announcement 
                                                     </small>
-                                                    @error('opening_hours')
+                                                    @error('announcement')
                                                     <span class="invalid-feedback"> <small> * </small> </span>
                                                     @enderror
                                                 </div>

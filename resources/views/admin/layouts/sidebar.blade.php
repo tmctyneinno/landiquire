@@ -12,7 +12,7 @@
         <li>
             <a  href="" data-toggle="tooltip" data-placement="right" title="Manage Menus"
            data-nav-target="#dashboards">
-            <i class="fa fa-file"></i>&nbsp; 
+           <i class="fa-solid fa-bars"></i>&nbsp; 
             Manage Menu</a>
             <ul>
                 <li><a href="{{route('admin.menu.index')}}"> Manage Menu</a></li>
@@ -22,7 +22,7 @@
                <li>
                <a  href="" data-toggle="tooltip" data-placement="right" title="Manage Pages"
                data-nav-target="#dashboards">
-                <i class="fa fa-user"></i> &nbsp; About-Us Pages
+               <i class="fa-solid fa-page"></i> &nbsp; About-Us Pages
                 </a>
                 <ul>
                     <li><a href="{{route('admin.PagesEdit', encrypt(1))}}">About-Us Pages</a></li>
@@ -32,7 +32,7 @@
         <li>
             <a  href="" data-toggle="tooltip" data-placement="right" title="Manage Blogs"
                data-nav-target="#dashboards">
-                <i class="fa fa-newspaper-o"></i>&nbsp;  Project Plus</a>
+               <i class="fas fa-project-diagram"></i>&nbsp;  Project Plus</a>
                 <ul>
                       <li><a href="{{route('admin.projects.index')}}"> Project Plus</a></li>
                       <li><a href="{{route('admin.projectplus.index')}}">Manage Content</a></li>
@@ -42,7 +42,7 @@
         <li>
             <a  href="" data-toggle="tooltip" data-placement="right" title="Manage Blogs"
                data-nav-target="#dashboards">
-                <i class="fa fa-newspaper-o"></i>&nbsp;  Partners Page</a>
+               <i class="fa-solid fa-handshake"></i>&nbsp;  Partners Page</a>
                 <ul>
                       <li><a href="{{route('admin.partners.users')}}"> View Partners</a></li>
                       <li><a href="{{route('admin.partners.index')}}">Manage Content</a></li>
@@ -51,7 +51,7 @@
         <li>
             <a  href="" data-toggle="tooltip" data-placement="right" title="Manage Blogs"
                data-nav-target="#dashboards">
-                <i class="fa fa-newspaper-o"></i>&nbsp;  Developer Page</a>
+               <i class="fa-solid fa-land-mine-on"></i>&nbsp;  Developer Page</a>
                 <ul>
                       <li><a href="{{route('admin.developer.index')}}"> View Developers</a></li>
                       <li><a href="{{route('admin.developer.index')}}">Manage Content</a></li>
@@ -61,13 +61,13 @@
          <li>
             <a  href="" data-toggle="tooltip" data-placement="right" title="Manage Blogs"
                data-nav-target="#dashboards">
-                <i class="fa fa-newspaper-o"></i>&nbsp; Manage Blog</a>
+               <i class="fa-solid fa-blog"></i>&nbsp; Manage Blog</a>
                 <ul>
                       <li><a href="{{route('admin.BlogsCreate')}}">Post Blog</a></li>
                       <li><a href="{{route('admin.blogs.index')}}">Manage Blog</a></li>
                 </ul>
         </li>  
-        <li>
+        {{-- <li>
             <a  href="" data-toggle="tooltip" data-placement="right" title="Manage Blogs"
                data-nav-target="#dashboards">
                 <i class="fa fa-picture-o"></i>&nbsp; Manage Galleries</a>
@@ -75,11 +75,11 @@
                       <li><a href="{{route('admin.galleries.index')}}">Manage Galleries</a></li>
                       <li><a href="{{route('admin.galleries.create')}}">Create Gallery</a></li>
                 </ul>
-        </li>  
+        </li>   --}}
         <li>
             <a  href="" data-toggle="tooltip" data-placement="right" title="Manage Blogs"
                data-nav-target="#dashboards">
-                <i class="fa fa-users"></i>&nbsp; Manage Teams</a>
+               <i class="fa-solid fa-people-group"></i>&nbsp; Manage Teams</a>
                 <ul>
                       <li><a href="{{route('admin.teams.index')}}">Manage team</a></li>
                       <li><a href="{{route('admin.teams.create')}}">Add team</a></li>

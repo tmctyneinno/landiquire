@@ -14,13 +14,15 @@ class BlogController extends Controller
         ['blogs' => Blog::latest()->get(), 
         'popular' => Blog::where('views', '>', 0)->get()
         ]
-    );
+    )
+    ->with('title', 'Blogs');
     }
 
     public function Details($blog_id){
         return view('frontend.blog_details', [
             'blog' => Blog::where('id',decrypt($blog_id))->first(),
             'blogs' => Blog::latest()->take(5)->get(),
-        ]);
+        ])
+        ->with('title', 'Blog Details');
     }
 }

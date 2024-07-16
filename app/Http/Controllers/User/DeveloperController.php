@@ -18,7 +18,8 @@ class DeveloperController extends Controller
     public function Index()
     {
         return view('frontend.developer')
-        ->with('developer', DeveloperContent::get());
+        ->with('developer', DeveloperContent::get())
+        ->with('title', 'For Developer');
     }
 
    

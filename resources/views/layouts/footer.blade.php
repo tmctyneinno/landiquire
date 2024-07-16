@@ -43,7 +43,7 @@
                         <div class="footer-contact-box">
                             <div class="footer-info-box">
                                 <div class="icon-box">
-                                    <img src="images/icon-location.svg" alt="">
+                                    <img src="{{asset('assets/images/icon-location.svg')}}" alt="">
                                 </div>
 
                                 <p>{{$settings->address}}</p>
@@ -51,7 +51,7 @@
 
                             <div class="footer-info-box">
                                 <div class="icon-box">
-                                    <img src="images/icon-phone.svg" alt="">
+                                    <img src="{{asset('assets/images/icon-phone.svg')}}"alt="">
                                 </div>
 
                                 <p>{{$settings->site_phone}}</p>
@@ -59,7 +59,7 @@
 
                             <div class="footer-info-box">
                                 <div class="icon-box">
-                                    <img src="images/icon-email.svg" alt="">
+                                    <img src="{{asset('assets/images/icon-email.svg')}}" alt="">
                                 </div>
 
                                 <p>{{$settings->site_email}}</p>
@@ -75,24 +75,9 @@
                     <div class="footer-quick-links">
                         <h3>Quick Links</h3>
                         <ul>
-                            @forelse ($menus as $menu )
-                            @if($menu->has_child) 
-                            <li class="nav-item submenu"> <a class="nav-link" href="#">Home</a>
-                                @if(count($menu->subMenu) > 0)
-                            <ul>
-                                @forelse ($menu->subMenu as $sub) 
-                                <li class="nav-item"><a class="nav-link" href="{{route($menu->slug)}}">{{$menu->name}}</a> 
-                                </li>
-                                    @empty
-                                @endforelse
-                        
-                            </ul>
-                            @endif
-                        </li>
-                        @else 
-                        
+                        @forelse ($menus->take(6) as $menu )
                         <li class="nav-item"><a class="nav-link" href="{{route($menu->slug)}}">{{$menu->name}}</a></li>
-                        @endif
+                        
                         @empty
                         @endforelse
                     </div>
@@ -112,7 +97,7 @@
             <div class="col-md-6">
                 <!-- Footer Copyright Content Start -->
                 <div class="footer-copyright">
-                    <p>{{$settings->copyright}}</p>
+                    <p >{{$settings->copyright}}</p>
                 </div>
                 <!-- Footer Copyright Content End -->
             </div>

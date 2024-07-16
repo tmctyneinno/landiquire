@@ -9,8 +9,9 @@
     <meta property="og:image" content="{{asset('images/'.$settings->site_logo)}}">
     <meta name="twitter:description" content="At Landiquire Limited, we are on a mission to revolutionize the real estate market in Nigeria, Are you ready to take your investment game to the next level? With ProjectPlus, you can participate in our large-scale land acquisitions and enjoy a 25% annual return on your investment for 2 years! Plus">
     <meta name="twitter:image" content="{{asset('images/'.$settings->site_logo)}}">
-    <link href="{{ asset('images/'.$settings->fav)}}" rel="shortcut icon" type="image/png">
+	<link rel="shortcut icon" href="{{asset('/assets/favs.png')}}" type="image/x-icon"/>
     <meta name="csrf-token" content="{{ csrf_token() }}" />
+	<title> {{ isset($title)? $title." |  Landiquire" : config('app.name')}} </title>
 	<!-- Favicon Icon -->
     <meta name="application-name" content="https://landiquire.com/ Web-App">
     <meta property="og:site_name" content="landiquire: No1 Estate website in Nigeria">

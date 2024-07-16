@@ -3,7 +3,7 @@
 <div class="container-fluid">
 
     <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-6">
             <div class="card bg-secondary-gradient">
                 <div class="card-body">
                     <div class="row align-items-center">
@@ -63,38 +63,58 @@
             </div>
             
         </div>
-                {{-- <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div>
-                                    <h6 class="card-title mb-3">Jobs Posted</h6>
-                                    <div class="d-flex d-sm-block d-lg-flex align-items-end">
-                                        <h2 class="mb-0 mr-2 font-weight-bold">{{count($jobs)}}</h2>
-                                        <p class="small text-muted mb-0 line-height-20">
-                                            <span class="text-success">{{count($applicant)}}</span> Applicants
-                                        </p>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="avatar avatar-lg">
-                                        <div class="avatar-title bg-success-bright text-success rounded-circle">
-                                            <i class="fa fa-users"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h6 class="card-title">Recent Partner Registration</h6>
+                    <ul class="list-group list-group-flush">
+                        @forelse ($partners as $appl)
+                        <li class="list-group-item d-flex align-items-center p-l-r-0">
                             
-                        </div>
-                        
-                    </div>--}}
+                            <div>
+                                <h6 class="m-b-0">{{$appl->name}}</h6>
+                                <small class="text-muted">{{$appl->email}}</small> <br>
+                            </div>
+                            <div class="ml-auto">
+                                <span class="badge  mr-2 d-sm-inline d-none">{{$appl->created_at->diffForHumans()}}</span>
+                                
+                            </div>
+                        </li> 
+                        @empty
+                            
+                        @endforelse
                     
-                    
-                </div> 
+                    </ul>
+                </div>
+            </div>
+        </div>
                
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h6 class="card-title">Recent Developer Registration</h6>
+                    <ul class="list-group list-group-flush">
+                        @forelse ($developer as $appl)
+                        <li class="list-group-item d-flex align-items-center p-l-r-0">
+                            
+                            <div>
+                                <h6 class="m-b-0">{{$appl->name}}</h6>
+                                <small class="text-muted">{{$appl->email}}</small> <br>
+                            </div>
+                            <div class="ml-auto">
+                                <span class="badge  mr-2 d-sm-inline d-none">{{$appl->created_at->diffForHumans()}}</span>
+                                
+                            </div>
+                        </li> 
+                        @empty
+                            
+                        @endforelse
+                    
+                    </ul>
+                </div>
+            </div>
+        </div>
              
             </div>
     </div>
-</div>
 @endsection

@@ -180,8 +180,8 @@
 							<div class="col-lg-6">
 								<!-- CTA Button Start -->
 								<div class="cta-button">
-									<a href="#" class="btn-default">Register as Partner</a>
-									<a href="#" class="btn-default btn-border"><i class="fa-solid fa-phone-volume"></i> Register as Developer</a>
+									<a href="{{route('users.partners.index')}}" class="btn-default">Register as Partner</a>
+									<a href="{{route('users.developers.index')}}" class="btn-default btn-border"><i class="fa-solid fa-phone-volume"></i> Register as Developer</a>
 								</div>
 								<!-- CTA Button End -->
 							</div>

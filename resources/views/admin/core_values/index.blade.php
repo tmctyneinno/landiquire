@@ -9,7 +9,7 @@
                                 <h6 class="card-title">Website</h6>
                                 <div>
                                     <a href="{{route('admin.core.objectives.create')}}" class="mr-3 btn btn-primary" style="color:aliceblue">
-                                        <i class="fa fa-bars"> Create Objectives</i>
+                                        <i class="fa fa-bars"> </i>Create Objectives
                                     </a>
                                     <div class="dropdown">
                                         <a href="#" data-toggle="dropdown" aria-haspopup="true"
@@ -44,7 +44,7 @@
                                                     <a href="#">{{$sp->title}}</a>
                                                 </td>    
                                                 <td> 
-                                                {{$sp->content}}   
+                                                {!! $sp->content !!}   
                                                 </td>   
                                                 <td> 
                                                     {{$sp->icon}}   

@@ -1,10 +1,14 @@
 
 	<header class="main-header">
-		<div class="header-sticky">
+		{{-- <div style="background: #2f3d7e; color:#fff; display:absolute">
+	 <marquee> {!! $settings->announcement??null !!}</marquee> 
+		
+		</div> --}}
+		<div class="header-sticky ">
 			<nav class="navbar navbar-expand-lg">
 				<div class="container">
 					<!-- Logo Start -->
-					<a class="navbar-brand" href="index.html">
+					<a class="navbar-brand" href="{{route('home')}}">
 						<img src="{{asset('assets/'.$settings->logo)}}" alt="Logo" style="width: 100px">
 					</a>
 					<!-- Logo End -->
