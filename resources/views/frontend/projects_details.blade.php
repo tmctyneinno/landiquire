@@ -79,24 +79,45 @@
 					<!-- Property Single Sidebar Start -->
 					<div class="porperty-single-sidebar">
 						<!-- Property Information Box Start -->
-						<div class="property-info-box wow fadeInUp" data-wow-delay="0.25s">
-							<h3>Be Part of this project by investing as low as N20,000</h3>
+						<div class="property-info-box wow fadeInUp" data-wow-delay="0.25s" style="visibility: visible; animation-delay: 0.25s; animation-name: fadeInUp;">
+							<h3>Other Details</h3>
 
 							<div class="property-info-lists">
 								<!-- Property Info item Start-->
 								<div class="property-info-item">
 									<div class="icon-box">
-										<img src="images/icon-property-location.svg" alt="">
+										<img src="{{asset('/assets/images/icon-property-location.svg')}}" alt="">
 									</div>
+
+									<p>{{$project->location}}</p>
 								</div>
-							
+
+								<!-- Property Info item Start-->
+								<div class="property-info-item">
+									<div class="icon-box">
+										<img src="{{asset('assets/images/icon-property-price.svg')}}" alt="">
+									</div>
+
+									<p>{{$project->amount}}</p>
+								</div>
+								<div class="property-info-item">
+									<div class="icon-box">
+										<img src="{{asset('assets/images/icon-area.svg')}}" alt="">
+									</div>
+
+									<p>{{$project->size}}</p>
+								</div>
+								<!-- Property Info item End-->
 							</div>
 						</div>
 						<div class="property-inquiry-box wow fadeInUp" data-wow-delay="0.5s">
 							<h3>Contact Us to learn More</h3>
-							
+							@if(Session::has('message'))
+							<span class="btn btn-{{Session::get('alert')}}"> {{Session::get('message')}}</span>
+							@endif
 							<div class="property-inquiry-form">
-								<form id="contactForm" action="#" method="POST" data-toggle="validator">
+								<form id="" action="{{route('contact-email')}}"method="POST" data-toggle="validator">
+									@csrf 
 									<div class="row">
 										<div class="form-group col-md-12 mb-3">
 											<input type="text" name="name" class="form-control" id="name" placeholder="Name" required >

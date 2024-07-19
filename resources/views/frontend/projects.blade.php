@@ -38,11 +38,23 @@
                                 </div>
                                 <div class="property-body">
                                     <h3>{{$project->title}}</h3>
-                                    <div class="property-meta">
-                                        {{-- {!! substr($project->content,0,100) !!} ..   --}}
-                                          <a href="{{route('users.projectplus.details', encrypt($project->id))}}" class=" btn-sm">Read More</a>
+                                          <div class="property-meta">
+											<div class="property-amenity-item">
+												<div class="icon-box">
+													@if(isset($project?->size)) <img src="{{asset('assets/images/icon-area.svg')}}" alt=""> @endif
+												</div>
+
+												<span>{{$project?->size}}</span>
+											</div>
+										</div>
+                                    </div>
+                                    <div class="property-footer">
+                                    	@if(isset($project?->amount))     <p class="property-price">₦{{$project->amount}}</p>  @endif
+                                        <a href="{{route('users.projectplus.details', encrypt($project->id))}}" class="btn-default">View Property</a>
                                     </div>
                                 </div>
+                              
+
                             </div>
                             <!-- Property Item End -->
                         </div>

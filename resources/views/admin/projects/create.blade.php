@@ -14,7 +14,7 @@
                                     <div class="form-group">
                                         <input type="text" name="title" value="{{ old('title') }}"
                                             class="form-control @error('title') is-invalid @enderror"
-                                            id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="News Title">
+                                            id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=" Title">
                                         <small id="emailHelp" class="form-text text-muted">Enter Project title
                                         </small>
                                         @error('title')
@@ -22,7 +22,31 @@
                                         @enderror
                                     </div>
                                 </div>
-
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" name="price" value="{{ old('price') }}"
+                                        class="form-control @error('price') is-invalid @enderror"
+                                        id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="size">
+                                        <small id="emailHelp" class="form-text text-muted">Property Price
+                                        </small>
+                                        @error('price')
+                                            <span class="invalid-feedback"> <small> *</small> </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" name="size" value="{{ old('size') }}"
+                                        class="form-control @error('size') is-invalid @enderror"
+                                        id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="size">
+                                        <small id="emailHelp" class="form-text text-muted">Property Size
+                                        </small>
+                                        @error('size')
+                                            <span class="invalid-feedback"> <small> *</small> </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <textarea id="summernote" class="@error('content') is-invalid @enderror" name="content">{{ old('content') }}</textarea>

@@ -46,6 +46,8 @@ class ProjectsController extends Controller
             $project->title = $request->title;
             $project->content = $request->content;
             $project->features = $request->features;
+            $project->amount = $request->price;
+            $project->size = $request->size;
             $project->location = $request->location;
             if($request->image){
             $project->image  = StoreImage($request);
@@ -103,6 +105,8 @@ class ProjectsController extends Controller
             $project->title = $request->title;
             $project->content = $request->content;
             $project->features = $request->features;
+            $project->amount = $request->price;
+            $project->size = $request->size;
             $project->location = $request->location;
             if($request->image){
             $project->image  = StoreImage($request);

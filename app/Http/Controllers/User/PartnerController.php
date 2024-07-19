@@ -21,16 +21,21 @@ class PartnerController extends Controller
     public function Store(Request $request)
     {
             $valid = Validator::make($request->all(), [
-                'company_profile' => 'required',
-                'intent_document' => 'required',
-                'property_document' => 'required'
+                'company_profile' => 'nullable',
+                'intent_document' => 'nullable',
             ]);
-            if($valid->fails()){
+            // if($valid->fails()){
+            //     Session::flash('alert', 'danger');
+            //     Session::flash('message', $valid->errors()->first());
+            //     return back()->withErrors($valid)->withInput($request->all());
+            // }
+            $capt = captcha_check($request->captcha);
+            if(!$capt){
+                Session::flash('message', 'Captcha does not match, try again');
                 Session::flash('alert', 'danger');
-                Session::flash('message', $valid->errors()->first());
-                return back()->withErrors($valid)->withInput($request->all());
+                return back()->withInput($request->all());
+               
             }
-
             try{
             DB::beginTransaction();
             if($request->has('company_profile')){

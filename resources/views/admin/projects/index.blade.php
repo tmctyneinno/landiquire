@@ -30,6 +30,8 @@
                         <div class="progress mb-2" style="height: 5px;">
                             <div class="progress-bar bg-primary"></div>
                         </div>
+                        <p> {{$project->size}}</p>
+                        <p> {{$project->price}}</p>
                         <label>Description </label> 
                         <p>{!! substr($project->content,0,200) !!}.</p>
                         <hr>

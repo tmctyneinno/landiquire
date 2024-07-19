@@ -30,6 +30,13 @@ class DeveloperController extends Controller
                 'email' => 'required',
                 'phone' => 'required'
             ]);
+            $capt = captcha_check($request->captcha);
+            if(!$capt){
+                Session::flash('message', 'Captcha does not match, try again');
+                Session::flash('alert', 'danger');
+                return back()->withInput($request->all());
+               
+            }
             if($valid->fails()){
                 Session::flash('alert', 'danger');
                 Session::flash('message', $valid->errors()->first());

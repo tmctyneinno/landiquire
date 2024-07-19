@@ -144,23 +144,23 @@
                             </div>
 
                             <div class="form-group col-md-12 mb-4">
-                                Attach company profile
+                                Attach company profile (FOR COMPANY)
                                 <input type="file" value="{{old('company_profile')}}" name="company_profile" class="form-control @error('company_profile') is-invalid @enderror" placeholder="*"
-                                                       required/>
+                                                       />
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group col-md-12 mb-4">
-                                Attach letter of intent
+                                Attach letter of intent (FOR COMPANY)
                                 <input type="file" value="{{old('intent_document')}}" name="intent_document" class="form-control @error('intent_document') is-invalid @enderror" placeholder="*"
-                                                       required/>
+                                                       />
                                 <div class="help-block with-errors"></div>
                             </div>
-                            <div class="form-group col-md-12 mb-4">
+                            {{-- <div class="form-group col-md-12 mb-4">
                                 Attach property details
                                 <input type="file" value="{{old('property_document')}}" name="property_document" class="form-control @error('property_document') is-invalid @enderror" placeholder="*"
                                                        required/>
                                 <div class="help-block with-errors"></div>
-                            </div>
+                            </div> --}}
 
 
                             <div class="form-group col-md-12 mb-4">
