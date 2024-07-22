@@ -32,10 +32,10 @@
         <li>
             <a  href="" data-toggle="tooltip" data-placement="right" title="Manage Blogs"
                data-nav-target="#dashboards">
-               <i class="fas fa-project-diagram"></i>&nbsp;  Project Plus</a>
+               <i class="fas fa-project-diagram"></i>&nbsp;  Project </a>
                 <ul>
-                      <li><a href="{{route('admin.projects.index')}}"> Project Plus</a></li>
-                      <li><a href="{{route('admin.projectplus.index')}}">Manage Content</a></li>
+                      <li><a href="{{route('admin.projects.index')}}"> Project</a></li>
+                      <li><a href="{{route('admin.projectplus.index')}}">Project Plus</a></li>
                 </ul>
         </li>  
 
