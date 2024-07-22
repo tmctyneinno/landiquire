@@ -30,6 +30,7 @@
 					<!-- Property Single Content Start -->
 					<div class="property-single-content">
 						<!-- Property Photos Slider Start -->
+
 						<div class="property-photos-slider wow fadeInUp" data-wow-delay="0.25s">
 							<div class="swiper">
 								<div class="swiper-wrapper">
@@ -56,7 +57,7 @@
 							  </div>
 						</div>
 						<div class="about-property wow fadeInUp" data-wow-delay="0.75s">
-
+ 					<h2 class="text-anime" style="color:#0c0c0c">{{$project->title}}</h2>
 							<div class="about-property-content">
 								<p>{!! $project->content !!}</p>
 
@@ -84,6 +85,7 @@
 
 							<div class="property-info-lists">
 								<!-- Property Info item Start-->
+								@if($project->location)
 								<div class="property-info-item">
 									<div class="icon-box">
 										<img src="{{asset('/assets/images/icon-property-location.svg')}}" alt="">
@@ -91,8 +93,10 @@
 
 									<p>{{$project->location}}</p>
 								</div>
+								@endif
 
 								<!-- Property Info item Start-->
+								@if($project->amount)
 								<div class="property-info-item">
 									<div class="icon-box">
 										<img src="{{asset('assets/images/icon-property-price.svg')}}" alt="">
@@ -100,6 +104,8 @@
 
 									<p>{{$project->amount}}</p>
 								</div>
+								@endif
+								@if($project->size)
 								<div class="property-info-item">
 									<div class="icon-box">
 										<img src="{{asset('assets/images/icon-area.svg')}}" alt="">
@@ -107,6 +113,7 @@
 
 									<p>{{$project->size}}</p>
 								</div>
+								@endif
 								<!-- Property Info item End-->
 							</div>
 						</div>
