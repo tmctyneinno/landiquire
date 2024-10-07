@@ -94,7 +94,7 @@
 													<img src="{{asset('images/'.$property->image)}}" alt="">
 												</figure>
 	
-												<span class="property-label">Rent</span>
+												<span class="property-label"></span>
 											</div>
 											<div class="property-body">
 												<h3>{{$property->title}}</h3>

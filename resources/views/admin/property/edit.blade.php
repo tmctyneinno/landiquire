@@ -114,7 +114,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="p-5">
-                                        <button type="submit" class="btn btn-primary p-3">Update Project</button>
+                                        <button type="submit" class="btn btn-primary p-3">Update Property</button>
                                     </div>
                                 </div>
                             </div>
