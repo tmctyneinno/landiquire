@@ -959,6 +959,7 @@ header.main-header .header-sticky.active{
 	font-weight: 500;
 	padding: 4px 14px;
 	border-radius: 5px;
+	display: none;
 }
 
 .property-item .property-body{
