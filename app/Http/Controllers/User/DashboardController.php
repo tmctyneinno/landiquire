@@ -31,7 +31,7 @@ class DashboardController extends Controller
             'teams' => TeamMember::take(4)->get(),
             'galleries' => Gallery::latest()->get(),
             'projects' => Project::latest()->get(),
-            'properties' => Property::latest()->take(4)
+            'properties' => Property::latest()->take(4)->get()
         ])
         ->with('title', 'Home');
     }

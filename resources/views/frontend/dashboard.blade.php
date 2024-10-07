@@ -74,7 +74,7 @@
 						<!-- Section Title Start -->
 						<div class="section-title " style="text-align: center">
 							<h3 class="wow fadeInUp">See Land Locations</h3>
-							<h4 class="text-anime">Our Projects</h4>
+							<h4 class="text-anime">Properties for sale</h4>
 						</div>
 						<!-- Section Title End -->
 					</div>

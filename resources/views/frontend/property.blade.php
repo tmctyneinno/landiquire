@@ -38,7 +38,7 @@
                                 </div>
                                 <div class="property-body">
                                     <h3>{{$property->title}}</h3>
-                                          {{-- <div class="property-meta">
+                                          <div class="property-meta">
 											<div class="property-amenity-item">
 												<div class="icon-box">
 													@if(isset($project?->size)) <img src="{{asset('assets/images/icon-area.svg')}}" alt=""> @endif
@@ -46,7 +46,7 @@
 
 												<span>{{$project?->size}}</span>
 											</div>
-										</div> --}}
+										</div>
                                     </div>
                                     <div class="property-footer">
                                     	@if(isset($property?->amount))     <p class="property-price">₦{{$property->amount}}</p>  @endif
