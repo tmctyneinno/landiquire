@@ -41,10 +41,10 @@
                                           <div class="property-meta">
 											<div class="property-amenity-item">
 												<div class="icon-box">
-													@if(isset($project?->size)) <img src="{{asset('assets/images/icon-area.svg')}}" alt=""> @endif
+													@if(isset($property?->size)) <img src="{{asset('assets/images/icon-area.svg')}}" alt=""> @endif
 												</div>
 
-												<span>{{$project?->size}}</span>
+												<span>{{$property?->size}}</span>
 											</div>
 										</div>
                                     </div>
