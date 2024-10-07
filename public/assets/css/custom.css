@@ -36,7 +36,8 @@
 /************************************/
 
 :root {
-	--primary-color			: #2F3D7E;
+	/* --primary-color			: #2F3D7E; */
+	--primary-color: 		  #041557;
 	--secondary-color		: #F6F8FF;
 	--text-color			: #646262;
 	--white-color			: #ffffff;
@@ -746,7 +747,7 @@ header.main-header .header-sticky.active{
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: var(--overlay-color);
+	/* background: var(--overlay-color);  remove image background on slider*/ 
 	z-index: 1;
 }
 
