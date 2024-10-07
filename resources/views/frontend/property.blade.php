@@ -57,9 +57,10 @@
 
                             </div>
                             <!-- Property Item End -->
+                            @empty 
+                            @endforelse
                         </div>
-                        @empty 
-                        @endforelse
+                       
                     </div>
                 </div>
             </div>
