@@ -631,7 +631,7 @@ header.main-header .header-sticky.active{
 	background-size: cover;
 	padding: 10px 0 31px;
 	position: relative;
-	/* height: 40em; */
+	height: 40em;
 }
 
 .hero .hero-section:before{
@@ -727,7 +727,7 @@ header.main-header .header-sticky.active{
 }
 
 .hero-slider .hero-section .hero-slide{
-	padding: 100px 0 312px;
+	padding: 200px 0 312px;
 	position: relative;
 }
 
