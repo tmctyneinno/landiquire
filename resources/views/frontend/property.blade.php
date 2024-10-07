@@ -1,15 +1,15 @@
 @extends('layouts.app')
 @section('contents')
-<div class="page-header parallaxie" style="background-image:url({{asset('images/'.$projects->first()?->image)}})">
+<div class="page-header parallaxie" style="background-image:url({{asset('images/'.$properties->first()?->image)}})">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="page-header-box">
-                    <h2 class="text-anime" style="color:#fff">Project Plus</h2>
+                    <h2 class="text-anime" style="color:#fff">Property for sale</h2>
                     <nav class="wow fadeInUp" data-wow-delay="0.25s">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{route('index')}}">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">/ Project Plus</li>
+                            <li class="breadcrumb-item active" aria-current="page">/ Property For Sale</li>
                         </ol>
                     </nav>
                 </div>
@@ -27,17 +27,17 @@
                 <div class="property-listings">
                     <div class="row">
 
-                        @forelse($projects as $project)
+                        @forelse($properties as $property)
                         <div class="col-md-4">
                             <!-- Property Item Start -->
                             <div class="property-item wow fadeInUp" data-wow-delay="0.25s">
                                 <div class="property-header">
                                     <figure class="image-anime">
-                                        <img src="{{asset('images/'.$project->image)}}" alt="">
+                                        <img src="{{asset('images/'.$property->image)}}" alt="">
                                     </figure>
                                 </div>
                                 <div class="property-body">
-                                    <h3>{{$project->title}}</h3>
+                                    <h3>{{$property->title}}</h3>
                                           {{-- <div class="property-meta">
 											<div class="property-amenity-item">
 												<div class="icon-box">
@@ -49,8 +49,8 @@
 										</div> --}}
                                     </div>
                                     <div class="property-footer">
-                                    	@if(isset($project?->amount))     <p class="property-price">₦{{$project->amount}}</p>  @endif
-                                        <a href="{{route('users.projectplus.details', encrypt($project->id))}}" class="btn-default">View Property</a>
+                                    	@if(isset($property?->amount))     <p class="property-price">₦{{$property->amount}}</p>  @endif
+                                        <a href="{{route('users.property.details', encrypt($property->id))}}" class="btn-default">View Property</a>
                                     </div>
                                 </div>
                               

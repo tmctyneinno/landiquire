@@ -4,11 +4,12 @@ use Intervention\Image\Facades\Image;
 
 
 if(!function_exists('StoreImage')){
-   function StoreImage($request){
+   function StoreImage($request, $width = null, $height = null){
     $image = $request->file('image');
     $ext = $image->getClientOriginalExtension();
     $fileName =  time().'.'.$ext;
-  Image::make($image)->resize(500,450)->save('images/'. $fileName);
+    if(isset($width))Image::make($image)->resize($width,$height)->save('images/'. $fileName);
+    Image::make($image)->save('images/'. $fileName);
     return $fileName;
     }
 }

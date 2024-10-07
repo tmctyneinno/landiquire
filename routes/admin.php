@@ -19,6 +19,7 @@ use App\Http\Controllers\DeveloperController;
 use App\Http\Controllers\PartnersController;
 use App\Http\Controllers\ProjectPlusController;
 use App\Http\Controllers\ProjectsController;
+use App\Http\Controllers\PropertyController;
 use App\Http\Controllers\TestimonialController;
 use App\Models\ProjectPlusContent;
 
@@ -146,9 +147,10 @@ Route::group(['prefix' => 'manage', 'as' => 'admin.'], function () {
         });
 
     Route::resource('/projectplus', ProjectPlusController::class);
+    Route::resource('/property', PropertyController::class);
 
-    Route::controller(ProjectPlusController::class)->group(function() {
-        Route::get('/projectplus/delete/{id}', 'delete')->name('projectplus.delete');
+    Route::controller(PropertyController::class)->group(function() {
+        Route::get('/property/delete/{id}', 'delete')->name('property.delete');
     });
     Route::resource('/projects', ProjectsController::class);
     Route::get('/projects/delete/{id}', [ProjectsController::class, 'delete'])->name('projects.delete');

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Project;
+use App\Models\Property;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
-class ProjectsController extends Controller
+class PropertyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +15,10 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        return view('admin.projects.index')
-        ->with('projects', Project::latest()->get())
-        ->with('bheading', 'Project Plus')
-        ->with('breadcrumb', 'Project Plus');
+        return view('admin.Property.index')
+        ->with('properties', Property::latest()->get())
+        ->with('bheading', 'Property for Sale')
+        ->with('breadcrumb', 'Property for Sale');
     }
 
     /**
@@ -28,9 +28,9 @@ class ProjectsController extends Controller
      */
     public function create()
     {
-        return view('admin.projects.create')
-        ->with('bheading', 'Project Plus')
-        ->with('breadcrumb', 'Project Plus');
+        return view('admin.Property.create')
+        ->with('bheading', 'Property for Sale')
+        ->with('breadcrumb', 'Property for Sale');
     }
 
     /**
@@ -42,7 +42,7 @@ class ProjectsController extends Controller
     public function store(Request $request)
     {
         try{
-            $project = new Project();
+            $project = new Property();
             $project->title = $request->title;
             $project->content = $request->content;
             $project->features = $request->features;
@@ -57,7 +57,7 @@ class ProjectsController extends Controller
             }
             $project->save();
             Session::flash('alert', 'success');
-            Session::flash('message', 'Project Plus  Added successfully');
+            Session::flash('message', 'Property  Added successfully');
             return redirect()->back();
       }catch(\Exception $e){
         Session::flash('alert', 'error');
@@ -85,10 +85,10 @@ class ProjectsController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.projects.edit')
-        ->with('project', Project::where('id', decrypt($id))->first())
-        ->with('bheading', 'Project Plus')
-        ->with('breadcrumb', 'Project Plus');
+        return view('admin.property.edit')
+        ->with('property', Property::where('id', decrypt($id))->first())
+        ->with('bheading', 'Property for sale')
+        ->with('breadcrumb', 'Property for sale');
     }
 
     /**
@@ -101,7 +101,7 @@ class ProjectsController extends Controller
     public function update(Request $request, $id)
     {
         try{
-            $project = Project::where('id', decrypt($id))->first();
+            $project = Property::where('id', decrypt($id))->first();
             $project->title = $request->title;
             $project->content = $request->content;
             $project->features = $request->features;
@@ -116,7 +116,7 @@ class ProjectsController extends Controller
             }
             $project->save();
             Session::flash('alert', 'success');
-            Session::flash('message', 'Project Plus  Updated successfully');
+            Session::flash('message', 'Property   Updated successfully');
             return redirect()->back();
       }catch(\Exception $e){
         Session::flash('alert', 'error');
@@ -138,13 +138,13 @@ class ProjectsController extends Controller
 
     public function delete($id)
     {
-        $project = Project::where('id', decrypt($id))->first();
+        $project = Property::where('id', decrypt($id))->first();
         if($project) {$project->delete(); 
             Session::flash('alert', 'error');
-            Session::flash('message', 'Project Plus  Deleted');return back();
+            Session::flash('message', 'Property  Deleted');return back();
         }else{
             Session::flash('alert', 'error');
-            Session::flash('message', 'Project Plus not found');
+            Session::flash('message', 'Property not found');
             return back();
         }
     }

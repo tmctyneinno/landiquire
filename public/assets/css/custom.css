@@ -628,9 +628,9 @@ header.main-header .header-sticky.active{
 	border-radius: 0px;
 	background: url(../images/hero.jpg) no-repeat center center;
 	background-size: cover;
-	padding: 100px 0 312px;
+	padding: 10px 0 31px;
 	position: relative;
-	height: 35em;
+	/* height: 40em; */
 }
 
 .hero .hero-section:before{

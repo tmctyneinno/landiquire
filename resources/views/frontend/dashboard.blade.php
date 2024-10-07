@@ -5,7 +5,7 @@
 	<div class="about-us">
 		<div class="container">
 			<div class="row align-items-center">
-				<div class="col-lg-4">
+				<div class="col-lg-6">
 					<!-- About Left Image Start -->
 					<div class="about-images">
 						<div class="about-video">
@@ -26,7 +26,7 @@
 					</div>
 					<!-- About Left Image End -->
 				</div>
-				<div class="col-lg-8">
+				<div class="col-lg-6">
 					<!-- About Content Start -->
 					<div class="about-content">
 						<!-- Section Title Start -->
@@ -38,7 +38,7 @@
 
 						<!-- About Content Body Start -->
 						<div class="about-content-body">
-							<p class="wow fadeInUp" data-wow-delay="0.5s">{!! $about?->contents !!}</p>
+							<p class="wow fadeInUp" data-wow-delay="0.5s">{!! $settings?->about !!}</p>
 							<ul>
 								
 								<li class="wow fadeInUp" data-wow-delay="0.75s" style="visibility: visible; animation-delay: 0.75s; animation-name: fadeInUp;">
@@ -63,6 +63,87 @@
 		</div>
 	</div>
 	<!-- About Section End -->
+
+
+
+		<!-- Featured Property Section Start -->
+		<div class="featured-property" style="padding-top:20px">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<!-- Section Title Start -->
+						<div class="section-title " style="text-align: center">
+							<h3 class="wow fadeInUp">See Land Locations</h3>
+							<h4 class="text-anime">Our Projects</h4>
+						</div>
+						<!-- Section Title End -->
+					</div>
+				</div>
+	
+				<div class="row">
+					<div class="col-md-12">
+						<!-- Property Slider Start -->
+						<div class="property-slider">
+							<div class="swiper">
+								<div class="swiper-wrapper">
+									@forelse($properties as $property)
+									<div class="swiper-slide">
+										<div class="property-item">
+											<div class="property-header">
+												<figure class="image-anime">
+													<img src="{{asset('images/'.$property->image)}}" alt="">
+												</figure>
+	
+												<span class="property-label">Rent</span>
+											</div>
+											<div class="property-body">
+												<h3>{{$property->title}}</h3>
+												
+												<div class="property-meta">
+													<div class="property-amenity-item">
+														@php 
+														if($property->sizes){
+															$sizes = explode(',',$property->sizes);
+														}
+														@endphp
+														@if(isset($sizes)) 
+														@foreach ($sizes as $size)
+														<span>{{$size}}  <br></span>
+														@endforeach
+														@endif
+													</div>
+	
+													<div class="property-amenity-item">
+														@php 
+														if($property->prices){
+															$prices = explode(',',$property->prices);
+														}
+														@endphp
+														@if(isset($prices)) 
+														@foreach ($prices as $price)
+														<span>{{$price}}</span> <br>
+														@endforeach
+														@endif
+													</div>
+												</div>
+											</div>
+											<div class="property-footer">
+												<a href="#" class="btn-default">See More</a>
+											</div>
+										</div>
+									</div>
+									@empty 
+									@endforelse
+								</div>
+								
+								<div class="swiper-pagination"></div>
+							</div>
+						</div>
+						<!-- Property Slider End -->
+					</div>
+				</div>
+			</div>
+		</div>
 
 	<!-- How It Work Section Start -->
 	<div class="how-it-works" style="padding:20px">

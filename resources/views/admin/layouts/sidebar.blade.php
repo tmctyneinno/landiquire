@@ -38,6 +38,15 @@
                       <li><a href="{{route('admin.projectplus.index')}}">Project Plus</a></li>
                 </ul>
         </li>  
+        <li>
+            <a  href="" data-toggle="tooltip" data-placement="right" title="Manage Blogs"
+               data-nav-target="#dashboards">
+               <i class="fas fa-project-diagram"></i>&nbsp;  Property for Sale </a>
+                <ul>
+                      <li><a href="{{route('admin.property.create')}}"> Add New</a></li>
+                      <li><a href="{{route('admin.property.index')}}">Manage Property</a></li>
+                </ul>
+        </li>  
 
         <li>
             <a  href="" data-toggle="tooltip" data-placement="right" title="Manage Blogs"

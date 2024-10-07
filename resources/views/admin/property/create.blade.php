@@ -3,11 +3,11 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <form action='{{ route('admin.projects.store') }}' method='post', enctype='multipart/form-data'>
+                <form action='{{ route('admin.property.store') }}' method='post', enctype='multipart/form-data'>
                     @csrf
                     <div class="card">
                         <div class="card-body">
-                            <h6 class="card-title">Post Project</h6>
+                            <h6 class="card-title">Post Property for Sale</h6>
                             <div class="row">
 
                                 <div class="col-md-12">
@@ -15,7 +15,7 @@
                                         <input type="text" name="title" value="{{ old('title') }}"
                                             class="form-control @error('title') is-invalid @enderror"
                                             id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=" Title">
-                                        <small id="emailHelp" class="form-text text-muted">Enter Project title
+                                        <small id="emailHelp" class="form-text text-muted">Enter Property for Sale title
                                         </small>
                                         @error('title')
                                             <span class="invalid-feedback"> <small> * </small> </span>
@@ -50,7 +50,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <textarea id="summernote" class="@error('content') is-invalid @enderror" name="content">{{ old('content') }}</textarea>
-                                        <small id="emailHelp" class="form-text text-muted"> Project Description
+                                        <small id="emailHelp" class="form-text text-muted"> Property Description
                                         </small>
                                         @error('content')
                                             <span class="invalid-feedback"> <small> *</small> </span>
@@ -105,7 +105,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="p-5">
-                                        <button type="submit" class="btn btn-primary p-3">Add Project</button>
+                                        <button type="submit" class="btn btn-primary p-3">Add Property</button>
                                     </div>
                                 </div>
                             </div>

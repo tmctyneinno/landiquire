@@ -9,6 +9,7 @@ use App\Http\Controllers\User\BlogController;
 use App\Http\Controllers\User\ContactController;
 use App\Http\Controllers\User\DeveloperController;
 use App\Http\Controllers\User\PartnerController;
+use App\Http\Controllers\User\PropertiesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,14 +59,17 @@ Route::controller(ProjectPlusController::class)->group(function () {
     Route::get('/projectplus/details/{id}', 'ProjectsDetails')->name('users.projectplus.details');
 });
 
-Route::controller(DeveloperController::class)->group(function() {
+Route::controller(PropertiesController::class)->group(function() {
+Route::get('/properties/index', 'Index')->name('users.properties.index');
+Route::get('/properties/{id}', 'property')->name('users.property.details');
+});
 
+Route::controller(DeveloperController::class)->group(function() {
     Route::get('/developers', 'Index')->name('users.developers.index');
     Route::post('developers/store', 'Store')->name('users.developers.store');
 });
 
 Route::controller(PartnerController::class)->group(function() {
-
     Route::get('partners', 'Index')->name('users.partners.index');
     Route::post('partners/store', 'Store')->name('users.partners.store');
 });

@@ -13,7 +13,8 @@ use App\Models\TeamMember;
 use App\Models\Testimonial;
 
 use App\Http\Controllers\Controller;
-
+use App\Models\Project;
+use App\Models\Property;
 
 class DashboardController extends Controller
 {
@@ -28,7 +29,9 @@ class DashboardController extends Controller
             'about' => About::latest()->first(),
             'goals' => CompanyGoal::get(),
             'teams' => TeamMember::take(4)->get(),
-            'galleries' => Gallery::latest()->get()
+            'galleries' => Gallery::latest()->get(),
+            'projects' => Project::latest()->get(),
+            'properties' => Property::latest()->take(4)
         ])
         ->with('title', 'Home');
     }

@@ -1,5 +1,3 @@
-
-
 <div class="hero hero-slider">
     <div class="hero-section">
         <!-- Hero Carousel Start -->
@@ -8,21 +6,8 @@
                 <div class="swiper-wrapper">
                     <!-- Hero Slide Start -->
                     @forelse ($sliders as  $slider)
-                    {{-- @if(!isset($slider->content))
-                    <style>
-                        .hero-slider .hero-section .hero-slide .hero-slide-image:after{
-                        content: '';
-                        display: block;
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        right: 0;
-                        bottom: 0;
-                        background: none;
-                        z-index: 1;
-                    }
-                    </style>
-                    @endif --}}
+                    @if(!isset($slider->content))
+                    @endif
                       <div class="swiper-slide">
                         <div class=" hero-slide " >
                             <div class="hero-slide-image " style="background: none">
@@ -44,10 +29,10 @@
                                 </div>
     
                                 <div class="hero-content-footer p-4">
-                                    {{-- @if($slider->title) --}}
-                                    {{-- <a href="#" class="btn-default">{{_('Learn More')}}</a> --}}
-                                    {{-- <a href="#" class="btn-default btn-border">{{_('Conact Us')}}</a> --}}
-                                    {{-- @endif --}}
+                                    @if($slider->title)
+                                    <a href="#" class="btn-default">{{_('Learn More')}}</a>
+                                    <a href="#" class="btn-default btn-border">{{_('Conact Us')}}</a>
+                                    @endif
                                 </div>
                             </div>
                           

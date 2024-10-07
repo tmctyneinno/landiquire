@@ -3,19 +3,19 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <form action='{{ route('admin.projects.store') }}' method='post', enctype='multipart/form-data'>
+                <form action='{{ route('admin.property.update', encrypt($property->id)) }}' method='post', enctype='multipart/form-data'>
                     @csrf
                     <div class="card">
                         <div class="card-body">
-                            <h6 class="card-title">Post Project</h6>
+                            <h6 class="card-title">Post Property for Sale</h6>
                             <div class="row">
 
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" name="title" value="{{ old('title') }}"
+                                        <input type="text" name="title" value="{{ $property->title}}"
                                             class="form-control @error('title') is-invalid @enderror"
-                                            id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=" Title">
-                                        <small id="emailHelp" class="form-text text-muted">Enter Project title
+                                            id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="News Title">
+                                        <small id="emailHelp" class="form-text text-muted">Enter property title
                                         </small>
                                         @error('title')
                                             <span class="invalid-feedback"> <small> * </small> </span>
@@ -24,9 +24,9 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" name="price" value="{{ old('price') }}"
+                                        <input type="text" name="price" value="{{ $property->price }}"
                                         class="form-control @error('price') is-invalid @enderror"
-                                        id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Price">
+                                        id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="price">
                                         <small id="emailHelp" class="form-text text-muted">Property Price
                                         </small>
                                         @error('price')
@@ -36,9 +36,9 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" name="size" value="{{ old('size') }}"
+                                        <input type="text" name="size" value="{{ $property->size }}"
                                         class="form-control @error('size') is-invalid @enderror"
-                                        id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter size">
+                                        id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="size">
                                         <small id="emailHelp" class="form-text text-muted">Property Size
                                         </small>
                                         @error('size')
@@ -46,11 +46,11 @@
                                         @enderror
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <textarea id="summernote" class="@error('content') is-invalid @enderror" name="content">{{ old('content') }}</textarea>
-                                        <small id="emailHelp" class="form-text text-muted"> Project Description
+                                        <textarea id="summernote" class="@error('content') is-invalid @enderror" name="content">{{ $property->content}}</textarea>
+                                        <small id="emailHelp" class="form-text text-muted"> property Description
                                         </small>
                                         @error('content')
                                             <span class="invalid-feedback"> <small> *</small> </span>
@@ -59,7 +59,7 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <textarea id="features" class="@error('features') is-invalid @enderror" name="features">{{ old('features') }}</textarea>
+                                        <textarea id="features" class="@error('features') is-invalid @enderror" name="features">{{ $property->features }}</textarea>
                                         <small id="emailHelp" class="form-text text-muted">Packages available
                                         </small>
                                         @error('features')
@@ -68,7 +68,10 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6 pt-4">
+
+                                  <img src="{{asset('images/'.$property->image)}}"  width="100px">
                                     <div class="custom-file">
+                           
                                         <input type="file" name="image"
                                             class="custom-file-input  @error('image') is-invalid @enderror">
                                         <label class="custom-file-label" for="customFile">Choose Page Cover Image</label>
@@ -80,6 +83,12 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-6 pt-4">
+                                  @php 
+                                  $image = json_decode($property->gallery, true);
+                                  @endphp
+                                  @foreach ($image as $file) 
+                                     <img src="{{asset('images/'.$file)}}"  width="100px">
+                                     @endforeach
                                     <div class="custom-file">
                                         <input type="file" name="images[]" multiple
                                             class="custom-file-input  @error('images') is-invalid @enderror">
@@ -105,12 +114,13 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="p-5">
-                                        <button type="submit" class="btn btn-primary p-3">Add Project</button>
+                                        <button type="submit" class="btn btn-primary p-3">Update Project</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    @method('put')
                 </form>
 
             </div>
