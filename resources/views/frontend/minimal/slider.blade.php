@@ -10,8 +10,8 @@
                     @endif
                       <div class="swiper-slide">
                         <div class=" hero-slide " >
-                            <div class="hero-slide-image " style="background: none">
-                                <img src="{{asset('images/'.$slider->image)}}" alt=""   @if(!$slider->title) style="" @endif>
+                            <div class="hero-slide-image " style="background: none"  style="object-fit: cover;">
+                                <img src="{{asset('images/'.$slider->image)}}" alt=""    @if(!$slider->title) @endif>
                             </div>
 
                             

@@ -15,7 +15,7 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        return view('admin.Property.index')
+        return view('admin.property.index')
         ->with('properties', Property::latest()->get())
         ->with('bheading', 'Property for Sale')
         ->with('breadcrumb', 'Property for Sale');
@@ -28,7 +28,7 @@ class PropertyController extends Controller
      */
     public function create()
     {
-        return view('admin.Property.create')
+        return view('admin.property.create')
         ->with('bheading', 'Property for Sale')
         ->with('breadcrumb', 'Property for Sale');
     }
