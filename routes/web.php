@@ -60,7 +60,7 @@ Route::controller(ProjectPlusController::class)->group(function () {
 });
 
 Route::controller(PropertiesController::class)->group(function() {
-Route::get('/properties/index', 'Index')->name('users.properties.index');
+Route::get('/property/index', 'Index')->name('users.properties.index');
 Route::get('/properties/{id}', 'property')->name('users.property.details');
 });
 
