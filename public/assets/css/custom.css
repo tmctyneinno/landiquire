@@ -952,7 +952,7 @@ header.main-header .header-sticky.active{
 	position: absolute;
 	top: 20px;
 	left: 20px;
-	background: var(--primary-color);
+	background: transparent !important;
 	color: var(--white-color);
 	font-family: var(--accent-font);
 	font-size: 16px;
